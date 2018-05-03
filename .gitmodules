@@ -1,3 +1,6 @@
 [submodule "roboy_communication"]
 	path = roboy_communication
 	url = https://github.com/Roboy/roboy_communication.git
+[submodule "ROSBridgeTemplate"]
+	path = ROSBridgeTemplate
+	url = https://github.com/sheveg/ROSBridgeTemplate.git
