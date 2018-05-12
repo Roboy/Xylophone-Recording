@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Renderer))]
 public class KeyVisualFeedback : MonoBehaviour {
 
     private bool isKeyMoved;
@@ -9,7 +10,9 @@ public class KeyVisualFeedback : MonoBehaviour {
     private Color originColor;
     private Color highlightColor = new Color(1.0f, 1.0f, 1.0f);
     private const float lerp = 0.2f;
-    private Vector3 hitMove = new Vector3(0.0f, -0.1f, 0.0f);
+
+    public float moveTime = 0.1f;
+    public Vector3 hitMove = new Vector3(0.0f, -0.1f, 0.0f);
 
     // Use this for initialization
     void Start () {
@@ -33,7 +36,7 @@ public class KeyVisualFeedback : MonoBehaviour {
             isKeyMoved = true;
         }
 
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(moveTime);
 
         if(isKeyMoved)
         {

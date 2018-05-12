@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class KeyAudioFeedback : MonoBehaviour {
 
     private AudioSource keySound;
@@ -11,7 +12,6 @@ public class KeyAudioFeedback : MonoBehaviour {
         keySound = GetComponent<AudioSource>();
 	}
 	
-	// Update is called once per frame
 	
 
     public void PlayKey()

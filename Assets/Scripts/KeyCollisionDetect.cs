@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(KeyAudioFeedback))]
+[RequireComponent(typeof(KeyVisualFeedback))]
 public class KeyCollisionDetect : MonoBehaviour {
 
     private KeyAudioFeedback keyAudioFeedback;
@@ -15,14 +17,9 @@ public class KeyCollisionDetect : MonoBehaviour {
 
 	}
 	
-	void Update () {
-		
-	}
-
     void OnCollisionEnter(Collision collision)
     {
-        //Debug.Log("aaah!");
-        keyAudioFeedback.PlayKey();
         keyVisualFeedback.MoveAndHighlightOnHit();
+        keyAudioFeedback.PlayKey();
     }
 }
