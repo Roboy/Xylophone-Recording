@@ -6,55 +6,71 @@ using ROSBridgeCustom;
 
 public class NotesManager : Singleton<NotesManager>
 {
+    #region PUBLIC_MEMBER_VARIABLES
+    public float Period = 1f;
+    private readonly System.DateTime m_UnixEpoch =
+                                      new System.DateTime(1970, 1, 1, 0, 0, 0, System.DateTimeKind.Utc);
+    #endregion // PUBLIC_MEMBER_VARIABLES
 
-    private float nextActionTime = 0.0f;
-    public float period = 1f;
+    #region PRIVATE_MEMBER_VARIABLES
+    private float m_NextActionTime = 0.0f;
 
-    // Use this for initialization
-    void Start()
-    {
+    #endregion // PRIVATE_MEMBER_VARIABLES
 
-    }
-
+    #region MONOBEHAVIOR_METHODS
     void Update()
     {
-        if (Time.time > nextActionTime)
+        if (Time.time > m_NextActionTime)
         {
-            nextActionTime += period;
-            SendROSMessage();
+            m_NextActionTime += Period;
+            sendROSMessage();
         }
     }
+    #endregion // MONOBEHAVIOR_METHODS
 
-    void SendROSMessage()
+    #region PUBLIC_METHODS
+    public System.Byte RandomMusicalNote()
+    {
+        System.Byte musicalNote;
+        List<System.Byte> musicalNotes = new List<System.Byte>();
+        musicalNotes.Add(12);
+        musicalNotes.Add(14);
+        musicalNotes.Add(16);
+
+        musicalNote = musicalNotes[Random.Range(0, musicalNotes.Count)];
+        return musicalNote;
+    }
+    #endregion // PUBLIC_METHODS
+
+    #region PRIVATE_METHODS
+    private void sendROSMessage()
     {
         MusicalNoteMsg msg;
-        string RandomMusicalNote = randomMusicalNote();
-        System.DateTime absoluteTime = System.DateTime.Now;
-        msg = new MusicalNoteMsg(RandomMusicalNote, absoluteTime);
+        System.Byte randomMusicalNote = RandomMusicalNote();
+        long absoluteTime = getCurrentUnixTimestampMillis();
+
+        msg = new MusicalNoteMsg(randomMusicalNote, absoluteTime);
         ROSBridge.ROSBridge.Instance.Publish(MusicalNotesPublisher.GetMessageTopic(), msg);
-
-        //print("MUSICALNOTE message sent:" + RandomMusicalNote + " " + absoluteTime.ToString());
-        print(msg.ToYAMLString());
-
-        /*string linkName = "left_hand";
-        List<string> linkNames = new List<string>();
-        linkNames.Add(linkName);
-
-        RoboyPoseMsg msg2 = new RoboyPoseMsg("hands",
-        linkNames, new Vector3[] { transform.position }, new Quaternion[] { transform.rotation });
-        ROSBridge.Instance.Publish(RoboyHandsPublisher.GetMessageTopic(), msg2);
-        print(msg2.ToYAMLString());*/
     }
 
-    string randomMusicalNote()
+    private long getCurrentUnixTimestampMillis()
     {
-        string MusicalNote;
-        List<string> MusicalNotes = new List<string>();
-        MusicalNotes.Add("A");
-        MusicalNotes.Add("D");
-        MusicalNotes.Add("C");
-
-        MusicalNote = MusicalNotes[Random.Range(0, MusicalNotes.Count)];
-        return MusicalNote;
+        return (long)(System.DateTime.UtcNow - m_UnixEpoch).TotalMilliseconds;
     }
+
+    private System.DateTime dateTimeFromUnixTimestampMillis(long millis)
+    {
+        return m_UnixEpoch.AddMilliseconds(millis);
+    }
+
+    private long getCurrentUnixTimestampSeconds()
+    {
+        return (long)(System.DateTime.UtcNow - m_UnixEpoch).TotalSeconds;
+    }
+
+    private System.DateTime dateTimeFromUnixTimestampSeconds(long seconds)
+    {
+        return m_UnixEpoch.AddSeconds(seconds);
+    }
+    #endregion // PRIVATE_METHODS
 }

@@ -4,6 +4,7 @@ namespace ROSBridgeCustom
 {
     public class MusicalNotesPublisher : ROSBridgePublisher
     {
+        #region PUBLIC_METHODS
         public new static string GetMessageTopic()
         {
             return "/roboy/control/musicalNote";
@@ -18,5 +19,6 @@ namespace ROSBridgeCustom
         {
             return msg.ToYAMLString();
         }
+        #endregion // PUBLIC_METHODS
     }
 }

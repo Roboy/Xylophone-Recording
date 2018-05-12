@@ -6,21 +6,25 @@ namespace ROSBridgeCustom
 {
     public class MusicalNoteMsg : ROSBridgeMsg
     {
+        #region PRIVATE_MEMBER_VARIABLES
+        //Midi Note Format -> http://www.music.mcgill.ca/~ich/classes/mumt306/StandardMIDIfileformat.html#BMA1_3
+        private Byte m_MusicialNote;
 
-        private string _musicialNote;
+        private long m_UnixTimeInMilliseconds;
 
-        private System.DateTime _absoluteTime;
+        #endregion // PRIVATE_MEMBER_VARIABLES
 
+        #region PUBLIC_METHODS
         public MusicalNoteMsg(JSONNode msg)
         {
             throw new System.NotImplementedException();
         }
 
 
-        public MusicalNoteMsg(string musicalNote, System.DateTime absoluteTime)
+        public MusicalNoteMsg(Byte musicalNote, long unixTimeInMilliseconds)
         {
-            _musicialNote = musicalNote;
-            _absoluteTime = absoluteTime;
+            m_MusicialNote = musicalNote;
+            m_UnixTimeInMilliseconds = unixTimeInMilliseconds;
         }
 
         public static string GetMessageType()
@@ -36,7 +40,8 @@ namespace ROSBridgeCustom
 
         public override string ToYAMLString()
         {
-            return "{" + "\"musicalNote\" : \"" + _musicialNote + "\", \"absoluteTime\" : \"" + _absoluteTime.ToString() + "\"}";
+            return "{" + "\"musicalNote\" : " + m_MusicialNote + ", \"unixTimeInMilliseconds\" : " + m_UnixTimeInMilliseconds + "}";
         }
+        #endregion // PUBLIC_METHODS
     }
 }
