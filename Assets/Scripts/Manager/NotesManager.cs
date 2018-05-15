@@ -4,17 +4,17 @@ using UnityEngine;
 using ROSBridge;
 using ROSBridgeCustom;
 
+//TODO: left for testing purposes - can be deactivated or deleted when the collision detection with sending ros messages works!
 public class NotesManager : Singleton<NotesManager>
 {
     #region PUBLIC_MEMBER_VARIABLES
     public float Period = 1f;
-    private readonly System.DateTime m_UnixEpoch =
-                                      new System.DateTime(1970, 1, 1, 0, 0, 0, System.DateTimeKind.Utc);
     #endregion // PUBLIC_MEMBER_VARIABLES
 
     #region PRIVATE_MEMBER_VARIABLES
     private float m_NextActionTime = 0.0f;
-
+    private readonly System.DateTime m_UnixEpoch =
+                                      new System.DateTime(1970, 1, 1, 0, 0, 0, System.DateTimeKind.Utc);
     #endregion // PRIVATE_MEMBER_VARIABLES
 
     #region MONOBEHAVIOR_METHODS

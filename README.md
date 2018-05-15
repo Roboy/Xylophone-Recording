@@ -7,3 +7,9 @@ This project is about capturing somebody playing xylophone in virtual reality. P
 ## Setup
 
 ## Usage
+
+Before running the Unity Project:
+```
+source path-to-roboy-repo/devel/setup.bash
+roslaunch rosbridge_server rosbridge_websocket.launch
+```
