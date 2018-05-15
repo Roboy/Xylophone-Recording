@@ -9,7 +9,7 @@ public class KeyVisualFeedback : MonoBehaviour {
     private Renderer rend;
     private Color originColor;
     private Color highlightColor = new Color(1.0f, 1.0f, 1.0f);
-    private const float lerp = 0.2f;
+    private const float lerp = 0.6f;
 
     public float moveTime = 0.1f;
     public Vector3 hitMove = new Vector3(0.0f, -0.1f, 0.0f);

@@ -7,6 +7,8 @@ public class KeyAudioFeedback : MonoBehaviour {
 
     private AudioSource keySound;
 
+    private float maxForce = 1000;
+
     // Use this for initialization
     void Start () {
         keySound = GetComponent<AudioSource>();
@@ -14,9 +16,10 @@ public class KeyAudioFeedback : MonoBehaviour {
 	
 	
 
-    public void PlayKey()
+    public void PlayKey(float force)
     {
+        float vol = Mathf.Clamp(force / maxForce, 0.0f, 1.0f);
+        keySound.volume = vol;
         keySound.Play();
-        //Debug.Log("play key!");
     }
 }
