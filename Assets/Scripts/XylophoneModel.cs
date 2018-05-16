@@ -7,14 +7,10 @@ public class XylophoneModel : MonoBehaviour {
     //xylophone color which is red
     public Color redColor = Color.red;
     // Use this for initialization
-    public GameObject enviroment;
     public GameObject xylophone;
-    public GameObject sticks;
     void Start()
     {
         xylophone = new GameObject("xylophone");
-        enviroment = new GameObject("enviroment");
-        sticks = new GameObject("sticks");
         //numberOfNotes is the number of notes which can be assigned by users
         int numberOfNotes;
         //notesMinSize which used for size of note in y boarder and z boarder
@@ -29,26 +25,11 @@ public class XylophoneModel : MonoBehaviour {
             notesStartPosition);
         CreateXylophoneNotes(numberOfNotes, notesMinSize, notesMaxSize, notesSizeScale,
             notesPositionScale, notesStartPosition);
-
-        CreateSticks();
-
+        xylophone.transform.Rotate(0, 120, 0);
+        xylophone.transform.position = new Vector3(2.5F, -0.5F, 2.5F);
     }
 
-    private void CreateSticks()
-    {
-        //Add controller script to sticks
-        sticks.AddComponent<Controller>();
-        GameObject leftStick = new GameObject("leftStick");
-        leftStick.transform.parent = sticks.transform;
-        GameObject rightStick = new GameObject("rightStick");
-        rightStick.transform.parent = sticks.transform;
-        float stickLength = 5, stickWidth = 0.1F;
-        float stickPosX = 0, stickPosY = 10, stickPosZ = 0;
-        CreateStick(leftStick, stickLength, stickWidth, stickPosX, stickPosY, stickPosZ);
-        CreateStick(rightStick, stickLength, stickWidth, stickPosX+10, stickPosY, stickPosZ);
-    }
-
-    private void CreateStick(GameObject parentObj, float stickLength, float stickWidth, float stickPosX, float stickPosY, float stickPosZ)
+    /*private void CreateStick(GameObject parentObj, float stickLength, float stickWidth, float stickPosX, float stickPosY, float stickPosZ)
     {
         GameObject stick = GameObject.CreatePrimitive(PrimitiveType.Cube);
         stick.transform.parent = parentObj.transform;
@@ -72,6 +53,7 @@ public class XylophoneModel : MonoBehaviour {
         stickSwitchButton.GetComponent<Renderer>().material.color = new Color(greenColor.r, greenColor.g, greenColor.b, 
             greenColor.a);
     }
+    */
 
     /// <summary>
     /// This methode will create the xylophone red frame based on the note size and notes distance.
@@ -121,13 +103,13 @@ public class XylophoneModel : MonoBehaviour {
     private void ScaleXylophoneNotesSize(out int numberOfNotes, out float notesMinSize, out float notesMaxSize, 
         out float sizeScale, out float notesDistance, out float firstNotePosition)
     {
-        numberOfNotes = 5;
-        notesMinSize = 0.5F;
-        notesMaxSize = 3;
+        numberOfNotes = 6;
+        notesMinSize = 0.1F;
+        notesMaxSize = 0.5F;
         sizeScale = 0;
         sizeScale = (notesMaxSize - notesMinSize) / numberOfNotes;
 
-        notesDistance = 1F;
+        notesDistance = 0.5F;
         if (numberOfNotes % 2 == 0)
         {
             firstNotePosition = -(((numberOfNotes / 2)-1) * notesDistance + notesDistance/2);
@@ -161,12 +143,12 @@ public class XylophoneModel : MonoBehaviour {
             //create small white button on the right hand side of note
             GameObject rightButton = GameObject.CreatePrimitive(PrimitiveType.Sphere);
             rightButton.transform.parent = xylophoneNote.transform;
-            rightButton.transform.localScale = new Vector3(0.5F, 0.5F, 0.5F);
+            rightButton.transform.localScale = new Vector3(0.05F, 0.05F, 0.05F);
             rightButton.transform.position = new Vector3((noteMaxSize - sizeScale * i)/2, 1.5F*notesMinSize, firstNotePosition + notesDistance * i);
             //create small white button on the left hand side of note
             GameObject leftButton = GameObject.CreatePrimitive(PrimitiveType.Sphere);
             leftButton.transform.parent = xylophoneNote.transform;
-            leftButton.transform.localScale = new Vector3(0.5F, 0.5F, 0.5F);
+            leftButton.transform.localScale = new Vector3(0.05F, 0.05F, 0.05F);
             leftButton.transform.position = new Vector3(-(noteMaxSize - sizeScale * i) / 2, 1.5F*notesMinSize, firstNotePosition + notesDistance * i);
 
         }
