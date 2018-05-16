@@ -1,6 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: f6e9e51eb7c841a449d179427a219316
 folderAsset: yes
+=======
+guid: c30df3f08f994f44ca02def69bbb92fd
+folderAsset: yes
+timeCreated: 1524505931
+licenseType: Free
+>>>>>>> xylophone-model
 DefaultImporter:
   externalObjects: {}
   userData: 

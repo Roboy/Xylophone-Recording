@@ -4,7 +4,11 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 14
+<<<<<<< HEAD
   productGUID: 51601c638ae599349a0c81c077b7aa5a
+=======
+  productGUID: 4cc31089363aa4f4387bad39e436ad32
+>>>>>>> xylophone-model
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   defaultScreenOrientation: 4
@@ -181,9 +185,13 @@ PlayerSettings:
   StripUnusedMeshComponents: 0
   VertexChannelCompressionMask:
     serializedVersion: 2
+<<<<<<< HEAD
     m_Bits: 4294901998
+=======
+    m_Bits: 238
+>>>>>>> xylophone-model
   iPhoneSdkVersion: 988
-  iOSTargetOSVersionString: 8.0
+  iOSTargetOSVersionString: 7.0
   tvOSSdkVersion: 0
   tvOSRequireExtendedGameController: 0
   tvOSTargetOSVersionString: 9.0
@@ -268,7 +276,11 @@ PlayerSettings:
       m_Icon: {fileID: 0}
       m_Width: 1
       m_Height: 1
+<<<<<<< HEAD
       m_Kind: 0
+=======
+      m_Kind: 60149
+>>>>>>> xylophone-model
   m_BuildTargetBatching:
   - m_BuildTarget: Standalone
     m_StaticBatching: 1
@@ -606,7 +618,11 @@ PlayerSettings:
   psp2UseLibLocation: 0
   psp2InfoBarOnStartup: 0
   psp2InfoBarColor: 0
+<<<<<<< HEAD
   psp2ScriptOptimizationLevel: 2
+=======
+  psp2ScriptOptimizationLevel: 0
+>>>>>>> xylophone-model
   psmSplashimage: {fileID: 0}
   splashScreenBackgroundSourceLandscape: {fileID: 0}
   splashScreenBackgroundSourcePortrait: {fileID: 0}
