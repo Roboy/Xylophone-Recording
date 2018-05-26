@@ -23,18 +23,24 @@ public class Controller : MonoBehaviour
     private bool touchPadTouched = false;
     Color whiteColor = new Color32(255, 255, 255, 255);
     Color greyColor = new Color32(173, 173, 173, 255);
+    public Rigidbody attachPoint;
 
     void Start()
     {
         trackedObject = GetComponent<SteamVR_TrackedObject>();
-        GameObject[] keys = GameObject.FindGameObjectsWithTag("Key");
-        for (int i = 0; i < keys.Length; i++)
-        {
+        //GameObject[] keys = GameObject.FindGameObjectsWithTag("Key");
+        //for (int i = 0; i < keys.Length; i++)
+        /*{
             keyRigidbodies.Add(keys[i].GetComponent<Rigidbody>());
         }
-        makeCubeStickVisible();
+
+        GameObject stick = GameObject.Find("Left_stick_lightsaber");
+        FixedJoint joint = stick.AddComponent<FixedJoint>();
+        joint.connectedBody = attachPoint;*/
+
+        makeCubeStickInvis();
         makeRoboyStickInvis();
-        makeLightSaberStickInvis();
+        makeLightSaberStickVisible();
     }
 
     void Update()
@@ -49,7 +55,7 @@ public class Controller : MonoBehaviour
         {
             //Show the choosing menu
             gripButtonPressed = true;
-            changeGameObjectSize("ControllerMenu", 1F, 1F, 1F);
+            makeGameObjectActive("ControllerMenu", 1,1,1);
         }
         if (gripButtonPressed && device.GetTouch(SteamVR_Controller.ButtonMask.Touchpad))
         {
@@ -59,7 +65,7 @@ public class Controller : MonoBehaviour
         }
         if (touchPadTouched && !device.GetTouch(SteamVR_Controller.ButtonMask.Touchpad)) {
             touchPadTouched = false;
-            changeGameObjectSize("ControllerMenu", 0F, 0F, 0F);
+            makeGameObjectActive("ControllerMenu", 0,0,0);
         }
 
         if (touchPadTouched /*device.GetAxis().x != 0*/)
@@ -67,33 +73,24 @@ public class Controller : MonoBehaviour
 
             if (device.GetAxis().x < -0.33f)
             {
-                //if (device.GetPressDown(SteamVR_Controller.ButtonMask.Touchpad))
-                //{
                 //makeThirdMenuGlow();
                 //makeSecondMenuNotGlow();
                 //makeFirstMenuNotGlow();
                 makeLightSaberStickVisible();
                 makeCubeStickInvis();
                 makeRoboyStickInvis();
-                //}
             }
             else if (device.GetAxis().x > -0.33f && device.GetAxis().x < 0.33f)
             {
-                //if (device.GetPressDown(SteamVR_Controller.ButtonMask.Touchpad))
-                //{
                 //makeFirstMenuGlow();
                 //makeSecondMenuNotGlow();
                 //makeThirdMenuNotGlow();
                 makeCubeStickInvis();
                 makeRoboyStickVisible();
                 makeLightSaberStickInvis();
-
-                //}
             }
             else if (device.GetAxis().x > 0.33f)
             {
-                //if (device.GetPressDown(SteamVR_Controller.ButtonMask.Touchpad))
-                //{
                 //makeSecondMenuGlow();
                 //makeFirstMenuNotGlow();
                 //makeThirdMenuNotGlow();
@@ -150,56 +147,45 @@ public class Controller : MonoBehaviour
 
     private void makeLightSaberStickVisible()
     {
-        changeGameObjectSize("Right_stick_lightsaber", 1F, 1F, 1F);
-        changeGameObjectSize("Left_stick_lightsaber", 1F, 1F, 1F);
+        makeGameObjectActive("Right_stick_lightsaber", 1,1,1);
+        makeGameObjectActive("Left_stick_lightsaber", 1,1,1);
+
     }
 
     private void makeLightSaberStickInvis()
     {
-        changeGameObjectSize("Right_stick_lightsaber", 0F, 0F, 0F);
-        changeGameObjectSize("Left_stick_lightsaber", 0F, 0F, 0F);
+        makeGameObjectActive("Right_stick_lightsaber", 0,0,0);
+        makeGameObjectActive("Left_stick_lightsaber", 0,0,0);
     }
 
     private void makeCubeStickVisible()
     {
-        changeGameObjectSize("Right_stick_cube", 1F, 1F, 1F);
-        changeGameObjectSize("Left_stick_cube", 1F, 1F, 1F);
+        makeGameObjectActive("Right_stick_cube", 1,1,1);
+        makeGameObjectActive("Left_stick_cube", 1,1,1);
     }
 
     private void makeCubeStickInvis()
     {
-        changeGameObjectSize("Right_stick_cube", 0F, 0F, 0F);
-        changeGameObjectSize("Left_stick_cube", 0F, 0F, 0F);
+        makeGameObjectActive("Right_stick_cube", 0,0,0);
+        makeGameObjectActive("Left_stick_cube",0,0,0);
     }
 
-    private void makeRoboyStickVisible()
-    {
-        /*changeGameObjectSize("Right_stick_roboy", 0.05F, 0.1F, 0.1F);
-        changeGameObjectSize("Left_stick_roboy", 0.05F, 0.1F, 0.1F);*/
+    private void makeRoboyStickVisible() { 
 
-        changeGameObjectSize("Right_stick_roboy", 1F, 1F, 1F);
-        changeGameObjectSize("Left_stick_roboy", 1F, 1F, 1F);
+        makeGameObjectActive("Right_stick_roboy", 1,1,1);
+        makeGameObjectActive("Left_stick_roboy", 1,1,1);
     }
 
     private void makeRoboyStickInvis()
     {
-        changeGameObjectSize("Right_stick_roboy", 0F, 0F, 0F);
-        changeGameObjectSize("Left_stick_roboy", 0F, 0F, 0F);
+        makeGameObjectActive("Right_stick_roboy",0,0,0);
+        makeGameObjectActive("Left_stick_roboy", 0,0,0);
     }
 
-    /*private void changeSticks(string headObject, string stickObject, float headSize, float stickSize)
-    {
-        GameObject stick = GameObject.Find(stickObject);
-        stick.transform.localScale = new Vector3(0.01F, 0F, stickSize);
-        GameObject stickHead = GameObject.Find(headObject);
-        stickHead.transform.localScale = new Vector3(headSize, headSize, headSize);
-        stickHead.transform.localPosition = new Vector3(0, 0, stickSize/2);
-    }
-    */
-    private void changeGameObjectSize(string objectName, float sizex, float sizey, float sizez)
+    private void makeGameObjectActive(string objectName, int sizeX, int sizeY, int sizeZ)
     {
         GameObject stick = GameObject.Find(objectName);
-        stick.transform.localScale = new Vector3(sizex, sizey, sizez);
+        stick.transform.localScale = new Vector3(sizeX, sizeY, sizeZ);
     }
 
     void onTriggerStay(Collider col)
