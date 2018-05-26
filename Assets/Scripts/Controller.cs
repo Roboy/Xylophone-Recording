@@ -19,6 +19,10 @@ public class Controller : MonoBehaviour
     private SteamVR_Controller.Device device;
     private List<Rigidbody> keyRigidbodies = new List<Rigidbody>();
     private Image roboy_image;
+    private bool gripButtonPressed = false;
+    private bool touchPadTouched = false;
+    Color whiteColor = new Color32(255, 255, 255, 255);
+    Color greyColor = new Color32(173, 173, 173, 255);
 
     void Start()
     {
@@ -40,42 +44,108 @@ public class Controller : MonoBehaviour
             return;
         }
         device = SteamVR_Controller.Input((int)trackedObject.index);
-        if (device.GetAxis().x != 0)
-        {
-            if (device.GetAxis().x < -0.33f)
-            {
-                if (device.GetPressDown(SteamVR_Controller.ButtonMask.Touchpad))
-                {
-                    makeCubeStickVisible();
-                    makeRoboyStickInvis();
-                    makeLightSaberStickInvis();
-                }
-            }
-            else if (device.GetAxis().x > -0.33f && device.GetAxis().x < 0.33f)
-            {
-                if (device.GetPressDown(SteamVR_Controller.ButtonMask.Touchpad))
-                {
-                    makeCubeStickInvis();
-                    makeRoboyStickVisible();
-                    makeLightSaberStickInvis();
-
-                }
-            }
-            else if (device.GetAxis().x > 0.33f)
-            {
-                if (device.GetPressDown(SteamVR_Controller.ButtonMask.Touchpad))
-                {
-                    makeLightSaberStickVisible();
-                    makeCubeStickInvis();
-                    makeRoboyStickInvis();
-                }
-            }
-        }
 
         if (device.GetPressDown(SteamVR_Controller.ButtonMask.Grip))
         {
-            TriggerPressed();
+            //Show the choosing menu
+            gripButtonPressed = true;
+            changeGameObjectSize("ControllerMenu", 1F, 1F, 1F);
         }
+        if (gripButtonPressed && device.GetTouch(SteamVR_Controller.ButtonMask.Touchpad))
+        {
+            //if they do not touche the touchPad just remove the menu
+            touchPadTouched = true;
+            gripButtonPressed = false;
+        }
+        if (touchPadTouched && !device.GetTouch(SteamVR_Controller.ButtonMask.Touchpad)) {
+            touchPadTouched = false;
+            changeGameObjectSize("ControllerMenu", 0F, 0F, 0F);
+        }
+
+        if (touchPadTouched /*device.GetAxis().x != 0*/)
+        {
+
+            if (device.GetAxis().x < -0.33f)
+            {
+                //if (device.GetPressDown(SteamVR_Controller.ButtonMask.Touchpad))
+                //{
+                //makeThirdMenuGlow();
+                //makeSecondMenuNotGlow();
+                //makeFirstMenuNotGlow();
+                makeLightSaberStickVisible();
+                makeCubeStickInvis();
+                makeRoboyStickInvis();
+                //}
+            }
+            else if (device.GetAxis().x > -0.33f && device.GetAxis().x < 0.33f)
+            {
+                //if (device.GetPressDown(SteamVR_Controller.ButtonMask.Touchpad))
+                //{
+                //makeFirstMenuGlow();
+                //makeSecondMenuNotGlow();
+                //makeThirdMenuNotGlow();
+                makeCubeStickInvis();
+                makeRoboyStickVisible();
+                makeLightSaberStickInvis();
+
+                //}
+            }
+            else if (device.GetAxis().x > 0.33f)
+            {
+                //if (device.GetPressDown(SteamVR_Controller.ButtonMask.Touchpad))
+                //{
+                //makeSecondMenuGlow();
+                //makeFirstMenuNotGlow();
+                //makeThirdMenuNotGlow();
+                //}
+                makeCubeStickVisible();
+                makeRoboyStickInvis();
+                makeLightSaberStickInvis();
+            }
+        }
+
+    }
+
+    private void makeThirdMenuGlow()
+    {
+        GameObject menu0 = GameObject.Find("SelectionWheelPart 0");
+        Renderer menu0Render = menu0.GetComponent<Renderer>();
+        menu0Render.material.SetColor("_Color", whiteColor);
+    }
+
+    private void makeSecondMenuGlow()
+    {
+        GameObject menu0 = GameObject.Find("SelectionWheelPart 2");
+        Renderer menu0Render = menu0.GetComponent<Renderer>();
+        menu0Render.material.SetColor("_Color", whiteColor);
+    }
+
+    private void makeFirstMenuGlow()
+    {
+        GameObject menu0 = GameObject.Find("SelectionWheelPart 3");
+        Renderer menu0Render = menu0.GetComponent<Renderer>();
+        menu0Render.material.SetColor("_Color", whiteColor);
+    }
+
+    private void makeThirdMenuNotGlow()
+    {
+        GameObject menu0 = GameObject.Find("SelectionWheelPart 0");
+        Renderer menu0Render = menu0.GetComponent<Renderer>();
+        menu0Render.material.SetColor("_Color", greyColor);
+    }
+
+    private void makeSecondMenuNotGlow()
+    {
+        GameObject menu0 = GameObject.Find("SelectionWheelPart 2");
+        Renderer menu0Render = menu0.GetComponent<Renderer>();
+        menu0Render.material.SetColor("_Color", greyColor);
+    }
+
+    private void makeFirstMenuNotGlow()
+    {
+        GameObject menu0 = GameObject.Find("SelectionWheelPart 3");
+        Renderer menu0Render = menu0.GetComponent<Renderer>();
+        menu0Render.material.SetColor("_Color", greyColor);
     }
 
     private void makeLightSaberStickVisible()
