@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class SongNoteMove : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    #region PUBLIC_MEMBER_VARIABLES
+    public float speed = 2;
+    #endregion
+
+
+    #region MONOBEHAVIOR_METHODS
+    void Start () {
 		
 	}
 	
-	// Update is called once per frame
 	void Update () {
-		
+        transform.Translate(new Vector3(0, -speed*Time.deltaTime, 0));
 	}
+    #endregion // MONOBEHAVIOR_METHODS
 }
