@@ -48,7 +48,6 @@ public class SongGenerator : MonoBehaviour {
     {
         if (SongStart && m_LoadSongFinish && !m_Playing)
         {
-            Debug.Log("can play song");
             m_Playing = true;
             StartCoroutine(playSong());
         }

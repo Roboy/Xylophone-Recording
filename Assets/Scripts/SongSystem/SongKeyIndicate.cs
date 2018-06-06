@@ -25,6 +25,8 @@ public class SongKeyIndicate : MonoBehaviour {
     private Color m_ErrorColor = new Color(0.8f, 0.2f, 0.2f);
     private const float m_Lerp = 0.6f;
     
+    private SongManager m_SongManager;
+
     #endregion // PRIVATE_MEMBER_VARIABLES
 
     #region MONOBEHAVIOR_METHODS
@@ -33,6 +35,8 @@ public class SongKeyIndicate : MonoBehaviour {
         m_Rend = GetComponent<Renderer>();
         m_KeySound = GetComponent<AudioSource>();
         m_OriginColor = m_Rend.material.GetColor("_Color");
+
+        m_SongManager = transform.parent.parent.Find("SongSystemManager").GetComponent<SongManager>();
     }
 
     void Update()
@@ -69,23 +73,16 @@ public class SongKeyIndicate : MonoBehaviour {
         if (strikeResult)
         {
             newColor = Color.Lerp(m_OriginColor, m_CorrectColor, m_Lerp);
+            m_SongManager.GoodHit();
         }
         else
         {
             newColor = m_ErrorColor;
+            m_SongManager.BadHit();
         }
         StartCoroutine(changeKeyColor(newColor));
     }
 
-    public bool DestroySongNote()
-    {
-        if(m_SongNoteObject == null)
-        {
-            return false;
-        }
-        Destroy(m_SongNoteObject);
-        return true;
-    }
     #endregion // PUBLIC_METHODS
 
     #region PRIVATE_METHODS
@@ -104,6 +101,15 @@ public class SongKeyIndicate : MonoBehaviour {
         m_KeySound.Play();
     }
 
-    #endregion // PRIVATE_METHODS
+    private bool DestroySongNote()
+    {
+        if (m_SongNoteObject == null)
+        {
+            return false;
+        }
+        Destroy(m_SongNoteObject);
+        return true;
+    }
 
+    #endregion // PRIVATE_METHODS
 }
