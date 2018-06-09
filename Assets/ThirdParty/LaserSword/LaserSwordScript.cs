@@ -21,17 +21,8 @@ namespace DigitalRuby.LaserSword
         [Tooltip("Blade game object.")]
         public GameObject Blade;
 
-        [Tooltip("Blade glow game object.")]
-        public LineRenderer BladeGlow;
-
         [Tooltip("Light game object.")]
         public Light Light;
-
-        [Tooltip("Audio source.")]
-        public AudioSource AudioSource;
-
-        [Tooltip("Audio source for looping.")]
-        public AudioSource AudioSourceLoop;
 
         [Tooltip("How long it takes to turn the laser sword on and off")]
         public float ActivationTime = 0.5f;
@@ -93,16 +84,11 @@ namespace DigitalRuby.LaserSword
             if (percent < 0.01f)
             {
                 Blade.SetActive(false);
-                BladeGlow.gameObject.SetActive(false);
             }
             else
             {
                 Blade.SetActive(true);
-                BladeGlow.gameObject.SetActive(true);
             }
-            BladeGlow.SetColors(new Color(1.0f, 1.0f, 1.0f, bladeIntensity), new Color(1.0f, 1.0f, 1.0f, bladeIntensity));
-            BladeGlow.SetPosition(0, BladeStart.transform.position - (Root.transform.up * creationScript.BladeHeight * 0.075f));
-            BladeGlow.SetPosition(1, BladeEnd.transform.position);
             Light.intensity = percent;
         }
 
@@ -138,16 +124,11 @@ namespace DigitalRuby.LaserSword
             {
                 bladeDir = 1.0f;
                 state = 3;
-                AudioSource.PlayOneShot(StartSound);
-                AudioSourceLoop.clip = ConstantSound;
-                AudioSourceLoop.Play();
             }
             else
             {
                 bladeDir = -1.0f;
                 state = 2;
-                AudioSource.PlayOneShot(StopSound);
-                AudioSourceLoop.Stop();
             }
 
             return true;

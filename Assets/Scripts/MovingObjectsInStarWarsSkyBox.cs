@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class MovingObjectsInStarWarsSkyBox : MonoBehaviour
 {
-
-    // Use this for initialization
-    public GameObject laserShot;
-    public GameObject parent;
+    
+    private float timeCounter;
 
     void Start()
     {
@@ -17,9 +15,33 @@ public class MovingObjectsInStarWarsSkyBox : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        timeCounter += Time.deltaTime;
+        foreach (Transform child in transform)
+        {
+                float x = Mathf.Cos(timeCounter) / 200;
+                float y = Mathf.Sin(timeCounter) / 200;
+                float z = 0;
+                if (x < 0) z += 0.02F;
+                else z -= 0.02F;
+                child.position = new Vector3(child.position.x + x, child.position.y + y, child.position.z);
+            
+        }
+
+        GameObject xWing = GameObject.Find("XWingSelf");
+        GameObject[] laserBolts = GameObject.FindGameObjectsWithTag("laserBolt");
+        foreach (GameObject laserBolt in laserBolts) {
+            laserBolt.transform.Translate(Vector3.up * 10F * Time.deltaTime);
+            float laserPos = laserBolt.transform.localPosition.x;
+            if (xWing.transform.position.z + 250 < laserPos)
+            {
+                laserBolt.transform.localPosition = laserBolt.transform.parent.transform.localPosition;
+            }
+        }
+        /*
         GameObject xWing = GameObject.Find("XWingSelf");
         float xWingPos;
-        xWingPos = xWing != null ? xWing.transform.localPosition.z : parent.transform.localPosition.z;
+        xWingPos = xWing != null ? xWing.transform.localPosition.z : p.transform.localPosition.z;
         if (laserShot != null)
         {
             laserShot.transform.Translate(Vector3.up * 10F * Time.deltaTime);
@@ -27,12 +49,16 @@ public class MovingObjectsInStarWarsSkyBox : MonoBehaviour
 
             if (xWingPos + 250 < laserPos)
             {
-                laserShot.transform.localPosition = parent.transform.localPosition;
+                laserShot.transform.localPosition = p.transform.localPosition;
             }
         }
-        if (parent != null) {
-            //parent.transform.Translate(Vector3.right * 0.5F * Time.deltaTime);
+        if (p != null) {
+            p.transform.Translate(Vector3.right * 4.5F * Time.deltaTime);
+            if (p.transform.position.x - xWing.transform.localPosition.x > 50)
+            {
+                p.transform.position = startingPosition;
+            }
         }
-
+        */
     }
 }
