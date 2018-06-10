@@ -13,12 +13,15 @@ public class KeyVisualFeedback : MonoBehaviour {
 
     public float moveTime = 0.1f;
     public Vector3 hitMove = new Vector3(0.0f, -0.1f, 0.0f);
-    public GameObject visibleKey = null;
+    private GameObject visibleKey;
 
 
     // Use this for initialization
     void Start () {
         isKeyMoved = false;
+
+        visibleKey = transform.parent.Find("XylophoneKeyVisual").gameObject;
+
         rend = visibleKey.GetComponent<Renderer>();
         originColor = rend.material.GetColor("_Color");
     }

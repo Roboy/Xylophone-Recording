@@ -10,6 +10,8 @@ TagManager:
   - roboyStick
   - ControllerMenu
   - laserBolt
+  - XylophoneKeyVisual
+  - XylophoneKeyCollider
   layers:
   - Default
   - TransparentFX
