@@ -318,7 +318,7 @@ MonoBehaviour:
   PositionG: -0.5
   PositionA: -1
   PositionB: -1.5
-  Bpm: 120
+  Bpm: 240
   SongStart: 1
   m_SongNotePrefab: {fileID: 1256535708058334, guid: 964ee290c53b2ef45b83650a99901c69,
     type: 2}
