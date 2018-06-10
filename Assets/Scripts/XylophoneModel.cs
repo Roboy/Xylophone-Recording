@@ -28,32 +28,7 @@ public class XylophoneModel : MonoBehaviour {
         xylophone.transform.Rotate(0, 120, 0);
         xylophone.transform.position = new Vector3(2.5F, -0.5F, 2.5F);
     }
-
-    /*private void CreateStick(GameObject parentObj, float stickLength, float stickWidth, float stickPosX, float stickPosY, float stickPosZ)
-    {
-        GameObject stick = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        stick.transform.parent = parentObj.transform;
-        stick.transform.name = "stick";
-        stick.transform.localScale = new Vector3(stickWidth, stickLength, 0.1F);
-        stick.transform.position = new Vector3(stickPosX, stickPosY, stickPosZ);
-        stick.GetComponent<Renderer>().material.color = new Color(redColor.r, redColor.g, redColor.b, redColor.a);
-        float stickSphereSize = 1;
-        GameObject stickHead = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-        stickHead.transform.name = "stick_head";
-        sticks.AddComponent<SwitchStickers>();
-        stickHead.transform.parent = parentObj.transform;
-        stickHead.transform.localScale = new Vector3(stickSphereSize, stickSphereSize, stickSphereSize);
-        stickHead.transform.position = new Vector3(stickPosX, stickPosY + (stickLength / 2), stickPosZ);
-        stickHead.GetComponent<Renderer>().material.color = new Color(redColor.r, redColor.g, redColor.b, redColor.a);
-        GameObject stickSwitchButton = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        stickSwitchButton.transform.name = "stick_switch_button";
-        stickSwitchButton.transform.parent = parentObj.transform;
-        stickSwitchButton.transform.localScale = new Vector3(0.5F, 0.5F, 0.1F);
-        stickSwitchButton.transform.position = new Vector3(stickPosX, stickPosY + (stickLength / 4), stickPosZ);
-        stickSwitchButton.GetComponent<Renderer>().material.color = new Color(greenColor.r, greenColor.g, greenColor.b, 
-            greenColor.a);
-    }
-    */
+    
 
     /// <summary>
     /// This methode will create the xylophone red frame based on the note size and notes distance.

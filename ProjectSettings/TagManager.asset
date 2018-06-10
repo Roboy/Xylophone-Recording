@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - SongNote
+  - lightsaberStick
+  - cubeStick
+  - roboyStick
+  - ControllerMenu
+  - laserBolt
   layers:
   - Default
   - TransparentFX

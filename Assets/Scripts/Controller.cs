@@ -28,19 +28,17 @@ public class Controller : MonoBehaviour
     void Start()
     {
         trackedObject = GetComponent<SteamVR_TrackedObject>();
-        //GameObject[] keys = GameObject.FindGameObjectsWithTag("Key");
-        //for (int i = 0; i < keys.Length; i++)
-        /*{
-            keyRigidbodies.Add(keys[i].GetComponent<Rigidbody>());
-        }
-
-        GameObject stick = GameObject.Find("Left_stick_lightsaber");
-        FixedJoint joint = stick.AddComponent<FixedJoint>();
-        joint.connectedBody = attachPoint;*/
-
+        makeControllerDisable();
         makeCubeStickInvis();
         makeRoboyStickInvis();
-        makeLightSaberStickVisible();
+        makeRoboyStickInvis();
+    }
+
+    private void makeControllerDisable()
+    {
+        GameObject controllerMenu = GameObject.Find("ControllerMenu");
+        makeGameObjectActive("ControllerMenu", false);
+        controllerMenu.transform.localScale = new Vector3(1, 1, 1);
     }
 
     void Update()
@@ -55,7 +53,7 @@ public class Controller : MonoBehaviour
         {
             //Show the choosing menu
             gripButtonPressed = true;
-            makeGameObjectActive("ControllerMenu", 1,1,1);
+            makeGameObjectActive("ControllerMenu", true);
         }
         if (gripButtonPressed && device.GetTouch(SteamVR_Controller.ButtonMask.Touchpad))
         {
@@ -65,7 +63,7 @@ public class Controller : MonoBehaviour
         }
         if (touchPadTouched && !device.GetTouch(SteamVR_Controller.ButtonMask.Touchpad)) {
             touchPadTouched = false;
-            makeGameObjectActive("ControllerMenu", 0,0,0);
+            makeControllerDisable();
         }
 
         if (touchPadTouched /*device.GetAxis().x != 0*/)
@@ -147,45 +145,43 @@ public class Controller : MonoBehaviour
 
     private void makeLightSaberStickVisible()
     {
-        makeGameObjectActive("Right_stick_lightsaber", 1,1,1);
-        makeGameObjectActive("Left_stick_lightsaber", 1,1,1);
+        makeGameObjectActive("lightsaberStick", true);
 
     }
 
     private void makeLightSaberStickInvis()
     {
-        makeGameObjectActive("Right_stick_lightsaber", 0,0,0);
-        makeGameObjectActive("Left_stick_lightsaber", 0,0,0);
+        makeGameObjectActive("lightsaberStick", false);
     }
 
     private void makeCubeStickVisible()
     {
-        makeGameObjectActive("Right_stick_cube", 1,1,1);
-        makeGameObjectActive("Left_stick_cube", 1,1,1);
+        makeGameObjectActive("cubeStick", true);
     }
 
     private void makeCubeStickInvis()
     {
-        makeGameObjectActive("Right_stick_cube", 0,0,0);
-        makeGameObjectActive("Left_stick_cube",0,0,0);
+        makeGameObjectActive("cubeStick", false);
     }
 
     private void makeRoboyStickVisible() { 
 
-        makeGameObjectActive("Right_stick_roboy", 1,1,1);
-        makeGameObjectActive("Left_stick_roboy", 1,1,1);
+        makeGameObjectActive("roboyStick", true);
     }
 
     private void makeRoboyStickInvis()
     {
-        makeGameObjectActive("Right_stick_roboy",0,0,0);
-        makeGameObjectActive("Left_stick_roboy", 0,0,0);
+        makeGameObjectActive("roboyStick", false);
     }
 
-    private void makeGameObjectActive(string objectName, int sizeX, int sizeY, int sizeZ)
+    private void makeGameObjectActive(string objectTagName, bool active)
     {
-        GameObject stick = GameObject.Find(objectName);
-        stick.transform.localScale = new Vector3(sizeX, sizeY, sizeZ);
+        if (active) {
+            Util.enableObject(objectTagName);
+        }
+        else {
+            Util.disableObject(objectTagName);
+        }
     }
 
     void onTriggerStay(Collider col)
