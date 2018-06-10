@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 8
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -39,7 +39,6 @@ RenderSettings:
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
   m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
-  m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -55,10 +54,11 @@ LightmapSettings:
     m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
-    serializedVersion: 10
+    serializedVersion: 9
     m_Resolution: 2
     m_BakeResolution: 40
-    m_AtlasSize: 1024
+    m_TextureWidth: 1024
+    m_TextureHeight: 1024
     m_AO: 0
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7b5937b87fdcae429847bd7b8d9f40b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SongFilePath: D:\mig's trash\roboy\ss18_xylophone_recording\Assets\Notes\Songs\testsong.txt
+  SongFilePath: D:\Unity Projects\xylophone_recording\ss18_xylophone_recording-yupei\Assets\Notes\Songs\testsong.txt
   PositionC: 1.5
   PositionD: 1
   PositionE: 0.5
@@ -365,7 +365,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: e4a457e8f346aeb41ab3cee12bc7c925, type: 2}
   m_StaticBatchInfo:
@@ -627,7 +626,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 21169649037040180, guid: 0d0b0bdd9fca9af4ca2a52ec0b9fa13b, type: 2}
   m_StaticBatchInfo:
@@ -1087,7 +1085,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 21169649037040180, guid: 0d0b0bdd9fca9af4ca2a52ec0b9fa13b, type: 2}
   m_StaticBatchInfo:
