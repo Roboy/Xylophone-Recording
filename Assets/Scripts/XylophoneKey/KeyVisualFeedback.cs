@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Renderer))]
+
 public class KeyVisualFeedback : MonoBehaviour {
 
     private bool isKeyMoved;
@@ -13,11 +13,13 @@ public class KeyVisualFeedback : MonoBehaviour {
 
     public float moveTime = 0.1f;
     public Vector3 hitMove = new Vector3(0.0f, -0.1f, 0.0f);
+    public GameObject visibleKey = null;
+
 
     // Use this for initialization
     void Start () {
         isKeyMoved = false;
-        rend = GetComponent<Renderer>();
+        rend = visibleKey.GetComponent<Renderer>();
         originColor = rend.material.GetColor("_Color");
     }
 	
@@ -31,7 +33,7 @@ public class KeyVisualFeedback : MonoBehaviour {
     {
         if(!isKeyMoved)
         {
-            transform.Translate(hitMove);
+            visibleKey.transform.Translate(hitMove);
             rend.material.color = Color.Lerp(originColor, highlightColor, lerp);
             isKeyMoved = true;
         }
@@ -40,7 +42,7 @@ public class KeyVisualFeedback : MonoBehaviour {
 
         if(isKeyMoved)
         {
-            transform.Translate(-hitMove);
+            visibleKey.transform.Translate(-hitMove);
             rend.material.color = originColor;
             isKeyMoved = false;
         }

@@ -58,7 +58,7 @@ public class KeyCollisionDetect : MonoBehaviour {
         keyTouched = false;
     }
 
-    private void OnTriggerExit(Collider other)
+    void OnTriggerExit(Collider other)
     {
         if(keyTouchCount > 0)
         {
@@ -69,5 +69,5 @@ public class KeyCollisionDetect : MonoBehaviour {
             keyTouchCount = 0;
         }
     }
-    #endregion // PRIVATE_METHODS
+    #endregion // PUBLIC_METHODS
 }
