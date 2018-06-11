@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using ROSBridge;
 using ROSBridgeCustom;
+using RtMidi.Core.Devices;
+using RtMidi.Core;
+using RtMidi.Core.Enums;
+using RtMidi.Core.Unmanaged;
+using RtMidi.Core.Messages;
+using Serilog;
+using System.Linq;
 
 public class NotesManager : Singleton<NotesManager>
 {
@@ -14,17 +21,35 @@ public class NotesManager : Singleton<NotesManager>
 
     #region PRIVATE_MEMBER_VARIABLES
     private float m_NextActionTime = 0.0f;
+    private IMidiOutputDevice outputDevice;
 
     #endregion // PRIVATE_MEMBER_VARIABLES
 
     #region MONOBEHAVIOR_METHODS
+    private void Start()
+    {
+        //Debug.Log(MidiDeviceManager.Default.GetAvailableMidiApis().Count());
+        RtMidi.Core.Devices.Infos.IMidiOutputDeviceInfo outputDeviceInfo = MidiDeviceManager.Default.OutputDevices.Skip(1).First();
+        this.outputDevice = outputDeviceInfo.CreateDevice();
+        Debug.Log(outputDeviceInfo.Name);
+        this.outputDevice.Open();
+    }
+
     void Update()
     {
         if (Time.time > m_NextActionTime)
         {
             m_NextActionTime += Period;
-            sendROSMessage();
+            //sendROSMessage();
+            NoteOffMessage msg = new NoteOffMessage(Channel.Channel1, Key.Key12, 12);
+            Debug.Log(msg);
+            this.outputDevice.Send(msg);
         }
+    }
+
+    private void OnApplicationQuit()
+    {
+        this.outputDevice.Close();
     }
     #endregion // MONOBEHAVIOR_METHODS
 
