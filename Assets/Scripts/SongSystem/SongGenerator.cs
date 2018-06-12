@@ -8,7 +8,7 @@ public class SongGenerator : MonoBehaviour {
 
     #region PUBLIC_MEMBER_VARIABLES
 
-    public string SongFilePath;
+    public string SongFolderPath;
 
     //  the x coordinate of the corresponding note
     //  the program will generate the note at this position
@@ -30,10 +30,12 @@ public class SongGenerator : MonoBehaviour {
 
     [SerializeField] private GameObject m_SongNotePrefab;
 
-    private List<string> m_SongData;
+    private List<List<string>> m_SongDataList;
 
     private bool m_LoadSongFinish = false;
     private bool m_Playing = false;
+
+    private int m_CurrentSongIndex = -1;
 
     #endregion // PRIVATE_MEMBER_VARIABLES
 
@@ -41,6 +43,7 @@ public class SongGenerator : MonoBehaviour {
 
     private void Start()
     {
+        m_SongDataList = new List<List<string>>();
         loadSong();
     }
 
@@ -57,20 +60,53 @@ public class SongGenerator : MonoBehaviour {
 
     #region PUBLIC_METHODS
 
+    public void StartSong()
+    {
+
+    }
+
+    public void PauseSong()
+    {
+
+    }
+
+    public void StopSong()
+    {
+
+    }
+
+    public void PlayNextSong()
+    {
+
+    }
+
+    public void PlayPrevSong()
+    {
+
+    }
+
     #endregion // PUBLIC_METHODS
 
     #region PRIVATE_METHODS
 
     private void loadSong()
     {
-        m_SongData = new List<string>(File.ReadAllLines(SongFilePath));
+        string[] fileNameArray = System.IO.Directory.GetFiles(SongFolderPath);
+        foreach (string filename in fileNameArray)
+        {
+            if (filename.EndsWith("txt"))
+            {
+                List<string> songData = new List<string>(File.ReadAllLines(filename));
+                m_SongDataList.Add(songData);
+            }
+        }
         m_LoadSongFinish = true;
     }
-
+    
     private IEnumerator playSong()
     {
         float noteInterval = 60 / Bpm;
-        foreach(string line in m_SongData)
+        foreach(string line in m_SongDataList[0])
         {
             if (line[0] == '1')
             {
