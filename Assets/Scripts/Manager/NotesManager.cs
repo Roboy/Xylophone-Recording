@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using ROSBridge;
 using ROSBridgeCustom;
+using RtMidi.Core.Devices;
+using RtMidi.Core;
+using RtMidi.Core.Enums;
+using RtMidi.Core.Unmanaged;
+using RtMidi.Core.Messages;
+using Serilog;
+using System.Linq;
 
 //TODO: left for testing purposes - can be deactivated or deleted when the collision detection with sending ros messages works!
 public class NotesManager : Singleton<NotesManager>
@@ -15,16 +22,34 @@ public class NotesManager : Singleton<NotesManager>
     private float m_NextActionTime = 0.0f;
     private readonly System.DateTime m_UnixEpoch =
                                       new System.DateTime(1970, 1, 1, 0, 0, 0, System.DateTimeKind.Utc);
+    private IMidiOutputDevice outputDevice;
     #endregion // PRIVATE_MEMBER_VARIABLES
 
     #region MONOBEHAVIOR_METHODS
+    private void Start()
+    {
+        //Debug.Log(MidiDeviceManager.Default.GetAvailableMidiApis().Count());
+        RtMidi.Core.Devices.Infos.IMidiOutputDeviceInfo outputDeviceInfo = MidiDeviceManager.Default.OutputDevices.Skip(1).First();
+        this.outputDevice = outputDeviceInfo.CreateDevice();
+        Debug.Log(outputDeviceInfo.Name);
+        this.outputDevice.Open();
+    }
+
     void Update()
     {
         if (Time.time > m_NextActionTime)
         {
             m_NextActionTime += Period;
-            sendROSMessage();
+            //sendROSMessage();
+            NoteOffMessage msg = new NoteOffMessage(Channel.Channel1, Key.Key12, 12);
+            Debug.Log(msg);
+            this.outputDevice.Send(msg);
         }
+    }
+
+    private void OnApplicationQuit()
+    {
+        this.outputDevice.Close();
     }
     #endregion // MONOBEHAVIOR_METHODS
 
