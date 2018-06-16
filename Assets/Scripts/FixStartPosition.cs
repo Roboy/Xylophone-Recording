@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 
-public class Init : MonoBehaviour {
-    
+public class FixStartPosition : MonoBehaviour
+{
+
     private GameObject cameraPos;
     void Start()
     {
-        
+
         cameraPos = GameObject.Find("Camera (head) (eye)");
-        
+
         foreach (Transform child in transform)
         {
             Vector3 childPos = child.transform.position;
@@ -15,10 +16,6 @@ public class Init : MonoBehaviour {
             cameraPos.transform.position.y + childPos.y,
             cameraPos.transform.position.z + childPos.z);
         }
-       
-    }
-	
-	void Update () {
-        
+
     }
 }

@@ -81,14 +81,7 @@ namespace DigitalRuby.LaserSword
             float distance = Vector3.Distance(BladeEnd.transform.position, BladeStart.transform.position);
             float percent = distance / creationScript.BladeHeight;
             Blade.transform.localScale = new Vector3(1.0f, percent, 1.0f);
-            if (percent < 0.01f)
-            {
-                Blade.SetActive(false);
-            }
-            else
-            {
-                Blade.SetActive(true);
-            }
+            Blade.SetActive(true);
             Light.intensity = percent;
         }
 
@@ -133,38 +126,6 @@ namespace DigitalRuby.LaserSword
 
             return true;
         }
-
-
-        /// <summary>
-        /// Turn on the laser sword
-        /// </summary>
-        public void Activate()
-        {
-            TurnOn(true);
-        }
-
-        /// <summary>
-        /// Turn off the laser sword
-        /// </summary>
-        public void Deactivate()
-        {
-            TurnOn(true);
-        }
-
-        /// <summary>
-        /// Activate or deactivate the laser sword
-        /// </summary>
-        /// <param name="active">True to activate, false to deactivate</param>
-        public void SetActive(bool active)
-        {
-            if (active)
-            {
-                Activate();
-            }
-            else
-            {
-                Deactivate();
-            }
-        }
+        
     }
 }

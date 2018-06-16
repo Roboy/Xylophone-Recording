@@ -71,28 +71,27 @@ public class Controller : MonoBehaviour
 
             if (device.GetAxis().x < -0.33f)
             {
-                //makeThirdMenuGlow();
-                //makeSecondMenuNotGlow();
-                //makeFirstMenuNotGlow();
+                makeFirstMenuNotGlow();
+                makeSecondMenuNotGlow();
+                makeThirdMenuGlow();
                 makeLightSaberStickVisible();
                 makeCubeStickInvis();
                 makeRoboyStickInvis();
             }
             else if (device.GetAxis().x > -0.33f && device.GetAxis().x < 0.33f)
             {
-                //makeFirstMenuGlow();
-                //makeSecondMenuNotGlow();
-                //makeThirdMenuNotGlow();
+                makeSecondMenuGlow();
+                makeFirstMenuNotGlow();
+                makeThirdMenuNotGlow();
                 makeCubeStickInvis();
                 makeRoboyStickVisible();
                 makeLightSaberStickInvis();
             }
             else if (device.GetAxis().x > 0.33f)
             {
-                //makeSecondMenuGlow();
-                //makeFirstMenuNotGlow();
-                //makeThirdMenuNotGlow();
-                //}
+                makeSecondMenuNotGlow();
+                makeFirstMenuGlow();
+                makeThirdMenuNotGlow();
                 makeCubeStickVisible();
                 makeRoboyStickInvis();
                 makeLightSaberStickInvis();
@@ -103,44 +102,44 @@ public class Controller : MonoBehaviour
 
     private void makeThirdMenuGlow()
     {
-        GameObject menu0 = GameObject.Find("SelectionWheelPart 0");
-        Renderer menu0Render = menu0.GetComponent<Renderer>();
-        menu0Render.material.SetColor("_Color", whiteColor);
+        GameObject menu0 = GameObject.FindGameObjectWithTag("SelectionMenu2");
+        Image image = menu0.GetComponent<Image>();
+        image.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
     }
 
     private void makeSecondMenuGlow()
     {
-        GameObject menu0 = GameObject.Find("SelectionWheelPart 2");
-        Renderer menu0Render = menu0.GetComponent<Renderer>();
-        menu0Render.material.SetColor("_Color", whiteColor);
+        GameObject menu0 = GameObject.FindGameObjectWithTag("SelectionMenu1");
+        Image image = menu0.GetComponent<Image>();
+        image.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
     }
 
     private void makeFirstMenuGlow()
     {
-        GameObject menu0 = GameObject.Find("SelectionWheelPart 3");
-        Renderer menu0Render = menu0.GetComponent<Renderer>();
-        menu0Render.material.SetColor("_Color", whiteColor);
+        GameObject menu0 = GameObject.FindGameObjectWithTag("SelectionMenu0");
+        Image image = menu0.GetComponent<Image>();
+        image.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
     }
 
     private void makeThirdMenuNotGlow()
     {
-        GameObject menu0 = GameObject.Find("SelectionWheelPart 0");
-        Renderer menu0Render = menu0.GetComponent<Renderer>();
-        menu0Render.material.SetColor("_Color", greyColor);
+        GameObject menu0 = GameObject.FindGameObjectWithTag("SelectionMenu2");
+        Image image = menu0.GetComponent<Image>();
+        image.GetComponent<Image>().color = new Color32(174, 174, 174, 255);
     }
 
     private void makeSecondMenuNotGlow()
     {
-        GameObject menu0 = GameObject.Find("SelectionWheelPart 2");
-        Renderer menu0Render = menu0.GetComponent<Renderer>();
-        menu0Render.material.SetColor("_Color", greyColor);
+        GameObject menu0 = GameObject.FindGameObjectWithTag("SelectionMenu1");
+        Image image = menu0.GetComponent<Image>();
+        image.GetComponent<Image>().color = new Color32(174, 174, 174, 255);
     }
 
     private void makeFirstMenuNotGlow()
     {
-        GameObject menu0 = GameObject.Find("SelectionWheelPart 3");
-        Renderer menu0Render = menu0.GetComponent<Renderer>();
-        menu0Render.material.SetColor("_Color", greyColor);
+        GameObject menu0 = GameObject.FindGameObjectWithTag("SelectionMenu0");
+        Image image = menu0.GetComponent<Image>();
+        image.GetComponent<Image>().color = new Color32(174, 174, 174, 255);
     }
 
     private void makeLightSaberStickVisible()

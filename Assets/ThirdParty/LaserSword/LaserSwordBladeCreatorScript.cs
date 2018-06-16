@@ -270,48 +270,6 @@ namespace DigitalRuby.LaserSword
             return mesh;
         }
 
-        private void RecreateBlade()
-        {
-            Mesh mesh = MeshFilter.sharedMesh;
-            if (mesh != null)
-            {
-                GameObject.DestroyImmediate(mesh, true);
-            }
-            Mesh bladeBody = CreateBladeBody();
-            Mesh bladeTip = CreateBladeTip();
-            Mesh bladeMesh = new Mesh();
-            bladeMesh.name = "LigthsabreMesh";
-            {
-                CombineInstance c1 = new CombineInstance();
-                c1.mesh = bladeBody;
-                c1.transform = Matrix4x4.identity;
-                CombineInstance c2 = new CombineInstance();
-                c2.mesh = bladeTip;
-                c2.transform = Matrix4x4.TRS(new Vector3(0.0f, BladeHeight - (BladeHeight * BladeTipPercent), 0.0f), Quaternion.identity, Vector3.one);
-                bladeMesh.CombineMeshes(new CombineInstance[] { c1, c2 }, true, true);
-                bladeMesh.RecalculateBounds();
-                ;
-            }
-            {
-                MeshCollider c = MeshFilter.gameObject.GetComponent<MeshCollider>();
-                if (c != null)
-                {
-                    c.sharedMesh = bladeMesh;
-                }
-                MeshFilter.sharedMesh = bladeMesh;
-            }
-        }
-
-        private void Start()
-        {
-
-        }
-
-        private void Update()
-        {
-            RecreateBlade();
-        }
-
 #endif
 
     }

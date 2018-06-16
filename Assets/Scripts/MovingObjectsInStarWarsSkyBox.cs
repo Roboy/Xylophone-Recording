@@ -1,18 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 
 public class MovingObjectsInStarWarsSkyBox : MonoBehaviour
 {
     
     private float timeCounter;
-
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
+    
     void Update()
     {
 
@@ -35,30 +28,18 @@ public class MovingObjectsInStarWarsSkyBox : MonoBehaviour
             float laserPos = laserBolt.transform.localPosition.x;
             if (xWing.transform.position.z + 250 < laserPos)
             {
-                laserBolt.transform.localPosition = laserBolt.transform.parent.transform.localPosition;
+                laserBolt.transform.localPosition = new Vector3(0, 0, 0);
             }
         }
-        /*
-        GameObject xWing = GameObject.Find("XWingSelf");
-        float xWingPos;
-        xWingPos = xWing != null ? xWing.transform.localPosition.z : p.transform.localPosition.z;
-        if (laserShot != null)
+        laserBolts = GameObject.FindGameObjectsWithTag("laserBoltXWing");
+        foreach (GameObject laserBolt in laserBolts)
         {
-            laserShot.transform.Translate(Vector3.up * 10F * Time.deltaTime);
-            float laserPos = laserShot.transform.localPosition.x;
-
-            if (xWingPos + 250 < laserPos)
+            laserBolt.transform.Translate(Vector3.up * 10F * Time.deltaTime);
+            float laserPos = laserBolt.transform.localPosition.x;
+            if (xWing.transform.position.z + 250 < laserPos)
             {
-                laserShot.transform.localPosition = p.transform.localPosition;
+                laserBolt.transform.localPosition = new Vector3(0, 0, -5);
             }
         }
-        if (p != null) {
-            p.transform.Translate(Vector3.right * 4.5F * Time.deltaTime);
-            if (p.transform.position.x - xWing.transform.localPosition.x > 50)
-            {
-                p.transform.position = startingPosition;
-            }
-        }
-        */
     }
 }

@@ -12,6 +12,10 @@ TagManager:
   - laserBolt
   - XylophoneKeyVisual
   - XylophoneKeyCollider
+  - laserBoltXWing
+  - SelectionMenu0
+  - SelectionMenu1
+  - SelectionMenu2
   layers:
   - Default
   - TransparentFX

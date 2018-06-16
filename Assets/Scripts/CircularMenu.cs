@@ -19,11 +19,6 @@ public class CircularMenu : MonoBehaviour {
     void Start () {
         menuItem = buttons.Count;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     private void getCurrentMenuItem() {
         mousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
