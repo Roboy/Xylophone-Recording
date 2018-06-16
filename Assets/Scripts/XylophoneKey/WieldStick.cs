@@ -14,6 +14,9 @@ public class WieldStick : MonoBehaviour {
 	// Use this for initialization
     // generate the xylophone stick in the hand (controller)
 	void Start () {
+
+        Debug.Log("wield stick!!!!");
+
         stick = GameObject.Instantiate(stickPrefab);
         stick.transform.position = attachPoint.transform.position;
         stick.transform.Rotate(new Vector3(0.0f, 0.0f, 80.0f));
