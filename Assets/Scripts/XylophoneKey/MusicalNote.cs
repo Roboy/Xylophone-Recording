@@ -4,49 +4,64 @@ using UnityEngine;
 using ROSBridge;
 using ROSBridgeCustom;
 
-public class MusicalNote : MonoBehaviour {
-    #region PUBLIC_MEMBER_VARIABLES
-    //Standard is E5 which is 76 in MIDI Format
-    public int musicalNote = 76;
-
-    #endregion // PUBLIC_MEMBER_VARIABLES
-
-    #region PRIVATE_MEMBER_VARIABLES
-    private readonly System.DateTime m_UnixEpoch =
-                                      new System.DateTime(1970, 1, 1, 0, 0, 0, System.DateTimeKind.Utc);
-
-    #endregion // PRIVATE_MEMBER_VARIABLES
-
-    #region PUBLIC_METHODS
-    public void publishMusicalNote()
+namespace XylophoneHero
+{
+    public class MusicalNote : MonoBehaviour
     {
-        MusicalNoteMsg msg;
-        long absoluteTime = getCurrentUnixTimestampMillis();
+        #region PUBLIC_MEMBER_VARIABLES
+        //Standard is E5 which is 76 in MIDI Format
+        public int musicalNote = 76;
 
-        msg = new MusicalNoteMsg(System.Convert.ToByte(musicalNote), absoluteTime);
-        ROSBridge.ROSBridge.Instance.Publish(MusicalNotesPublisher.GetMessageTopic(), msg);
-    }
-    #endregion // PUBLIC_METHODS
+        #endregion // PUBLIC_MEMBER_VARIABLES
 
-    #region PRIVATE_METHODS
-    private long getCurrentUnixTimestampMillis()
-    {
-        return (long)(System.DateTime.UtcNow - m_UnixEpoch).TotalMilliseconds;
-    }
+        #region PRIVATE_MEMBER_VARIABLES
+        private readonly System.DateTime m_UnixEpoch =
+                                          new System.DateTime(1970, 1, 1, 0, 0, 0, System.DateTimeKind.Utc);
 
-    private System.DateTime dateTimeFromUnixTimestampMillis(long millis)
-    {
-        return m_UnixEpoch.AddMilliseconds(millis);
-    }
+        #endregion // PRIVATE_MEMBER_VARIABLES
 
-    private long getCurrentUnixTimestampSeconds()
-    {
-        return (long)(System.DateTime.UtcNow - m_UnixEpoch).TotalSeconds;
-    }
+        #region PUBLIC_METHODS
+        public void publishMusicalNoteViaROS()
+        {
+            MusicalNoteMsg msg;
+            long absoluteTime = getCurrentUnixTimestampMillis();
 
-    private System.DateTime dateTimeFromUnixTimestampSeconds(long seconds)
-    {
-        return m_UnixEpoch.AddSeconds(seconds);
+            msg = new MusicalNoteMsg(System.Convert.ToByte(musicalNote), absoluteTime);
+            ROSBridge.ROSBridge.Instance.Publish(MusicalNotesPublisher.GetMessageTopic(), msg);
+        }
+
+        public void sendNoteOnMessage()
+        {
+            MidiBridge.Instance.NoteOnMessage(musicalNote, 127);
+        }
+
+        public void sendNoteOffMessage()
+        {
+            MidiBridge.Instance.NoteOffMessage(musicalNote, 127);
+        }
+
+        #endregion // PUBLIC_METHODS
+
+        #region PRIVATE_METHODS
+        private long getCurrentUnixTimestampMillis()
+        {
+            return (long)(System.DateTime.UtcNow - m_UnixEpoch).TotalMilliseconds;
+        }
+
+        private System.DateTime dateTimeFromUnixTimestampMillis(long millis)
+        {
+            return m_UnixEpoch.AddMilliseconds(millis);
+        }
+
+        private long getCurrentUnixTimestampSeconds()
+        {
+            return (long)(System.DateTime.UtcNow - m_UnixEpoch).TotalSeconds;
+        }
+
+        private System.DateTime dateTimeFromUnixTimestampSeconds(long seconds)
+        {
+            return m_UnixEpoch.AddSeconds(seconds);
+        }
+        #endregion // PRIVATE_METHODS
     }
-    #endregion // PRIVATE_METHODS
 }
