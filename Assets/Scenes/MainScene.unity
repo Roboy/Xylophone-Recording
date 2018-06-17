@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.001528068, g: 0.0016586252, b: 0.0021783663, a: 1}
+  m_IndirectSpecularColor: {r: 0.0015438676, g: 0.0016524729, b: 0.0021920428, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -175,7 +175,7 @@ Transform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 794831552}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 360, y: 270, z: -180}
 --- !u!199 &28177327
 ParticleSystemRenderer:
@@ -4932,7 +4932,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1533452250531818, guid: dc17e612d4d80444697875957806d029, type: 2}
       propertyPath: m_Name
-      value: XylophoneKeyWrapperA
+      value: XylophoneKeyWrapperA5
       objectReference: {fileID: 0}
     - target: {fileID: 82760258641198120, guid: dc17e612d4d80444697875957806d029,
         type: 2}
@@ -4959,6 +4959,16 @@ Prefab:
       propertyPath: KeyIndicatorObject
       value: 
       objectReference: {fileID: 570263842}
+    - target: {fileID: 82213356454241608, guid: dc17e612d4d80444697875957806d029,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 51e9582ac092b5e43acca7273981ebb4, type: 3}
+    - target: {fileID: 114166197100953030, guid: dc17e612d4d80444697875957806d029,
+        type: 2}
+      propertyPath: musicalNote
+      value: 81
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc17e612d4d80444697875957806d029, type: 2}
   m_IsPrefabParent: 0
@@ -5434,7 +5444,7 @@ Transform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 32717598}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 360, y: 270, z: -180}
 --- !u!199 &123267761
 ParticleSystemRenderer:
@@ -10547,152 +10557,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 347405497}
   m_Mesh: {fileID: 4300000, guid: 0ee7ddc5e83eae94094b5a460951c0b4, type: 3}
---- !u!43 &358237434
-Mesh:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  serializedVersion: 8
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 24
-    topology: 0
-    baseVertex: 0
-    firstVertex: 0
-    vertexCount: 8
-    localAABB:
-      m_Center: {x: 0, y: 0.01, z: 0}
-      m_Extent: {x: 1.65, y: 0, z: 1.275}
-  m_Shapes:
-    vertices: []
-    shapes: []
-    channels: []
-    fullWeights: []
-  m_BindPose: []
-  m_BoneNameHashes: 
-  m_RootBoneNameHash: 0
-  m_MeshCompression: 0
-  m_IsReadable: 1
-  m_KeepVertices: 1
-  m_KeepIndices: 1
-  m_IndexFormat: 0
-  m_IndexBuffer: 000004000100010004000500010005000200020005000600020006000300030006000700030007000000000007000400
-  m_Skin: []
-  m_VertexData:
-    serializedVersion: 2
-    m_VertexCount: 8
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 12
-      format: 0
-      dimension: 4
-    - stream: 0
-      offset: 28
-      format: 0
-      dimension: 2
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    m_DataSize: 288
-    _typelessdata: 0000c03f0ad7233c000090bf000000000000803f0000803f0000803f00000000000000000000c0bf0ad7233c000090bf000000000000803f0000803f0000803f0000803f000000000000c0bf0ad7233c0000903f000000000000803f0000803f0000803f00000000000000000000c03f0ad7233c0000903f000000000000803f0000803f0000803f0000803f000000003333d33f0ad7233c3333a3bf000000000000803f0000803f00000000000000000000803f3333d3bf0ad7233c3333a3bf000000000000803f0000803f000000000000803f0000803f3333d3bf0ad7233c3333a33f000000000000803f0000803f00000000000000000000803f3333d33f0ad7233c3333a33f000000000000803f0000803f000000000000803f0000803f
-  m_CompressedMesh:
-    m_Vertices:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UV:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Tangents:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Weights:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_NormalSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_TangentSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_FloatColors:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BoneIndices:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Triangles:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UVInfo: 0
-  m_LocalAABB:
-    m_Center: {x: 0, y: 0.01, z: 0}
-    m_Extent: {x: 1.65, y: 0, z: 1.275}
-  m_MeshUsageFlags: 0
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
-  m_MeshOptimized: 0
 --- !u!1 &422737904
 GameObject:
   m_ObjectHideFlags: 0
@@ -10916,7 +10780,7 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 426831297}
-  m_Mesh: {fileID: 358237434}
+  m_Mesh: {fileID: 1984904719}
 --- !u!23 &426831300
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10933,7 +10797,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 892286212}
+  - {fileID: 1732936504}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11279,7 +11143,7 @@ Transform:
   m_LocalPosition: {x: 5, y: 10, z: 40}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 794831552}
+  - {fileID: 1029366656}
   - {fileID: 801269280}
   m_Father: {fileID: 925821016}
   m_RootOrder: 1
@@ -11312,7 +11176,7 @@ Transform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 794831552}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 360, y: 270, z: -180}
 --- !u!199 &518837796
 ParticleSystemRenderer:
@@ -15938,7 +15802,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1533452250531818, guid: dc17e612d4d80444697875957806d029, type: 2}
       propertyPath: m_Name
-      value: XylophoneKeyWrapperD
+      value: XylophoneKeyWrapperD5
       objectReference: {fileID: 0}
     - target: {fileID: 82760258641198120, guid: dc17e612d4d80444697875957806d029,
         type: 2}
@@ -15965,6 +15829,16 @@ Prefab:
       propertyPath: KeyIndicatorObject
       value: 
       objectReference: {fileID: 570263846}
+    - target: {fileID: 82213356454241608, guid: dc17e612d4d80444697875957806d029,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 75142e1fe91468840863cda25a035ebb, type: 3}
+    - target: {fileID: 114166197100953030, guid: dc17e612d4d80444697875957806d029,
+        type: 2}
+      propertyPath: musicalNote
+      value: 74
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc17e612d4d80444697875957806d029, type: 2}
   m_IsPrefabParent: 0
@@ -16412,7 +16286,7 @@ Transform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 32717598}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 360, y: 270, z: -180}
 --- !u!199 &642398262
 ParticleSystemRenderer:
@@ -21087,7 +20961,7 @@ Transform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 794831552}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 360, y: 270, z: -180}
 --- !u!199 &711989389
 ParticleSystemRenderer:
@@ -26029,39 +25903,6 @@ MonoBehaviour:
   ConstantSound: {fileID: 8300000, guid: 2e654dad5826f75439d0b193c671faa2, type: 3}
   BladeStart: {fileID: 473803951}
   BladeEnd: {fileID: 2082172151}
---- !u!21 &892286212
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &897877271
 Prefab:
   m_ObjectHideFlags: 0
@@ -26196,7 +26037,7 @@ Transform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 94246131}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 360, y: 270, z: -180}
 --- !u!199 &901132350
 ParticleSystemRenderer:
@@ -30796,7 +30637,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e31592584fb51904bb8d3808f60d6850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Period: 1
   MidiDeviveNumber: 2
   MidiChannel: 0
 --- !u!4 &902650768
@@ -30871,7 +30711,7 @@ Transform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 94246131}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 360, y: 270, z: -180}
 --- !u!199 &936096234
 ParticleSystemRenderer:
@@ -35933,6 +35773,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7a9e7eaa6748e464a95a9b4edddefa63, type: 3}
   m_IsPrefabParent: 0
+--- !u!4 &1029366656 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 1029366655}
 --- !u!1001 &1034752855
 Prefab:
   m_ObjectHideFlags: 0
@@ -35974,7 +35818,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1533452250531818, guid: dc17e612d4d80444697875957806d029, type: 2}
       propertyPath: m_Name
-      value: XylophoneKeyWrapperC
+      value: XylophoneKeyWrapperC5
       objectReference: {fileID: 0}
     - target: {fileID: 82760258641198120, guid: dc17e612d4d80444697875957806d029,
         type: 2}
@@ -36001,6 +35845,16 @@ Prefab:
       propertyPath: KeyIndicatorObject
       value: 
       objectReference: {fileID: 570263847}
+    - target: {fileID: 82213356454241608, guid: dc17e612d4d80444697875957806d029,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 71ab5ca0d58491a43a7dc8b757342f80, type: 3}
+    - target: {fileID: 114166197100953030, guid: dc17e612d4d80444697875957806d029,
+        type: 2}
+      propertyPath: musicalNote
+      value: 72
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc17e612d4d80444697875957806d029, type: 2}
   m_IsPrefabParent: 0
@@ -36085,7 +35939,7 @@ Transform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1826204398}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 360, y: 270, z: -180}
 --- !u!199 &1061780216
 ParticleSystemRenderer:
@@ -40952,7 +40806,7 @@ Transform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 94246131}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 360, y: 270, z: -180}
 --- !u!199 &1138657530
 ParticleSystemRenderer:
@@ -45854,7 +45708,7 @@ Transform:
   m_LocalPosition: {x: 5, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 94246131}
+  - {fileID: 1690390022}
   - {fileID: 425611115}
   m_Father: {fileID: 925821016}
   m_RootOrder: 0
@@ -45887,7 +45741,7 @@ Transform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1826204398}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 360, y: 270, z: -180}
 --- !u!199 &1278407620
 ParticleSystemRenderer:
@@ -51027,7 +50881,7 @@ Transform:
   m_LocalPosition: {x: -5, y: 0, z: 15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 32717598}
+  - {fileID: 2146894287}
   - {fileID: 1018265829}
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -51101,7 +50955,7 @@ Transform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1826204398}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 360, y: 270, z: -180}
 --- !u!199 &1472570553
 ParticleSystemRenderer:
@@ -56025,7 +55879,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1533452250531818, guid: dc17e612d4d80444697875957806d029, type: 2}
       propertyPath: m_Name
-      value: XylophoneKeyWrapperG
+      value: XylophoneKeyWrapperG5
       objectReference: {fileID: 0}
     - target: {fileID: 82760258641198120, guid: dc17e612d4d80444697875957806d029,
         type: 2}
@@ -56072,6 +55926,16 @@ Prefab:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: f46971cb9558c0546be9f9ac10f5b716, type: 3}
+    - target: {fileID: 82213356454241608, guid: dc17e612d4d80444697875957806d029,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6f7f05a87af765646af926c1c8bf5d35, type: 3}
+    - target: {fileID: 114166197100953030, guid: dc17e612d4d80444697875957806d029,
+        type: 2}
+      propertyPath: musicalNote
+      value: 79
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc17e612d4d80444697875957806d029, type: 2}
   m_IsPrefabParent: 0
@@ -56201,7 +56065,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1533452250531818, guid: dc17e612d4d80444697875957806d029, type: 2}
       propertyPath: m_Name
-      value: XylophoneKeyWrapperE
+      value: XylophoneKeyWrapperE5
       objectReference: {fileID: 0}
     - target: {fileID: 82760258641198120, guid: dc17e612d4d80444697875957806d029,
         type: 2}
@@ -56402,6 +56266,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7a9e7eaa6748e464a95a9b4edddefa63, type: 3}
   m_IsPrefabParent: 0
+--- !u!4 &1690390022 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 1690390021}
 --- !u!1001 &1703778329
 Prefab:
   m_ObjectHideFlags: 0
@@ -56464,6 +56332,39 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400014, guid: e293f5e4604f94143b54feccbc22e00c, type: 3}
   m_PrefabInternal: {fileID: 1703778329}
+--- !u!21 &1732936504
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1740604266
 Prefab:
   m_ObjectHideFlags: 0
@@ -56731,6 +56632,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7a9e7eaa6748e464a95a9b4edddefa63, type: 3}
   m_IsPrefabParent: 0
+--- !u!4 &1785533286 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 1785533285}
 --- !u!1 &1819003056
 GameObject:
   m_ObjectHideFlags: 0
@@ -56848,7 +56753,7 @@ Transform:
   m_LocalPosition: {x: 30, y: -10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1826204398}
+  - {fileID: 1785533286}
   - {fileID: 983991718}
   m_Father: {fileID: 925821016}
   m_RootOrder: 2
@@ -56898,6 +56803,152 @@ Transform:
   m_Father: {fileID: 1339449067}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!43 &1984904719
+Mesh:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  serializedVersion: 8
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 24
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 8
+    localAABB:
+      m_Center: {x: 0, y: 0.01, z: 0}
+      m_Extent: {x: 1.65, y: 0, z: 1.275}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexFormat: 0
+  m_IndexBuffer: 000004000100010004000500010005000200020005000600020006000300030006000700030007000000000007000400
+  m_Skin: []
+  m_VertexData:
+    serializedVersion: 2
+    m_VertexCount: 8
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 4
+    - stream: 0
+      offset: 28
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 288
+    _typelessdata: 0000c03f0ad7233c000090bf000000000000803f0000803f0000803f00000000000000000000c0bf0ad7233c000090bf000000000000803f0000803f0000803f0000803f000000000000c0bf0ad7233c0000903f000000000000803f0000803f0000803f00000000000000000000c03f0ad7233c0000903f000000000000803f0000803f0000803f0000803f000000003333d33f0ad7233c3333a3bf000000000000803f0000803f00000000000000000000803f3333d3bf0ad7233c3333a3bf000000000000803f0000803f000000000000803f0000803f3333d3bf0ad7233c3333a33f000000000000803f0000803f00000000000000000000803f3333d33f0ad7233c3333a33f000000000000803f0000803f000000000000803f0000803f
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: 0, y: 0.01, z: 0}
+    m_Extent: {x: 1.65, y: 0, z: 1.275}
+  m_MeshUsageFlags: 0
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  m_MeshOptimized: 0
 --- !u!1001 &1997333389
 Prefab:
   m_ObjectHideFlags: 0
@@ -56951,7 +57002,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1533452250531818, guid: dc17e612d4d80444697875957806d029, type: 2}
       propertyPath: m_Name
-      value: XylophoneKeyWrapperF
+      value: XylophoneKeyWrapperF5
       objectReference: {fileID: 0}
     - target: {fileID: 82760258641198120, guid: dc17e612d4d80444697875957806d029,
         type: 2}
@@ -56993,6 +57044,16 @@ Prefab:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 50366a017b62dc942ba1474337aacb37, type: 3}
+    - target: {fileID: 82213356454241608, guid: dc17e612d4d80444697875957806d029,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 06d391261f8b2b643a97426b1c150e8d, type: 3}
+    - target: {fileID: 114166197100953030, guid: dc17e612d4d80444697875957806d029,
+        type: 2}
+      propertyPath: musicalNote
+      value: 77
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc17e612d4d80444697875957806d029, type: 2}
   m_IsPrefabParent: 0
@@ -57374,7 +57435,7 @@ Transform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 32717598}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 360, y: 270, z: -180}
 --- !u!199 &2111637231
 ParticleSystemRenderer:
@@ -62134,7 +62195,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1533452250531818, guid: dc17e612d4d80444697875957806d029, type: 2}
       propertyPath: m_Name
-      value: XylophoneKeyWrapperB
+      value: XylophoneKeyWrapperB5
       objectReference: {fileID: 0}
     - target: {fileID: 82760258641198120, guid: dc17e612d4d80444697875957806d029,
         type: 2}
@@ -62161,6 +62222,16 @@ Prefab:
       propertyPath: KeyIndicatorObject
       value: 
       objectReference: {fileID: 570263841}
+    - target: {fileID: 82213356454241608, guid: dc17e612d4d80444697875957806d029,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1abf4a7592a01e14f81b7b11902f6198, type: 3}
+    - target: {fileID: 114166197100953030, guid: dc17e612d4d80444697875957806d029,
+        type: 2}
+      propertyPath: musicalNote
+      value: 83
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc17e612d4d80444697875957806d029, type: 2}
   m_IsPrefabParent: 0
@@ -62275,3 +62346,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5d24d625c011d8e4987beaa25fc1e936, type: 3}
   m_IsPrefabParent: 0
+--- !u!4 &2146894287 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 2146894286}
