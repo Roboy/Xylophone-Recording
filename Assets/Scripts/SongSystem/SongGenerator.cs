@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEngine;
 
 public class SongGenerator : MonoBehaviour {
@@ -53,7 +54,7 @@ public class SongGenerator : MonoBehaviour {
         PositionG = -0.5f;
         PositionA = -1.0f;
         PositionB = -1.5f;
-        Bpm = 60f;
+        Bpm = 120f;
         SongStart = true;
         m_LoadSongFinish = false;
         m_Playing = false;
@@ -116,14 +117,11 @@ public class SongGenerator : MonoBehaviour {
 
     private void loadSong()
     {
-        string[] fileNameArray = System.IO.Directory.GetFiles(SongFolderPath);
-        foreach (string filename in fileNameArray)
+        TextAsset[] rawSongFiles = Resources.LoadAll("Songs/testsong", typeof(TextAsset)).Cast<TextAsset>().ToArray();
+        foreach (TextAsset rawSongData in rawSongFiles)
         {
-            if (filename.EndsWith("txt"))
-            {
-                List<string> songData = new List<string>(File.ReadAllLines(filename));
-                m_SongDataList.Add(songData);
-            }
+            List<string> songData = new List<string>(rawSongData.text.Split('\n'));
+            m_SongDataList.Add(songData);
         }
         m_LoadSongFinish = true;
     }
