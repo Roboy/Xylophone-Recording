@@ -5,10 +5,6 @@ using System.IO;
 
 public class Controller : MonoBehaviour
 {
-    //Notes color which is green
-    public Color greenColor = Color.green;
-    //xylophone color which is red
-    public Color redColor = Color.red;
     public delegate void OnTrackpadPress(int deviceID, string side);
     public static OnTrackpadPress TrackpadPressed;
 
@@ -24,11 +20,14 @@ public class Controller : MonoBehaviour
     Color whiteColor = new Color32(255, 255, 255, 255);
     Color greyColor = new Color32(173, 173, 173, 255);
     public Rigidbody attachPoint;
+    private bool isSongBoardActive = false;
+    private bool isApplicationButtomPressed = false;
 
     void Start()
     {
         trackedObject = GetComponent<SteamVR_TrackedObject>();
         makeControllerDisable();
+        makeGameBoardDisableAtStart();
         makeCubeStickInvis();
         makeRoboyStickInvis();
         makeRoboyStickInvis();
@@ -38,7 +37,14 @@ public class Controller : MonoBehaviour
     {
         GameObject controllerMenu = GameObject.Find("ControllerMenu");
         makeGameObjectActive("ControllerMenu", false);
-        controllerMenu.transform.localScale = new Vector3(1, 1, 1);
+        controllerMenu.transform.localScale = new Vector3(1,1,1);
+    }
+
+    private void makeGameBoardDisableAtStart()
+    {
+        GameObject controllerMenu = GameObject.FindGameObjectWithTag("SongBoard");
+        makeGameObjectActive("SongBoard", false);
+        controllerMenu.transform.localScale = new Vector3(0.5F, 0.5F, 0.5F);
     }
 
     void Update()
@@ -48,6 +54,10 @@ public class Controller : MonoBehaviour
             return;
         }
         device = SteamVR_Controller.Input((int)trackedObject.index);
+
+        CheckAndShowSongBoard();
+
+        CheckAndHideSongBoard();
 
         if (device.GetPressDown(SteamVR_Controller.ButtonMask.Grip))
         {
@@ -61,7 +71,8 @@ public class Controller : MonoBehaviour
             touchPadTouched = true;
             gripButtonPressed = false;
         }
-        if (touchPadTouched && !device.GetTouch(SteamVR_Controller.ButtonMask.Touchpad)) {
+        if (touchPadTouched && !device.GetTouch(SteamVR_Controller.ButtonMask.Touchpad))
+        {
             touchPadTouched = false;
             makeControllerDisable();
         }
@@ -98,6 +109,36 @@ public class Controller : MonoBehaviour
             }
         }
 
+    }
+
+    private void CheckAndShowSongBoard()
+    {
+        if (!isSongBoardActive && isApplicationButtomPressed && device.GetPressUp(SteamVR_Controller.ButtonMask.ApplicationMenu))
+        {
+            isSongBoardActive = true;
+            isApplicationButtomPressed = false;
+        }
+
+        if (!isSongBoardActive && device.GetPressDown(SteamVR_Controller.ButtonMask.ApplicationMenu))
+        {
+            makeGameObjectActive("SongBoard", true);
+            isApplicationButtomPressed = true;
+        }
+    }
+
+    private void CheckAndHideSongBoard()
+    {
+        if (isSongBoardActive && isApplicationButtomPressed && device.GetPressUp(SteamVR_Controller.ButtonMask.ApplicationMenu))
+        {
+            isSongBoardActive = false;
+            isApplicationButtomPressed = false;
+        }
+
+        if (isSongBoardActive && device.GetPressDown(SteamVR_Controller.ButtonMask.ApplicationMenu))
+        {
+            makeGameObjectActive("SongBoard", false);
+            isApplicationButtomPressed = true;
+        }
     }
 
     private void makeThirdMenuGlow()

@@ -12,17 +12,17 @@ public class SongGenerator : MonoBehaviour {
 
     //  the x coordinate of the corresponding note
     //  the program will generate the note at this position
-    public float PositionC = 1.5f;
-    public float PositionD = 1.0f;
-    public float PositionE = 0.5f;
-    public float PositionF = 0f;
-    public float PositionG = -0.5f;
-    public float PositionA = -1.0f;
-    public float PositionB = -1.5f;
+    public float PositionC;
+    public float PositionD;
+    public float PositionE;
+    public float PositionF;
+    public float PositionG;
+    public float PositionA;
+    public float PositionB;
 
-    public float Bpm = 60f;
+    public float Bpm;
 
-    public bool SongStart = true;
+    public bool SongStart;
 
     #endregion // PUBLIC_MEMBER_VARIABLES
 
@@ -32,14 +32,40 @@ public class SongGenerator : MonoBehaviour {
 
     private List<List<string>> m_SongDataList;
 
-    private bool m_LoadSongFinish = false;
-    private bool m_Playing = false;
+    private bool m_LoadSongFinish;
+    private bool m_Playing;
 
-    private int m_CurrentSongIndex = -1;
+    private int m_CurrentSongIndex;
 
     #endregion // PRIVATE_MEMBER_VARIABLES
 
     #region MONOBEHAVIOR_METHODS
+
+    private SongGenerator() {
+        InitVariables();
+    }
+
+    private void InitVariables() {
+        PositionC = 1.5f;
+        PositionD = 1.0f;
+        PositionE = 0.5f;
+        PositionF = 0f;
+        PositionG = -0.5f;
+        PositionA = -1.0f;
+        PositionB = -1.5f;
+        Bpm = 60f;
+        SongStart = true;
+        m_LoadSongFinish = false;
+        m_Playing = false;
+        m_CurrentSongIndex = -1;
+
+}
+
+    private void OnEnable()
+    {
+        InitVariables();
+        Start();
+    }
 
     private void Start()
     {
@@ -62,7 +88,6 @@ public class SongGenerator : MonoBehaviour {
 
     public void StartSong()
     {
-
     }
 
     public void PauseSong()
@@ -148,6 +173,15 @@ public class SongGenerator : MonoBehaviour {
         n.transform.Rotate(new Vector3(90, 0, 0));
         
     }
-    
+
+    private void OnDisable()
+    {
+        GameObject[] songNotes = GameObject.FindGameObjectsWithTag("SongNote");
+        foreach (GameObject child in songNotes)
+        {
+            Destroy(child);
+        }
+    }
+
     #endregion // PRIVATE_METHODS
 }
