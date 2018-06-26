@@ -1,13 +1,20 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Creates a simple xylophone based on number of notes.
+/// </summary>
 public class XylophoneModel : MonoBehaviour {
 
+    #region PRIVATE_MEMBER_VARIABLES
     //Notes color which is green
-    public Color greenColor = Color.green;
+    private Color greenColor = Color.green;
     //xylophone color which is red
-    public Color redColor = Color.red;
+    private Color redColor = Color.red;
     // Use this for initialization
-    public GameObject xylophone;
+    private GameObject xylophone;
+    #endregion PRIVATE_MEMBER_VARIABLES
+
+    #region PRIVATE_METHODS
     void Start()
     {
         xylophone = new GameObject("xylophone");
@@ -128,12 +135,9 @@ public class XylophoneModel : MonoBehaviour {
 
         }
     }
-
-    
-
     // Update is called once per frame, before rendering update
     void Update () {
 		
 	}
-    
+    #endregion // PRIVATE_METHODS
 }

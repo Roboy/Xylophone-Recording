@@ -3,13 +3,17 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 
+/// <summary>
+/// Changing controller model is handled in this class.
+/// </summary>
 public class Controller : MonoBehaviour
 {
-    public delegate void OnTrackpadPress(int deviceID, string side);
-    public static OnTrackpadPress TrackpadPressed;
+    #region PRIVATE_MEMBER_VARIABLES
+    private delegate void OnTrackpadPress(int deviceID, string side);
+    private static OnTrackpadPress TrackpadPressed;
 
-    public delegate void OnTriggerPress();
-    public static OnTriggerPress TriggerPressed;
+    private delegate void OnTriggerPress();
+    private static OnTriggerPress TriggerPressed;
 
     private SteamVR_TrackedObject trackedObject;
     private SteamVR_Controller.Device device;
@@ -17,34 +21,21 @@ public class Controller : MonoBehaviour
     private Image roboy_image;
     private bool gripButtonPressed = false;
     private bool touchPadTouched = false;
-    Color whiteColor = new Color32(255, 255, 255, 255);
-    Color greyColor = new Color32(173, 173, 173, 255);
+    private Color whiteColor = new Color32(255, 255, 255, 255);
+    private Color greyColor = new Color32(173, 173, 173, 255);
     public Rigidbody attachPoint;
     private bool isSongBoardActive = false;
     private bool isApplicationButtomPressed = false;
+    #endregion // PRIVATE_MEMBER_VARIABLES
 
     void Start()
     {
         trackedObject = GetComponent<SteamVR_TrackedObject>();
-        makeControllerDisable();
-        makeGameBoardDisableAtStart();
-        makeCubeStickInvis();
-        makeRoboyStickInvis();
-        makeRoboyStickInvis();
-    }
-
-    private void makeControllerDisable()
-    {
-        GameObject controllerMenu = GameObject.Find("ControllerMenu");
-        makeGameObjectActive("ControllerMenu", false);
-        controllerMenu.transform.localScale = new Vector3(1,1,1);
-    }
-
-    private void makeGameBoardDisableAtStart()
-    {
-        GameObject controllerMenu = GameObject.FindGameObjectWithTag("SongBoard");
-        makeGameObjectActive("SongBoard", false);
-        controllerMenu.transform.localScale = new Vector3(0.5F, 0.5F, 0.5F);
+        MakeControllerDisable();
+        MakeGameBoardDisableAtStart();
+        MakeCubeStickInvis();
+        MakeRoboyStickInvis();
+        MakeRoboyStickInvis();
     }
 
     void Update()
@@ -61,67 +52,83 @@ public class Controller : MonoBehaviour
 
         if (device.GetPressDown(SteamVR_Controller.ButtonMask.Grip))
         {
-            //Show the choosing menu
+            //Show the controller choosing menu
             gripButtonPressed = true;
-            makeGameObjectActive("ControllerMenu", true);
+            MakeGameObjectActive("ControllerMenu", true);
         }
         if (gripButtonPressed && device.GetTouch(SteamVR_Controller.ButtonMask.Touchpad))
         {
-            //if they do not touche the touchPad just remove the menu
+            //If user do not touche the touchPad just remove the menu
             touchPadTouched = true;
             gripButtonPressed = false;
         }
         if (touchPadTouched && !device.GetTouch(SteamVR_Controller.ButtonMask.Touchpad))
         {
             touchPadTouched = false;
-            makeControllerDisable();
+            MakeControllerDisable();
         }
 
-        if (touchPadTouched /*device.GetAxis().x != 0*/)
+        if (touchPadTouched)
         {
 
             if (device.GetAxis().x < -0.33f)
             {
-                makeFirstMenuNotGlow();
-                makeSecondMenuNotGlow();
-                makeThirdMenuGlow();
-                makeLightSaberStickVisible();
-                makeCubeStickInvis();
-                makeRoboyStickInvis();
+                MakeFirstMenuNotGlow();
+                MakeSecondMenuNotGlow();
+                MakeThirdMenuGlow();
+                MakeLightSaberStickVisible();
+                MakeCubeStickInvis();
+                MakeRoboyStickInvis();
             }
             else if (device.GetAxis().x > -0.33f && device.GetAxis().x < 0.33f)
             {
-                makeSecondMenuGlow();
-                makeFirstMenuNotGlow();
-                makeThirdMenuNotGlow();
-                makeCubeStickInvis();
-                makeRoboyStickVisible();
-                makeLightSaberStickInvis();
+                MakeSecondMenuGlow();
+                MakeFirstMenuNotGlow();
+                MakeThirdMenuNotGlow();
+                MakeCubeStickInvis();
+                MakeRoboyStickVisible();
+                MakeLightSaberStickInvis();
             }
             else if (device.GetAxis().x > 0.33f)
             {
-                makeSecondMenuNotGlow();
-                makeFirstMenuGlow();
-                makeThirdMenuNotGlow();
-                makeCubeStickVisible();
-                makeRoboyStickInvis();
-                makeLightSaberStickInvis();
+                MakeSecondMenuNotGlow();
+                MakeFirstMenuGlow();
+                MakeThirdMenuNotGlow();
+                MakeCubeStickVisible();
+                MakeRoboyStickInvis();
+                MakeLightSaberStickInvis();
             }
         }
 
+    }
+
+    #region PRIVATE_METHODS
+    private void MakeControllerDisable()
+    {
+        GameObject controllerMenu = GameObject.Find("ControllerMenu");
+        MakeGameObjectActive("ControllerMenu", false);
+        controllerMenu.transform.localScale = new Vector3(1, 1, 1);
+    }
+
+    private void MakeGameBoardDisableAtStart()
+    {
+        GameObject controllerMenu = GameObject.FindGameObjectWithTag("SongBoard");
+        MakeGameObjectActive("SongBoard", false);
+        controllerMenu.transform.localScale = new Vector3(0.5F, 0.5F, 0.5F);
     }
 
     private void CheckAndShowSongBoard()
     {
         if (!isSongBoardActive && isApplicationButtomPressed && device.GetPressUp(SteamVR_Controller.ButtonMask.ApplicationMenu))
         {
+            //Set parameter for hiding songBoard when user click on menu button next time.
             isSongBoardActive = true;
             isApplicationButtomPressed = false;
         }
 
         if (!isSongBoardActive && device.GetPressDown(SteamVR_Controller.ButtonMask.ApplicationMenu))
         {
-            makeGameObjectActive("SongBoard", true);
+            MakeGameObjectActive("SongBoard", true);
             isApplicationButtomPressed = true;
         }
     }
@@ -130,108 +137,102 @@ public class Controller : MonoBehaviour
     {
         if (isSongBoardActive && isApplicationButtomPressed && device.GetPressUp(SteamVR_Controller.ButtonMask.ApplicationMenu))
         {
+            //Set parameter for showing songBoard when user click on menu button next time.
             isSongBoardActive = false;
             isApplicationButtomPressed = false;
         }
 
         if (isSongBoardActive && device.GetPressDown(SteamVR_Controller.ButtonMask.ApplicationMenu))
         {
-            makeGameObjectActive("SongBoard", false);
+            MakeGameObjectActive("SongBoard", false);
             isApplicationButtomPressed = true;
         }
     }
 
-    private void makeThirdMenuGlow()
+    private void MakeThirdMenuGlow()
     {
         GameObject menu0 = GameObject.FindGameObjectWithTag("SelectionMenu2");
         Image image = menu0.GetComponent<Image>();
         image.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
     }
 
-    private void makeSecondMenuGlow()
+    private void MakeSecondMenuGlow()
     {
         GameObject menu0 = GameObject.FindGameObjectWithTag("SelectionMenu1");
         Image image = menu0.GetComponent<Image>();
         image.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
     }
 
-    private void makeFirstMenuGlow()
+    private void MakeFirstMenuGlow()
     {
         GameObject menu0 = GameObject.FindGameObjectWithTag("SelectionMenu0");
         Image image = menu0.GetComponent<Image>();
         image.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
     }
 
-    private void makeThirdMenuNotGlow()
+    private void MakeThirdMenuNotGlow()
     {
         GameObject menu0 = GameObject.FindGameObjectWithTag("SelectionMenu2");
         Image image = menu0.GetComponent<Image>();
         image.GetComponent<Image>().color = new Color32(174, 174, 174, 255);
     }
 
-    private void makeSecondMenuNotGlow()
+    private void MakeSecondMenuNotGlow()
     {
         GameObject menu0 = GameObject.FindGameObjectWithTag("SelectionMenu1");
         Image image = menu0.GetComponent<Image>();
         image.GetComponent<Image>().color = new Color32(174, 174, 174, 255);
     }
 
-    private void makeFirstMenuNotGlow()
+    private void MakeFirstMenuNotGlow()
     {
         GameObject menu0 = GameObject.FindGameObjectWithTag("SelectionMenu0");
         Image image = menu0.GetComponent<Image>();
         image.GetComponent<Image>().color = new Color32(174, 174, 174, 255);
     }
 
-    private void makeLightSaberStickVisible()
+    private void MakeLightSaberStickVisible()
     {
-        makeGameObjectActive("lightsaberStick", true);
+        MakeGameObjectActive("lightsaberStick", true);
 
     }
 
-    private void makeLightSaberStickInvis()
+    private void MakeLightSaberStickInvis()
     {
-        makeGameObjectActive("lightsaberStick", false);
+        MakeGameObjectActive("lightsaberStick", false);
     }
 
-    private void makeCubeStickVisible()
+    private void MakeCubeStickVisible()
     {
-        makeGameObjectActive("cubeStick", true);
+        MakeGameObjectActive("cubeStick", true);
     }
 
-    private void makeCubeStickInvis()
+    private void MakeCubeStickInvis()
     {
-        makeGameObjectActive("cubeStick", false);
+        MakeGameObjectActive("cubeStick", false);
     }
 
-    private void makeRoboyStickVisible() { 
+    private void MakeRoboyStickVisible()
+    {
 
-        makeGameObjectActive("roboyStick", true);
+        MakeGameObjectActive("roboyStick", true);
     }
 
-    private void makeRoboyStickInvis()
+    private void MakeRoboyStickInvis()
     {
-        makeGameObjectActive("roboyStick", false);
+        MakeGameObjectActive("roboyStick", false);
     }
 
-    private void makeGameObjectActive(string objectTagName, bool active)
+    private void MakeGameObjectActive(string objectTagName, bool active)
     {
-        if (active) {
+        if (active)
+        {
             Util.enableObject(objectTagName);
         }
-        else {
+        else
+        {
             Util.disableObject(objectTagName);
         }
     }
-
-    void onTriggerStay(Collider col)
-    {
-        Debug.Log("You have collided with " + col.name + " and activated onTriggerStay");
-        if (device.GetTouch(SteamVR_Controller.ButtonMask.Trigger))
-        {
-            Debug.Log("You have collided with " + col.name + " while holding down Touch");
-            col.attachedRigidbody.isKinematic = true;
-            col.gameObject.transform.SetParent(gameObject.transform);
-        }
-    }
+    #endregion // PRIVATE_METHODS
 }
