@@ -16,6 +16,7 @@ TagManager:
   - SelectionMenu0
   - SelectionMenu1
   - SelectionMenu2
+  - SongBoard
   layers:
   - Default
   - TransparentFX

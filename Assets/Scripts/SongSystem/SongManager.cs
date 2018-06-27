@@ -29,6 +29,7 @@ public class SongManager : MonoBehaviour {
 
     private void Start()
     {
+        
         m_InfoPromps = transform.Find("InfoPromps").gameObject;
         m_ScoreDisplay = transform.Find("ScoreDisplay").gameObject;
 
@@ -37,6 +38,7 @@ public class SongManager : MonoBehaviour {
             m_InfoPrompsText = m_InfoPromps.GetComponent<TextMeshPro>();
             m_ScoreDisplayText = m_ScoreDisplay.GetComponent<TextMeshPro>();
         }
+        
     }
     
     #region PUBLIC_METHODS
@@ -64,7 +66,7 @@ public class SongManager : MonoBehaviour {
             m_Score += 80;
             m_Promps = "Godlike!";
         }
-        StartCoroutine(displayText());
+        StartCoroutine(DisplayScoreText());
     }
 
     public void BadHit()
@@ -77,7 +79,7 @@ public class SongManager : MonoBehaviour {
 
     #region PRIVATE_METHODS
     
-    private IEnumerator displayText()
+    private IEnumerator DisplayScoreText()
     {
         m_InfoPromps.SetActive(false);
 
@@ -92,6 +94,13 @@ public class SongManager : MonoBehaviour {
         {
             m_InfoPromps.SetActive(false);
         }
+    }
+
+    private void OnEnable()
+    {
+        m_Score = 0;
+        m_InfoPromps.SetActive(false);
+        m_ScoreDisplayText.SetText("Score: " + m_Score);
     }
 
     #endregion // PRIVATE_METHODS
