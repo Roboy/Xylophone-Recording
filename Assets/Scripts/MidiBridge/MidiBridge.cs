@@ -16,17 +16,13 @@ namespace XylophoneHero
     public class MidiBridge : Singleton<MidiBridge>
     {
         #region PUBLIC_MEMBER_VARIABLES
-        //public float Period = 1f;
         //starts with 1 as at least on Windows the MidiDevice Numbers start with 1 in the GUIs
         public int MidiDeviveNumber = 1;
         public Channel MidiChannel = Channel.Channel1;
-
         #endregion // PUBLIC_MEMBER_VARIABLES
 
         #region PRIVATE_MEMBER_VARIABLES
-        //private float m_NextActionTime = 0.0f;
-        private IMidiOutputDevice outputDevice;
-
+        private IMidiOutputDevice m_OutputDevice;
         #endregion // PRIVATE_MEMBER_VARIABLES
 
         #region MONOBEHAVIOR_METHODS
@@ -38,9 +34,9 @@ namespace XylophoneHero
             {
                 IEnumerable<RtMidi.Core.Devices.Infos.IMidiOutputDeviceInfo> outputDevices = MidiDeviceManager.Default.OutputDevices;
                 RtMidi.Core.Devices.Infos.IMidiOutputDeviceInfo outputDeviceInfo = outputDevices.ElementAt(MidiDeviveNumber - 1);
-                this.outputDevice = outputDeviceInfo.CreateDevice();
+                this.m_OutputDevice = outputDeviceInfo.CreateDevice();
                 Debug.Log("Now using MidiDevice Number: " + MidiDeviveNumber + outputDeviceInfo.Name);
-                this.outputDevice.Open();
+                this.m_OutputDevice.Open();
             }
             catch (System.Exception e)
             {
@@ -50,18 +46,9 @@ namespace XylophoneHero
 
         }
 
-        /*void Update()
-        {
-            if (Time.time > m_NextActionTime)
-            {
-                m_NextActionTime += Period;
-                NoteOnMessage();
-            }
-        }*/
-
         private void OnApplicationQuit()
         {
-            this.outputDevice.Close();
+            this.m_OutputDevice.Close();
         }
         #endregion // MONOBEHAVIOR_METHODS
 
@@ -72,7 +59,7 @@ namespace XylophoneHero
             {
                 NoteOnMessage msg = new NoteOnMessage(MidiChannel, (Key)key, velocity);
                 Debug.Log("SENT Midi msg: " + msg);
-                this.outputDevice.Send(msg);
+                this.m_OutputDevice.Send(msg);
             }
             catch (System.Exception e)
             {
@@ -80,17 +67,14 @@ namespace XylophoneHero
                 Debug.LogException(e);
             }
         }
-        /*public void NoteOnMessage()
-        {
-            NoteOnMessage(Random.Range(0, 127), Random.Range(0, 127));
-        }*/
+
         public void NoteOffMessage(int key, int velocity)
         {
             try
             {
                 NoteOffMessage msg = new NoteOffMessage(MidiChannel, (Key)key, velocity);
                 Debug.Log("SENT Midi msg: " + msg);
-                this.outputDevice.Send(msg);
+                this.m_OutputDevice.Send(msg);
             }
             catch (System.Exception e)
             {

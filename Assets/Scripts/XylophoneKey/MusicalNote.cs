@@ -10,36 +10,33 @@ namespace XylophoneHero
     {
         #region PUBLIC_MEMBER_VARIABLES
         //Standard is E5 which is 76 in MIDI Format
-        public int musicalNote = 76;
-
+        public int MusicalMIDINote = 76;
         #endregion // PUBLIC_MEMBER_VARIABLES
 
         #region PRIVATE_MEMBER_VARIABLES
         private readonly System.DateTime m_UnixEpoch =
                                           new System.DateTime(1970, 1, 1, 0, 0, 0, System.DateTimeKind.Utc);
-
         #endregion // PRIVATE_MEMBER_VARIABLES
 
         #region PUBLIC_METHODS
-        public void publishMusicalNoteViaROS()
+        public void PublishMusicalNoteViaROS()
         {
             MusicalNoteMsg msg;
             long absoluteTime = getCurrentUnixTimestampMillis();
 
-            msg = new MusicalNoteMsg(System.Convert.ToByte(musicalNote), absoluteTime);
+            msg = new MusicalNoteMsg(System.Convert.ToByte(MusicalMIDINote), absoluteTime);
             ROSBridge.ROSBridge.Instance.Publish(MusicalNotesPublisher.GetMessageTopic(), msg);
         }
 
-        public void sendNoteOnMessage()
+        public void SendNoteOnMessage()
         {
-            MidiBridge.Instance.NoteOnMessage(musicalNote, 127);
+            MidiBridge.Instance.NoteOnMessage(MusicalMIDINote, 127);
         }
 
-        public void sendNoteOffMessage()
+        public void SendNoteOffMessage()
         {
-            MidiBridge.Instance.NoteOffMessage(musicalNote, 127);
+            MidiBridge.Instance.NoteOffMessage(MusicalMIDINote, 127);
         }
-
         #endregion // PUBLIC_METHODS
 
         #region PRIVATE_METHODS

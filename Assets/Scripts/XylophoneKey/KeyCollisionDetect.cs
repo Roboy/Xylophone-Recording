@@ -76,8 +76,8 @@ namespace XylophoneHero
             {
                 m_KeyVisualFeedback.MoveAndHighlightOnHit();
                 m_KeyAudioFeedback.PlayKey(500f);
-                m_MusicalNote.publishMusicalNoteViaROS();
-                m_MusicalNote.sendNoteOnMessage();
+                m_MusicalNote.PublishMusicalNoteViaROS();
+                m_MusicalNote.SendNoteOnMessage();
                 if (m_KeyIndicator != null)
                 {
                     m_KeyIndicator.HandleStrike();
@@ -89,7 +89,7 @@ namespace XylophoneHero
         private void OnTriggerExit(Collider other)
         {
             m_KeyTouched = false;
-            m_MusicalNote.sendNoteOffMessage();
+            m_MusicalNote.SendNoteOffMessage();
         }
 
         #endregion // PUBLIC_METHODS

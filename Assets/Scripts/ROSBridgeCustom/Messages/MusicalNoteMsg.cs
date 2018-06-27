@@ -11,7 +11,6 @@ namespace ROSBridgeCustom
         private Byte m_MusicialNote;
 
         private long m_UnixTimeInMilliseconds;
-
         #endregion // PRIVATE_MEMBER_VARIABLES
 
         #region PUBLIC_METHODS
