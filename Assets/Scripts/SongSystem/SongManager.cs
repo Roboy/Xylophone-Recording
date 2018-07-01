@@ -17,6 +17,8 @@ public class SongManager : MonoBehaviour {
     private GameObject m_ScoreDisplay;
     private TextMeshPro m_ScoreDisplayText;
 
+    private SongGenerator m_SongGenerator;
+
     private int m_ComboCounter = 0;
     private int m_Score = 0;
     private string m_Promps = "";
@@ -25,24 +27,25 @@ public class SongManager : MonoBehaviour {
 
     #region MONOBEHAVIOR_METHODS
 
-    #endregion // MONOBEHAVIOR_METHODS
-
     private void Start()
     {
-        
+
         m_InfoPromps = transform.Find("InfoPromps").gameObject;
         m_ScoreDisplay = transform.Find("ScoreDisplay").gameObject;
 
-        if(m_InfoPromps != null && m_ScoreDisplay != null)
+        if (m_InfoPromps != null && m_ScoreDisplay != null)
         {
             m_InfoPrompsText = m_InfoPromps.GetComponent<TextMeshPro>();
             m_ScoreDisplayText = m_ScoreDisplay.GetComponent<TextMeshPro>();
         }
+        m_SongGenerator = transform.Find("NoteGenerator").gameObject.GetComponent<SongGenerator>();
         
     }
-    
+
+    #endregion // MONOBEHAVIOR_METHODS
+
     #region PUBLIC_METHODS
-    
+
     public void GoodHit()
     {
         ++m_ComboCounter;
@@ -66,7 +69,7 @@ public class SongManager : MonoBehaviour {
             m_Score += 80;
             m_Promps = "Godlike!";
         }
-        StartCoroutine(DisplayScoreText());
+        StartCoroutine(displayScoreText());
     }
 
     public void BadHit()
@@ -75,15 +78,44 @@ public class SongManager : MonoBehaviour {
         m_InfoPromps.SetActive(false); 
     }
 
+    public void StartSong()
+    {
+        m_ComboCounter = 0;
+        m_Score = 0;
+        m_Promps = "";
+        StartCoroutine(displayScoreText());
+        m_SongGenerator.StartGenerate();
+    }
+
+    public void PauseSong()
+    {
+
+    }
+
+    public void StopSong()
+    {
+        m_SongGenerator.StopGenerate();
+    }
+
+    public void PrevSong()
+    {
+
+    }
+
+    public void NextSong()
+    {
+
+    }
+
     #endregion // PUBLIC_METHODS
 
     #region PRIVATE_METHODS
     
-    private IEnumerator DisplayScoreText()
+    private IEnumerator displayScoreText()
     {
         m_InfoPromps.SetActive(false);
 
-        m_ScoreDisplayText.SetText("Score: " + m_Score);
+        showScore();
         m_InfoPrompsText.SetText(m_Promps);
 
         m_InfoPromps.SetActive(true);
@@ -96,10 +128,8 @@ public class SongManager : MonoBehaviour {
         }
     }
 
-    private void OnEnable()
+    private void showScore()
     {
-        m_Score = 0;
-        m_InfoPromps.SetActive(false);
         m_ScoreDisplayText.SetText("Score: " + m_Score);
     }
 
