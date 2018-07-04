@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -18,6 +19,12 @@ public class SongManager : MonoBehaviour {
     private TextMeshPro m_ScoreDisplayText;
 
     private SongGenerator m_SongGenerator;
+
+    private List<string> m_SongNameList = null;
+    private List<List<string>> m_SongDataList = null;
+    private bool m_LoadSongFinish = false;
+    private bool m_IsPlaying = false;
+    private int m_CurrentSongIndex = -1;
 
     private int m_ComboCounter = 0;
     private int m_Score = 0;
@@ -39,12 +46,73 @@ public class SongManager : MonoBehaviour {
             m_ScoreDisplayText = m_ScoreDisplay.GetComponent<TextMeshPro>();
         }
         m_SongGenerator = transform.Find("NoteGenerator").gameObject.GetComponent<SongGenerator>();
-        
+
+        LoadSong();
     }
 
     #endregion // MONOBEHAVIOR_METHODS
 
     #region PUBLIC_METHODS
+
+    public void LoadSong()
+    {
+        if (m_SongDataList == null && m_SongNameList == null)
+        {
+            m_SongDataList = new List<List<string>>();
+            m_SongNameList = new List<string>();
+        }
+
+        TextAsset[] rawSongFiles = Resources.LoadAll("Songs", typeof(TextAsset)).Cast<TextAsset>().ToArray();
+        foreach (TextAsset rawSongData in rawSongFiles)
+        {
+            m_SongNameList.Add(rawSongData.name);
+            List<string> songData = new List<string>(rawSongData.text.Split('\n'));
+            m_SongDataList.Add(songData);
+        }
+
+        if (m_SongDataList.Count > 0)
+        {
+            m_CurrentSongIndex = 1;
+            m_LoadSongFinish = true;
+        }
+        else
+        {
+            m_CurrentSongIndex = -1;
+            m_LoadSongFinish = false;
+        }
+    }
+
+    public void StartSong()
+    {
+        if (m_LoadSongFinish)
+        {
+            m_ComboCounter = 0;
+            m_Score = 0;
+            m_Promps = "";
+            StartCoroutine(displayScoreText());
+            m_SongGenerator.StartGenerate(m_SongDataList[m_CurrentSongIndex-1]);
+        }
+    }
+
+    public void PauseSong()
+    {
+
+    }
+
+    public void StopSong()
+    {
+        m_SongGenerator.StopGenerate();
+    }
+
+    public void PrevSong()
+    {
+
+    }
+
+    public void NextSong()
+    {
+
+    }
 
     public void GoodHit()
     {
@@ -75,42 +143,18 @@ public class SongManager : MonoBehaviour {
     public void BadHit()
     {
         m_ComboCounter = 0;
-        m_InfoPromps.SetActive(false); 
+        m_InfoPromps.SetActive(false);
     }
 
-    public void StartSong()
+    public void SongFinish()
     {
-        m_ComboCounter = 0;
-        m_Score = 0;
-        m_Promps = "";
-        StartCoroutine(displayScoreText());
-        m_SongGenerator.StartGenerate();
-    }
-
-    public void PauseSong()
-    {
-
-    }
-
-    public void StopSong()
-    {
-        m_SongGenerator.StopGenerate();
-    }
-
-    public void PrevSong()
-    {
-
-    }
-
-    public void NextSong()
-    {
-
+        m_IsPlaying = false;
     }
 
     #endregion // PUBLIC_METHODS
 
     #region PRIVATE_METHODS
-    
+
     private IEnumerator displayScoreText()
     {
         m_InfoPromps.SetActive(false);

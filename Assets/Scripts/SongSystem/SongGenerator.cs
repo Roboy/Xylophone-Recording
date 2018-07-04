@@ -10,8 +10,6 @@ public class SongGenerator : MonoBehaviour {
 
     #region PUBLIC_MEMBER_VARIABLES
 
-    public string SongFolderPath;
-
     //  the x coordinate of the corresponding note
     //  the program will generate the note at this position
     public float PositionC = 1.5f;
@@ -24,7 +22,7 @@ public class SongGenerator : MonoBehaviour {
 
     public float Bpm = 120f;
 
-    public TextMeshPro SongListDisplay;
+    public SongManager Manager;
 
     #endregion // PUBLIC_MEMBER_VARIABLES
 
@@ -32,13 +30,7 @@ public class SongGenerator : MonoBehaviour {
 
     [SerializeField] private GameObject m_SongNotePrefab;
 
-    private List<string> m_SongNameList = null;
-    private List<List<string>> m_SongDataList = null;
-    
-    private bool m_LoadSongFinish = false;
-    private bool m_Playing = false;
-    private int m_CurrentSongIndex = -1;
-
+    private bool m_IsGenerating = false;
     private Coroutine m_GenerationCoroutine = null;
 
     #endregion // PRIVATE_MEMBER_VARIABLES
@@ -49,17 +41,10 @@ public class SongGenerator : MonoBehaviour {
 
     #region PUBLIC_METHODS
 
-    public void StartGenerate()
+    public void StartGenerate(List<string> songData)
     {
-        if (!m_LoadSongFinish)
-        {
-            LoadSong();
-        }
-        if (m_LoadSongFinish && !m_Playing)
-        {
-            m_Playing = true;
-            m_GenerationCoroutine = StartCoroutine(generateNotes());
-        }
+        m_IsGenerating = true;
+        m_GenerationCoroutine = StartCoroutine(generateNotes(songData));
     }
 
     public void PauseGenerate()
@@ -73,7 +58,7 @@ public class SongGenerator : MonoBehaviour {
         {
             killAllNotes();
             StopCoroutine(m_GenerationCoroutine);
-            m_Playing = false;
+            m_IsGenerating = false;
         }
     }
 
@@ -87,44 +72,14 @@ public class SongGenerator : MonoBehaviour {
 
     }
 
-    public void LoadSong()
-    {
-        if (m_SongDataList == null && m_SongNameList == null)
-        {
-            m_SongDataList = new List<List<string>>();
-            m_SongNameList = new List<string>();
-        }
-        
-        TextAsset[] rawSongFiles = Resources.LoadAll("Songs", typeof(TextAsset)).Cast<TextAsset>().ToArray();
-        foreach (TextAsset rawSongData in rawSongFiles)
-        {
-            m_SongNameList.Add(rawSongData.name);
-            List<string> songData = new List<string>(rawSongData.text.Split('\n'));
-            m_SongDataList.Add(songData);
-        }
-
-        if (m_SongDataList.Count > 0)
-        {
-            m_CurrentSongIndex = 1;
-            m_LoadSongFinish = true;
-        }
-        else
-        {
-            m_CurrentSongIndex = -1;
-            m_LoadSongFinish = false;
-        }
-
-
-    }
-
     #endregion // PUBLIC_METHODS
 
     #region PRIVATE_METHODS
 
-    private IEnumerator generateNotes()
+    private IEnumerator generateNotes(List<string> songData)
     {
         float noteInterval = 60 / Bpm;
-        foreach(string line in m_SongDataList[m_CurrentSongIndex-1])
+        foreach(string line in songData)
         {
             if (line[0] == '1')
             {
@@ -156,7 +111,8 @@ public class SongGenerator : MonoBehaviour {
             }
             yield return new WaitForSeconds(noteInterval);
         }
-        m_Playing = false;
+        m_IsGenerating = false;
+        Manager.SongFinish();
     }
 
     private void generateNote(float posx)
@@ -174,15 +130,6 @@ public class SongGenerator : MonoBehaviour {
             Destroy(sn);
         }
     }
-
-    //private void OnDisable()
-    //{
-    //    GameObject[] songNotes = GameObject.FindGameObjectsWithTag("SongNote");
-    //    foreach (GameObject child in songNotes)
-    //    {
-    //        Destroy(child);
-    //    }
-    //}
 
     #endregion // PRIVATE_METHODS
 }
