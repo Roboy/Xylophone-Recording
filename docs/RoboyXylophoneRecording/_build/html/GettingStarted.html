@@ -1,0 +1,262 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting Started &mdash; RoboyXylophoneRecording  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Project Structure" href="ProjectStructure.html" />
+    <link rel="prev" title="Introduction" href="Introduction.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> RoboyXylophoneRecording
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#part-1-install-unity">Part 1: Install Unity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#part-2-setup-htc-vive-and-steamvr">Part 2: Setup HTC Vive and SteamVR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#part-3-clone-the-project-from-github">Part 3: Clone the project from Github</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#part-4-setup-rosbridge-and-midibridge">Part 4: Setup ROSBridge and MidiBridge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#part-4-setup-the-project-in-unity">Part 4: Setup the project in Unity</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ProjectStructure.html">Project Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UseCase.html">Use Case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CurrentState.html">Current State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Midi.html">Midi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="XylophoneHero.html">Xylophone Hero</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Environments.html">Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LibririesAndExternalSoftware.html">Libriries and External Software</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RoboyXylophoneRecording</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Getting Started</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/GettingStarted.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="part-1-install-unity">
+<h3>Part 1: Install Unity<a class="headerlink" href="#part-1-install-unity" title="Permalink to this headline">¶</a></h3>
+<p>The Xylophone Recording Project is developped and tested in Unity 2018.1.5.f1. Any Versions later than this should be compatible with this project. Using earlier versions should be avoided, because it may cause “missing prefab” problem.</p>
+<p>Unity can be downloaded from here: <a class="reference external" href="https://unity3d.com/get-unity/download/archive">https://unity3d.com/get-unity/download/archive</a></p>
+<p>Select the correct version and download the installer. After downloading, run the installer and follow the instructions to install Unity.</p>
+</div>
+<div class="section" id="part-2-setup-htc-vive-and-steamvr">
+<h3>Part 2: Setup HTC Vive and SteamVR<a class="headerlink" href="#part-2-setup-htc-vive-and-steamvr" title="Permalink to this headline">¶</a></h3>
+<p>Follow the official <a class="reference external" href="https://support.steampowered.com/kb_article.php?ref=2001-UXCM-4439">SteamVR HTC Vive PRE installation Guide</a> to set up HTC Vive and SteamVR.</p>
+</div>
+<div class="section" id="part-3-clone-the-project-from-github">
+<h3>Part 3: Clone the project from Github<a class="headerlink" href="#part-3-clone-the-project-from-github" title="Permalink to this headline">¶</a></h3>
+<p>Use the following command in Git Bash or command line to clone the Xylophone Recording repository from Github:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">Roboy</span><span class="o">/</span><span class="n">ss18_xylophone_recording</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="part-4-setup-rosbridge-and-midibridge">
+<h3>Part 4: Setup ROSBridge and MidiBridge<a class="headerlink" href="#part-4-setup-rosbridge-and-midibridge" title="Permalink to this headline">¶</a></h3>
+<p><em>Under Construction</em></p>
+</div>
+<div class="section" id="part-4-setup-the-project-in-unity">
+<h3>Part 4: Setup the project in Unity<a class="headerlink" href="#part-4-setup-the-project-in-unity" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ProjectStructure.html" class="btn btn-neutral float-right" title="Project Structure" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Introduction.html" class="btn btn-neutral" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Arash,Ludwig,Yupei.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
