@@ -22,8 +22,8 @@ public class MovingObjectsInStarWarsSkyBox : MonoBehaviour
             child.position = new Vector3(child.position.x + x, child.position.y + y, child.position.z);
 
         }
-        GameObject xWing = GameObject.Find("XWingSelf");
-        GameObject[] laserBolts = GameObject.FindGameObjectsWithTag("laserBolt");
+        GameObject xWing = GameObject.FindGameObjectWithTag(TagsConstants.XWING_SELF);
+        GameObject[] laserBolts = GameObject.FindGameObjectsWithTag(TagsConstants.LASER_BOLT);
         foreach (GameObject laserBolt in laserBolts)
         {
             laserBolt.transform.Translate(Vector3.up * 10F * Time.deltaTime);
@@ -33,7 +33,7 @@ public class MovingObjectsInStarWarsSkyBox : MonoBehaviour
                 laserBolt.transform.localPosition = new Vector3(0, 0, 0);
             }
         }
-        laserBolts = GameObject.FindGameObjectsWithTag("laserBoltXWing");
+        laserBolts = GameObject.FindGameObjectsWithTag(TagsConstants.LASER_BOLT_XWING);
         foreach (GameObject laserBolt in laserBolts)
         {
             laserBolt.transform.Translate(Vector3.up * 10F * Time.deltaTime);

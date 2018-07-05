@@ -17,6 +17,10 @@ TagManager:
   - SelectionMenu1
   - SelectionMenu2
   - SongBoard
+  - ControllerDevice
+  - RestartMessage
+  - XWingSelf
+  - AllStarWarsObjects
   layers:
   - Default
   - TransparentFX

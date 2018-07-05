@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System.IO;
 
 /// <summary>
 /// Changing controller model is handled in this class.
@@ -26,8 +25,10 @@ public class Controller : MonoBehaviour
     public Rigidbody attachPoint;
     private bool isSongBoardActive = false;
     private bool isApplicationButtomPressed = false;
+    private bool restartApp = false;
     #endregion // PRIVATE_MEMBER_VARIABLES
 
+    #region PUBLIC_METHODS
     void Start()
     {
         trackedObject = GetComponent<SteamVR_TrackedObject>();
@@ -40,6 +41,15 @@ public class Controller : MonoBehaviour
 
     void Update()
     {
+        GameObject[] controllers = GameObject.FindGameObjectsWithTag(TagsConstants.CONTROLLER_DEVICE);
+        if (restartApp || controllers.Length != TagsConstants.NUMBER_OF_CONTROLLER) {
+            MakeGameObjectActive(TagsConstants.CONTROLLER_DEVICE, false);
+            MakeGameObjectActive(TagsConstants.ALL_STARWARS_OBJECT, false);
+            MakeGameObjectActive(TagsConstants.RESTART_MESSAGE, true);
+            restartApp = true;
+            return;
+        }
+
         if (trackedObject == null)
         {
             return;
@@ -54,7 +64,7 @@ public class Controller : MonoBehaviour
         {
             //Show the controller choosing menu
             gripButtonPressed = true;
-            MakeGameObjectActive("ControllerMenu", true);
+            MakeGameObjectActive(TagsConstants.CONTROLLER_MENU, true);
         }
         if (gripButtonPressed && device.GetTouch(SteamVR_Controller.ButtonMask.Touchpad))
         {
@@ -101,19 +111,21 @@ public class Controller : MonoBehaviour
         }
 
     }
-
+    #endregion // PUBLIC_METHODS
+    
     #region PRIVATE_METHODS
     private void MakeControllerDisable()
     {
-        GameObject controllerMenu = GameObject.Find("ControllerMenu");
-        MakeGameObjectActive("ControllerMenu", false);
+        GameObject controllerMenu = GameObject.Find(TagsConstants.CONTROLLER_MENU);
+        MakeGameObjectActive(TagsConstants.RESTART_MESSAGE, false);
+        MakeGameObjectActive(TagsConstants.CONTROLLER_MENU, false);
         controllerMenu.transform.localScale = new Vector3(1, 1, 1);
     }
 
     private void MakeGameBoardDisableAtStart()
     {
-        GameObject controllerMenu = GameObject.FindGameObjectWithTag("SongBoard");
-        MakeGameObjectActive("SongBoard", false);
+        GameObject controllerMenu = GameObject.FindGameObjectWithTag(TagsConstants.SONG_BOARD);
+        MakeGameObjectActive(TagsConstants.SONG_BOARD, false);
         controllerMenu.transform.localScale = new Vector3(0.5F, 0.5F, 0.5F);
     }
 
@@ -128,7 +140,7 @@ public class Controller : MonoBehaviour
 
         if (!isSongBoardActive && device.GetPressDown(SteamVR_Controller.ButtonMask.ApplicationMenu))
         {
-            MakeGameObjectActive("SongBoard", true);
+            MakeGameObjectActive(TagsConstants.SONG_BOARD, true);
             isApplicationButtomPressed = true;
         }
     }
@@ -144,83 +156,83 @@ public class Controller : MonoBehaviour
 
         if (isSongBoardActive && device.GetPressDown(SteamVR_Controller.ButtonMask.ApplicationMenu))
         {
-            MakeGameObjectActive("SongBoard", false);
+            MakeGameObjectActive(TagsConstants.SONG_BOARD, false);
             isApplicationButtomPressed = true;
         }
     }
 
     private void MakeThirdMenuGlow()
     {
-        GameObject menu0 = GameObject.FindGameObjectWithTag("SelectionMenu2");
+        GameObject menu0 = GameObject.FindGameObjectWithTag(TagsConstants.SELECTION_MENU_2);
         Image image = menu0.GetComponent<Image>();
         image.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
     }
 
     private void MakeSecondMenuGlow()
     {
-        GameObject menu0 = GameObject.FindGameObjectWithTag("SelectionMenu1");
+        GameObject menu0 = GameObject.FindGameObjectWithTag(TagsConstants.SELECTION_MENU_1);
         Image image = menu0.GetComponent<Image>();
         image.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
     }
 
     private void MakeFirstMenuGlow()
     {
-        GameObject menu0 = GameObject.FindGameObjectWithTag("SelectionMenu0");
+        GameObject menu0 = GameObject.FindGameObjectWithTag(TagsConstants.SELECTION_MENU_0);
         Image image = menu0.GetComponent<Image>();
         image.GetComponent<Image>().color = new Color32(255, 255, 225, 100);
     }
 
     private void MakeThirdMenuNotGlow()
     {
-        GameObject menu0 = GameObject.FindGameObjectWithTag("SelectionMenu2");
+        GameObject menu0 = GameObject.FindGameObjectWithTag(TagsConstants.SELECTION_MENU_2);
         Image image = menu0.GetComponent<Image>();
         image.GetComponent<Image>().color = new Color32(174, 174, 174, 255);
     }
 
     private void MakeSecondMenuNotGlow()
     {
-        GameObject menu0 = GameObject.FindGameObjectWithTag("SelectionMenu1");
+        GameObject menu0 = GameObject.FindGameObjectWithTag(TagsConstants.SELECTION_MENU_1);
         Image image = menu0.GetComponent<Image>();
         image.GetComponent<Image>().color = new Color32(174, 174, 174, 255);
     }
 
     private void MakeFirstMenuNotGlow()
     {
-        GameObject menu0 = GameObject.FindGameObjectWithTag("SelectionMenu0");
+        GameObject menu0 = GameObject.FindGameObjectWithTag(TagsConstants.SELECTION_MENU_0);
         Image image = menu0.GetComponent<Image>();
         image.GetComponent<Image>().color = new Color32(174, 174, 174, 255);
     }
 
     private void MakeLightSaberStickVisible()
     {
-        MakeGameObjectActive("lightsaberStick", true);
+        MakeGameObjectActive(TagsConstants.LIGHT_SABER_STICK, true);
 
     }
 
     private void MakeLightSaberStickInvis()
     {
-        MakeGameObjectActive("lightsaberStick", false);
+        MakeGameObjectActive(TagsConstants.LIGHT_SABER_STICK, false);
     }
 
     private void MakeCubeStickVisible()
     {
-        MakeGameObjectActive("cubeStick", true);
+        MakeGameObjectActive(TagsConstants.CUBE_STICK, true);
     }
 
     private void MakeCubeStickInvis()
     {
-        MakeGameObjectActive("cubeStick", false);
+        MakeGameObjectActive(TagsConstants.CUBE_STICK, false);
     }
 
     private void MakeRoboyStickVisible()
     {
 
-        MakeGameObjectActive("roboyStick", true);
+        MakeGameObjectActive(TagsConstants.ROBOY_STICK, true);
     }
 
     private void MakeRoboyStickInvis()
     {
-        MakeGameObjectActive("roboyStick", false);
+        MakeGameObjectActive(TagsConstants.ROBOY_STICK, false);
     }
 
     private void MakeGameObjectActive(string objectTagName, bool active)
