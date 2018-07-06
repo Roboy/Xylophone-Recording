@@ -16,4 +16,7 @@ Structure
 Usage
 --------------
 
-Xylophone Hero is hidden in the scene by default. to activate it, press the menu button  on the Vive controller.
+Xylophone Hero is hidden in the scene by default. to activate it, press the ``menu`` button on the Vive controller. To disable it, press the ``menu`` button again.
+
+Current State
+----------------------
