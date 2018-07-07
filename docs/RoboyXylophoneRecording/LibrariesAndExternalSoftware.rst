@@ -1,0 +1,32 @@
+Libraries and External Software
+=================================
+
+Libraries
+---------
+
+HCI
+^^^
+
+*to be continued by Arash or/and Yupei*
+
+Communciation
+^^^^^^^^^^^^^
+
+MidiBridge
+""""""""""
+	- `RtMidi.Core <https://github.com/micdah/RtMidi.Core>`_
+
+ROSBridge
+"""""""""
+	- `ROSBridge <https://github.com/RobotWebTools/rosbridge_suite>`_
+
+External Software
+-----------------
+
+These external programs have been used for developing and testing. Some of them could probably be substituted with different programs.
+
+- `Unity <https://unity3d.com/>`_ (VR Development)
+- `SteamVR <https://assetstore.unity.com/packages/templates/systems/steamvr-plugin-32647>`_ (VR Development - HTC Vive)
+- `ROS <http://www.ros.org/>`_ (ROS Communication)
+- `MIDI-OX <http://www.midiox.com/>`_ (Midi Testing - Midi Monitor)
+- `loopMIDI <http://www.tobias-erichsen.de/software/loopmidi.html>`_ (Midi Testing - Midi Loopback Driver)

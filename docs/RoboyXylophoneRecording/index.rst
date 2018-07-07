@@ -14,9 +14,9 @@ Welcome to RoboyXylophoneRecording's documentation!
    GettingStarted
    ProjectStructure
    UseCase
-   Midi
+   Communication
    XylophoneHero
    Environments
    CurrentState
    Troubleshooting
-   LibririesAndExternalSoftware
+   LibrariesAndExternalSoftware
