@@ -18,11 +18,14 @@ public class SongManager : MonoBehaviour {
     private GameObject m_ScoreDisplay;
     private TextMeshPro m_ScoreDisplayText;
 
+    private SongListBoard m_SongListBoard;
+
     private SongGenerator m_SongGenerator;
 
     private List<string> m_SongNameList = null;
     private List<List<string>> m_SongDataList = null;
-    private bool m_LoadSongFinish = false;
+    private int m_SongCount = -1;
+    private bool m_IsLoadSongFinish = false;
     private bool m_IsPlaying = false;
     private int m_CurrentSongIndex = -1;
 
@@ -39,7 +42,7 @@ public class SongManager : MonoBehaviour {
 
         m_InfoPromps = transform.Find("InfoPromps").gameObject;
         m_ScoreDisplay = transform.Find("ScoreDisplay").gameObject;
-
+        m_SongListBoard = transform.Find("SongList").GetComponent<SongListBoard>();
         if (m_InfoPromps != null && m_ScoreDisplay != null)
         {
             m_InfoPrompsText = m_InfoPromps.GetComponent<TextMeshPro>();
@@ -72,19 +75,23 @@ public class SongManager : MonoBehaviour {
 
         if (m_SongDataList.Count > 0)
         {
+            m_SongCount = m_SongDataList.Count;
             m_CurrentSongIndex = 1;
-            m_LoadSongFinish = true;
+            m_IsLoadSongFinish = true;
+            m_SongListBoard.DisplaySongList(m_SongNameList, m_CurrentSongIndex);
         }
         else
         {
+            m_SongCount = -1;
             m_CurrentSongIndex = -1;
-            m_LoadSongFinish = false;
+            m_IsLoadSongFinish = false;
+            m_SongListBoard.DisplaySongList(false);
         }
     }
 
     public void StartSong()
     {
-        if (m_LoadSongFinish)
+        if (m_IsLoadSongFinish)
         {
             m_ComboCounter = 0;
             m_Score = 0;
@@ -106,12 +113,26 @@ public class SongManager : MonoBehaviour {
 
     public void PrevSong()
     {
-
+        --m_CurrentSongIndex;
+        if(m_CurrentSongIndex <= 0)
+        {
+            m_CurrentSongIndex = m_SongCount;
+        }
+        StopSong();
+        StartSong();
+        m_SongListBoard.DisplaySongList(m_SongNameList, m_CurrentSongIndex);
     }
 
     public void NextSong()
     {
-
+        ++m_CurrentSongIndex;
+        if(m_CurrentSongIndex > m_SongCount)
+        {
+            m_CurrentSongIndex = 1;
+        }
+        StopSong();
+        StartSong();
+        m_SongListBoard.DisplaySongList(m_SongNameList, m_CurrentSongIndex);
     }
 
     public void GoodHit()

@@ -675,6 +675,7 @@ GameObject:
   - component: {fileID: 601131441}
   - component: {fileID: 601131440}
   - component: {fileID: 601131439}
+  - component: {fileID: 601131442}
   m_Layer: 0
   m_Name: SongList
   m_TagString: Untagged
@@ -755,6 +756,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 601131437}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &601131442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 601131437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ad9b8e9d0787054c921b76196254398, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &652112609
 GameObject:
   m_ObjectHideFlags: 0
@@ -798,7 +810,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7b5937b87fdcae429847bd7b8d9f40b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SongFolderPath: D:\Unity Projects\xylophone_recording\ss18_xylophone_recording_merge_sprint\Assets\Notes\Songs
   PositionC: 1.5
   PositionD: 1
   PositionE: 0.5
@@ -807,7 +818,7 @@ MonoBehaviour:
   PositionA: -1
   PositionB: -1.5
   Bpm: 120
-  SongListDisplay: {fileID: 0}
+  Manager: {fileID: 1992867406}
   m_SongNotePrefab: {fileID: 1256535708058334, guid: 964ee290c53b2ef45b83650a99901c69,
     type: 2}
 --- !u!1 &706185470
@@ -2138,7 +2149,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: sample song
+  m_text: 'sample song
+
+    - sample song2 -'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
@@ -2206,12 +2219,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1447884504}
-    characterCount: 11
+    characterCount: 28
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 2
+    spaceCount: 5
+    wordCount: 6
     linkCount: 0
-    lineCount: 1
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_havePropertiesChanged: 0

@@ -59,6 +59,7 @@ public class SongGenerator : MonoBehaviour {
             killAllNotes();
             StopCoroutine(m_GenerationCoroutine);
             m_IsGenerating = false;
+            Manager.SongFinish();
         }
     }
 
