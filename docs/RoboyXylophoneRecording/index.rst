@@ -15,7 +15,7 @@ Welcome to RoboyXylophoneRecording's documentation!
    ProjectStructure
    UseCase
    Communication
-   XylophoneHero
+   SongSystem
    Environments
    CurrentState
    Troubleshooting

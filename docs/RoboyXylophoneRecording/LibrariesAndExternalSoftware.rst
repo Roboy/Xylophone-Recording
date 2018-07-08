@@ -7,7 +7,7 @@ Libraries
 HCI
 ^^^
 
-*to be continued by Arash or/and Yupei*
+- `TextMesh Pro <https://assetstore.unity.com/packages/essentials/beta-projects/textmesh-pro-84126>`_ (Substitute of the original unity text mesh)
 
 Communciation
 ^^^^^^^^^^^^^

@@ -1,5 +1,5 @@
-Xylophone Hero
-===================
+Song System (Xylophone Hero)
+================================
 
 Motivation and Introduction
 --------------------------------
