@@ -27,10 +27,26 @@ Use the following command in Git Bash or command line to clone the Xylophone Rec
 
 Part 4: Setup ROS
 ~~~~~~~~~~~~~~~~~~
-*TODO by Ludwig clarify this*
+This is just one way of installing ROS for Roboy. There are probably more suited approaches which are more elegant. But this one worked for us. ROS can be installed on another computer then were Unity is installed.
 
-Install ROS and build our `branch of ROS communication <https://github.com/Roboy/roboy_communication/tree/ss18_xylophone_recording>`_. This could be installed on another computer then were Unity is installed.
+Install ROS like described in the `Roboy repository <https://github.com/Roboy/Roboy>`_.
 
+Change to the Roboy directory and checkout our `branch <https://github.com/Roboy/roboy_communication/tree/ss18_xylophone_recording>`_ of the roboy_communication repository::
+
+	cd path/to/Roboy/src/roboy_communication
+	git checkout ss18_xylophone_recording
+
+If you just want to run our program you can move all the other submodules/folders inside src (everything except CMakeLists.txt and roboy_communication) to another folder outside src so that they won't be built::
+	
+	cd path/to/Roboy
+	mkdir donotbuild
+	mv src/common_utilities donotbuild
+	...
+
+Build the project::
+
+	source devel/setup.bash
+	catkin_make
 
 Starting the Program
 --------------------
@@ -57,4 +73,10 @@ Step 3: Launch Unity
 
 Launch Unity and check the GameObjects MidiBridge for the correct Midi Device Number which you wrote down earlier and your desired Midi Channel.
 
+.. image:: _static/GameObject_MidiBridge.png
+		:alt: GameObject MidiBridge
+
 Check the GameObject ROSBridge for the correct ROS Core IP (computer where you started the ROSBridge Server) and Port.
+
+.. image:: _static/GameObject_ROSBridge.png
+		:alt: GameObject ROSBridge
