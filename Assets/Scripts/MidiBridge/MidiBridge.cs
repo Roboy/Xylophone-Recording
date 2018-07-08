@@ -13,6 +13,9 @@ using ROSBridge;
 
 namespace XylophoneHero
 {
+    /// <summary>
+    /// interface to the RTMidi Library for accessing the local midi devices
+    /// </summary>
     public class MidiBridge : Singleton<MidiBridge>
     {
         #region PUBLIC_MEMBER_VARIABLES

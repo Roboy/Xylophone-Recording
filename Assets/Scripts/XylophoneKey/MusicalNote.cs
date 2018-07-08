@@ -6,6 +6,9 @@ using ROSBridgeCustom;
 
 namespace XylophoneHero
 {
+    /// <summary>
+    /// stores the note data and populates the communication functions
+    /// </summary>
     public class MusicalNote : MonoBehaviour
     {
         #region PUBLIC_MEMBER_VARIABLES
