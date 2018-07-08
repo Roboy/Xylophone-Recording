@@ -3,7 +3,7 @@ Environments
 =============
 
 Surrounding Objects
-------------
+-----------------------
 This section would describe the xylophone playing environment in VR and how to interact with that both on users and developer view.
 
 **Notes:**
@@ -12,7 +12,7 @@ This section would describe the xylophone playing environment in VR and how to i
 - Both Controller should be activated.
 
 Developer view
-^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
 
 Every Object inside the starWars object are under StarWarsObject unity object, except for the sticks which are under CameraRig. 
 Objects movement inside starwars environment are defined in MovingObjectsInStarWarsSkyBox.cs. 
@@ -20,7 +20,7 @@ And if you want to add an object which you want to move like tieFighters or xwin
 create your objects inside StarWarsObject and assign laserBolt tag for them. 
 
 Controllers
----------
+---------------
 
 In the VR you can play xylophone with different sticks which each one of them produce different sound, for example the Lightsaber stick would create 
 more electronic xylophone sound and the normal stick would create classical xylophone sound. 
@@ -30,14 +30,14 @@ more electronic xylophone sound and the normal stick would create classical xylo
   :alt: normal stick
 
 For changing sticks model in VR you have to press Grip button of vive controller (button number 8 in the picture) then a menu which contains 3 controller model,
- would appear. You can choose each model with controller trackpad (button number 2 in picture). The controller would disappear as soon as you do not touch the trackpad.
+would appear. You can choose each model with controller trackpad (button number 2 in picture). The controller would disappear as soon as you do not touch the trackpad.
 
 .. image:: _static/vive_controllers.jpg
   :width: 400
   :alt: normal stick
 
 Developer view
-^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 
 If you want to add new controller model you should add the model at position (0,0,0) in both controller(Controller (left) and Controller (right)) 
 object inside cameraRig in unity. Also you have to add the model picture in controller menu so users could be able to change the sticker to that model. 
