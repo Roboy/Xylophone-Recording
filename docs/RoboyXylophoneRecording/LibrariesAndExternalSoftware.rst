@@ -30,3 +30,8 @@ These external programs have been used for developing and testing. Some of them 
 - `ROS <http://www.ros.org/>`_ (ROS Communication)
 - `MIDI-OX <http://www.midiox.com/>`_ (Midi Testing - Midi Monitor)
 - `loopMIDI <http://www.tobias-erichsen.de/software/loopmidi.html>`_ (Midi Testing - Midi Loopback Driver)
+-  All libraries and model which used from external sources are at ThirdParty folder.
+
+
+The lightsaber or laserSword model was downloaded from https://github.com/jjxtra/UnityLightsaber.git.
+darth_vaders fighter, tieFighters, xwing were downloaded from https://clara.io/ and https://free3d.com/.
