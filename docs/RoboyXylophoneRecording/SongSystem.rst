@@ -52,10 +52,20 @@ Info Prompt and Score Display
 
 The Xylophone Hero has a score system. If the user play the correct key at the right time, he/she gains 10 points. If he/she manages to do that continuously, this is called combos. Combos gains more points. The points the user gains and some prompts are displayed in info prompt and score display section.
 
+Key Indicator
+~~~~~~~~~~~~~~~~~
+
+The key indicator indicates which key should be play now. When the song note falls and hits the key indicator, the corresponding key should be played. if the key is played, the song note would be destroyed and the key indicator would tell song system manager that the user has scored. If not, the song note would fall through the indicator and reach the note destroyer.
+
 Note Destroyer
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 The Note Destroyer destroys all game objects with the tag ``SongNote`` which enter its trigger zone. This basically "cleans up" the notes that are not played by the user.
+
+Back Board
+~~~~~~~~~~~~~
+
+The song board basically serves as a background for the song system.
 
 Usage
 --------------
@@ -65,4 +75,4 @@ Xylophone Hero is hidden in the scene by default. to activate it, press the ``me
 Current State
 ----------------------
 
-The song system is playable. It can load one song from the designated path and generate the song.
+The song system is playable. It can load one song from the designated path and generate the song. The functions of loading multiple songs and selecting songs are not yet finished. Song system controls like start, stop etc. are not implemented either. In addition, the song board, song notes and other elements still use the basic unity cubes, which is not yet ideal. 
