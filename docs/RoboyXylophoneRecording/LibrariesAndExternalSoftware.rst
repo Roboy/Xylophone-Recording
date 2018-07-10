@@ -14,7 +14,8 @@ Communciation
 
 MidiBridge
 """"""""""
-	- `RtMidi.Core <https://github.com/micdah/RtMidi.Core>`_
+	- `RtMidi.Core <https://github.com/micdah/RtMidi.Core>`_ (Version: 1.0.38 netstandard2.0)
+	- `Serilog <https://serilog.net/>`_ (Dependecy for RtMidi.Core, Version: 2.6.0 netstandard1.3)
 
 ROSBridge
 """""""""
