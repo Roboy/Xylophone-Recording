@@ -88,8 +88,8 @@ namespace XylophoneHero
 
         private void OnTriggerExit(Collider other)
         {
-            m_KeyTouched = false;
             m_MusicalNote.SendNoteOffMessage();
+            m_KeyTouched = false;
         }
 
         #endregion // PUBLIC_METHODS
