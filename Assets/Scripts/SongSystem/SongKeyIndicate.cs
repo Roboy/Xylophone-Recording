@@ -11,8 +11,6 @@ namespace XylophoneHero
 
         #region PUBLIC_MEMBER_VARIABLES
 
-        public KeyCode TestKeyCode;
-
         public float HighlightTime = 0.1f;
 
         #endregion // PUBLIC_MEMBER_VARIABLES
@@ -40,15 +38,6 @@ namespace XylophoneHero
             m_OriginColor = m_Rend.material.GetColor("_Color");
 
             m_SongManager = transform.parent.parent.Find("SongSystemManager").GetComponent<SongManager>();
-        }
-
-        void Update()
-        {
-            if (Input.GetKeyDown(TestKeyCode))
-            {
-                HandleStrike();
-                playSound();
-            }
         }
 
         void OnTriggerEnter(Collider other)

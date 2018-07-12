@@ -4,6 +4,10 @@ using UnityEngine;
 
 namespace XylophoneHero
 {
+    /// <summary>
+    /// Looks for collisions on the notes and triggers the corresponding functions.
+    /// If there is no VR Setup you can also debug via keyboard.
+    /// </summary>
     [RequireComponent(typeof(KeyAudioFeedback))]
     [RequireComponent(typeof(KeyVisualFeedback))]
     [RequireComponent(typeof(MusicalNote))]
@@ -12,7 +16,9 @@ namespace XylophoneHero
 
         #region PRIVATE_MEMBER_VARIABLES
 
+        //TODO: where is this populated? Should we make it invisible in the Inspector? [Ludwig]
         public GameObject KeyIndicatorObject;
+        public KeyCode TestKeyCode;
 
         #endregion
 
@@ -23,6 +29,7 @@ namespace XylophoneHero
         private MusicalNote m_MusicalNote;
 
         private bool m_KeyTouched = false;
+        private bool m_KeyboardTriggered = false;
 
         private SongKeyIndicate m_KeyIndicator;
 
@@ -38,6 +45,18 @@ namespace XylophoneHero
             if (KeyIndicatorObject != null)
             {
                 m_KeyIndicator = KeyIndicatorObject.GetComponent<SongKeyIndicate>();
+            }
+        }
+
+        void Update()
+        {
+            if (Input.GetKeyDown(TestKeyCode))
+            {
+                OnTriggerEnter(new Collider());
+            }
+            if (Input.GetKeyUp(TestKeyCode))
+            {
+                OnTriggerExit(new Collider());
             }
         }
 
