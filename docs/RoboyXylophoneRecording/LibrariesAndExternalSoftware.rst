@@ -29,7 +29,8 @@ These external programs have been used for developing and testing. Some of them 
 - `Unity <https://unity3d.com/>`_ (VR Development)
 - `SteamVR <https://assetstore.unity.com/packages/templates/systems/steamvr-plugin-32647>`_ (VR Development - HTC Vive)
 - `ROS <http://www.ros.org/>`_ (ROS Communication)
-- `MIDI-OX <http://www.midiox.com/>`_ (Midi Testing - Midi Monitor)
+- `MIDI-OX <http://www.midiox.com/>`_ (Midi Testing - Midi Monitor Windows)
+- `MIDIMonitor <https://www.snoize.com/MIDIMonitor/>`_ (Midi Testing - Midi Monitor MacOSX)
 - `loopMIDI <http://www.tobias-erichsen.de/software/loopmidi.html>`_ (Midi Testing - Midi Loopback Driver)
 -  All libraries and models which were used from external sources are inside the ThirdParty folder.
 

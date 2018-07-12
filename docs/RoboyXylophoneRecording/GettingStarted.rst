@@ -62,11 +62,14 @@ Before running the Unity Project launch the ROSBridge Server on a device which h
 Step 2: Check for an available Midi Device
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Check if you have any available Midi Devices. This can be done by using a Midi Management/Monitoring tool like `Midi-OX <http://www.Midiox.com/>`_. In Midi-OX use Options > Midi Devices to see the current Midi Devices available.
+Check if you have any available Midi Devices. This can be done by using a Midi Management/Monitoring tool like `Midi-OX (Windows) <http://www.Midiox.com/>`_. In Midi-OX use Options > Midi Devices to see the current Midi Devices available.
+
+An Alternative for MacOSX would be `MIDIMonitor <https://www.snoize.com/MIDIMonitor/>`_.
 
 Note down the Midi Device Number of your prefered Midi Output as you need it later on.
 
-If you don't have a local Midi Device you can use a loopback Driver like `loopMIDI <http://www.tobias-erichsen.de/software/loopMidi.html>`_ for testing purposes.
+If you don't have a local Midi Device you can use a loopback Driver like `loopMIDI (Windows) <http://www.tobias-erichsen.de/software/loopMidi.html>`_ for testing purposes.
+On MacOSX you can use the `this guide <https://help.ableton.com/hc/en-us/articles/209774225-Using-virtual-MIDI-buses>`_ to setup a loopback Driver.
 
 Step 3: Launch Unity
 ~~~~~~~~~~~~~~~~~~~~
