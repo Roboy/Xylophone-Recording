@@ -11,8 +11,9 @@ namespace XylophoneHero
     {
 
         #region PRIVATE_MEMBER_VARIABLES
-        public float ForceThreshold = 10.0f;
+
         public GameObject KeyIndicatorObject;
+
         #endregion
 
         #region PRIVATE_MEMBER_VARIABLES
@@ -22,7 +23,6 @@ namespace XylophoneHero
         private MusicalNote m_MusicalNote;
 
         private bool m_KeyTouched = false;
-        private int m_KeyTouchCount = 0;
 
         private SongKeyIndicate m_KeyIndicator;
 
@@ -44,31 +44,6 @@ namespace XylophoneHero
         #endregion // MONOBEHAVIOR_METHODS
 
         #region PUBLIC_METHODS
-
-        /*
-        void OnCollisionEnter(Collision collision)
-        {
-            if(!m_KeyTouched)
-            {
-                Vector3 impulseSum = collision.impulse;
-                Vector3 forceSum = impulseSum / Time.fixedDeltaTime;
-                float impactForce = Mathf.Max(forceSum.y, ForceThreshold);
-
-                float relativeVelocity = collision.relativeVelocity.magnitude;
-                Debug.Log("relativeVelocity " + relativeVelocity);
-
-                m_KeyVisualFeedback.MoveAndHighlightOnHit();
-                m_KeyAudioFeedback.PlayKey(impactForce);
-                m_MusicalNote.publishMusicalNote();
-                m_KeyTouched = true;
-            }
-        }
-
-        void OnCollisionExit(Collision collision)
-        {
-            m_KeyTouched = false;
-        }
-        */
 
         private void OnTriggerEnter(Collider other)
         {
