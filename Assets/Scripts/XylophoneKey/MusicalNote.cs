@@ -34,11 +34,13 @@ namespace XylophoneHero
         public void SendNoteOnMessage()
         {
             MidiBridge.Instance.NoteOnMessage(MusicalMIDINote, 127);
+            MidiRecording.Instance.NoteOnMessage(System.Convert.ToByte(MusicalMIDINote), 127);
         }
 
         public void SendNoteOffMessage()
         {
             MidiBridge.Instance.NoteOffMessage(MusicalMIDINote, 127);
+            MidiRecording.Instance.NoteOffMessage(System.Convert.ToByte(MusicalMIDINote), 127);
         }
         #endregion // PUBLIC_METHODS
 
