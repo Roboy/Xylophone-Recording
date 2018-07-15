@@ -7,21 +7,31 @@ ModelImporter:
     100002: CassettePlayer
     100004: Speaker1
     100006: Speaker1_001
+    100008: SpeakerLeft
+    100010: SpeakerRight
     400000: //RootNode
     400002: CassettePlayer
     400004: Speaker1
     400006: Speaker1_001
+    400008: SpeakerLeft
+    400010: SpeakerRight
     2100000: unnamed
     2100002: Material
     2300000: CassettePlayer
     2300002: Speaker1
     2300004: Speaker1_001
+    2300006: SpeakerLeft
+    2300008: SpeakerRight
     3300000: CassettePlayer
     3300002: Speaker1
     3300004: Speaker1_001
+    3300006: SpeakerLeft
+    3300008: SpeakerRight
     4300000: Speaker1_001
     4300002: Speaker1
     4300004: CassettePlayer
+    4300006: SpeakerRight
+    4300008: SpeakerLeft
     7400000: Default Take
     9500000: //RootNode
     2186277476908879412: ImportLogs

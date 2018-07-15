@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using XylophoneHero.SongSystem.Utils;
 
 public class SongListBoard : MonoBehaviour {
 
@@ -23,21 +24,21 @@ public class SongListBoard : MonoBehaviour {
 
     #region PUBLIC_METHODS
 
-    public void DisplaySongList(List<string> songNameList, int currentSongIndex)
+    public void DisplaySongList(List<Song> songs, int currentSongIndex)
     {
         if(m_SongListDisplay != null)
         {
             string display = "";
-            for(int i = 0; i<songNameList.Count; i++)
+            for(int i = 0; i<songs.Count; i++)
             {
                 if(i+1 == currentSongIndex)
                 {
-                    display = display + "- " + songNameList[i] + " -\n";
+                    display = display + "- " + songs[i].Name + " -\n";
 
                 }
                 else
                 {
-                    display = display + songNameList[i] + "\n";
+                    display = display + songs[i].Name + "\n";
                 }
             }
             m_SongListDisplay.text = display;

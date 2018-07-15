@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using XylophoneHero.SongSystem.Utils;
 
 public class SongManager : MonoBehaviour {
 
@@ -22,8 +23,8 @@ public class SongManager : MonoBehaviour {
 
     private SongGenerator m_SongGenerator;
 
-    private List<string> m_SongNameList = null;
-    private List<List<string>> m_SongDataList = null;
+
+    private List<Song> m_Songs = null;
     private int m_SongCount = -1;
     private bool m_IsLoadSongFinish = false;
     private bool m_IsPlaying = false;
@@ -59,26 +60,25 @@ public class SongManager : MonoBehaviour {
 
     public void LoadSong()
     {
-        if (m_SongDataList == null && m_SongNameList == null)
+
+        if (m_Songs == null)
         {
-            m_SongDataList = new List<List<string>>();
-            m_SongNameList = new List<string>();
+            m_Songs = new List<Song>();
         }
 
         TextAsset[] rawSongFiles = Resources.LoadAll("Songs", typeof(TextAsset)).Cast<TextAsset>().ToArray();
         foreach (TextAsset rawSongData in rawSongFiles)
         {
-            m_SongNameList.Add(rawSongData.name);
-            List<string> songData = new List<string>(rawSongData.text.Split('\n'));
-            m_SongDataList.Add(songData);
+            m_Songs.Add(new Song(rawSongData.name, new List<string>(rawSongData.text.Split('\n'))));
+
         }
 
-        if (m_SongDataList.Count > 0)
+        if (m_Songs.Count > 0)
         {
-            m_SongCount = m_SongDataList.Count;
+            m_SongCount = m_Songs.Count;
             m_CurrentSongIndex = 1;
             m_IsLoadSongFinish = true;
-            m_SongListBoard.DisplaySongList(m_SongNameList, m_CurrentSongIndex);
+            m_SongListBoard.DisplaySongList(m_Songs, m_CurrentSongIndex);
         }
         else
         {
@@ -97,7 +97,7 @@ public class SongManager : MonoBehaviour {
             m_Score = 0;
             m_Promps = "";
             StartCoroutine(displayScoreText());
-            m_SongGenerator.StartGenerate(m_SongDataList[m_CurrentSongIndex-1]);
+            m_SongGenerator.StartGenerate(m_Songs[m_CurrentSongIndex-1]);
         }
     }
 
@@ -120,7 +120,7 @@ public class SongManager : MonoBehaviour {
         }
         StopSong();
         StartSong();
-        m_SongListBoard.DisplaySongList(m_SongNameList, m_CurrentSongIndex);
+        m_SongListBoard.DisplaySongList(m_Songs, m_CurrentSongIndex);
     }
 
     public void NextSong()
@@ -132,7 +132,7 @@ public class SongManager : MonoBehaviour {
         }
         StopSong();
         StartSong();
-        m_SongListBoard.DisplaySongList(m_SongNameList, m_CurrentSongIndex);
+        m_SongListBoard.DisplaySongList(m_Songs, m_CurrentSongIndex);
     }
 
     public void GoodHit()

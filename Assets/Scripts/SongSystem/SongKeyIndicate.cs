@@ -12,6 +12,8 @@ public class SongKeyIndicate : MonoBehaviour {
 
     public float HighlightTime = 0.1f;
 
+    public SongManager SongManager;
+
     #endregion // PUBLIC_MEMBER_VARIABLES
 
     #region PRIVATE_MEMBER_VARIABLES
@@ -25,8 +27,6 @@ public class SongKeyIndicate : MonoBehaviour {
     private Color m_ErrorColor = new Color(0.8f, 0.2f, 0.2f);
     private const float m_Lerp = 0.6f;
     
-    private SongManager m_SongManager;
-
     #endregion // PRIVATE_MEMBER_VARIABLES
 
     #region MONOBEHAVIOR_METHODS
@@ -35,8 +35,7 @@ public class SongKeyIndicate : MonoBehaviour {
         m_Rend = GetComponent<Renderer>();
         m_KeySound = GetComponent<AudioSource>();
         m_OriginColor = m_Rend.material.GetColor("_Color");
-
-        m_SongManager = transform.parent.parent.Find("SongSystemManager").GetComponent<SongManager>();
+        
     }
 
     void Update()
@@ -73,12 +72,12 @@ public class SongKeyIndicate : MonoBehaviour {
         if (strikeResult)
         {
             newColor = Color.Lerp(m_OriginColor, m_CorrectColor, m_Lerp);
-            m_SongManager.GoodHit();
+            SongManager.GoodHit();
         }
         else
         {
             newColor = m_ErrorColor;
-            m_SongManager.BadHit();
+            SongManager.BadHit();
         }
         StartCoroutine(changeKeyColor(newColor));
     }

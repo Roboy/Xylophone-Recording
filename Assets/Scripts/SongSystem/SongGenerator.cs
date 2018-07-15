@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using XylophoneHero.SongSystem.Utils;
 
 public class SongGenerator : MonoBehaviour {
 
@@ -41,10 +42,10 @@ public class SongGenerator : MonoBehaviour {
 
     #region PUBLIC_METHODS
 
-    public void StartGenerate(List<string> songData)
+    public void StartGenerate(Song song)
     {
         m_IsGenerating = true;
-        m_GenerationCoroutine = StartCoroutine(generateNotes(songData));
+        m_GenerationCoroutine = StartCoroutine(generateNotes(song.Content));
     }
 
     public void PauseGenerate()

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CassettePlayerManeger : MonoBehaviour {
 
-    public GameObject m_indicator;
+    public GameObject Indicator;
     public KeyCode TestKeyCode;
     public Vector3 ShootForce;
 
@@ -12,7 +12,7 @@ public class CassettePlayerManeger : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        m_indicator.SetActive(true);
+        Indicator.SetActive(true);
         if (collision.transform.gameObject.tag == "Cassette")
         {
             m_Cassette = collision.transform.gameObject;
@@ -24,7 +24,7 @@ public class CassettePlayerManeger : MonoBehaviour {
         if (Input.GetKeyDown(TestKeyCode) && m_Cassette != null)
         {
             m_Cassette.GetComponent<Rigidbody>().AddForce(ShootForce);
-            m_indicator.SetActive(false);
+            Indicator.SetActive(false);
             m_Cassette = null;
         }
     }
