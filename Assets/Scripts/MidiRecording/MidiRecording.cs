@@ -37,7 +37,7 @@ namespace XylophoneHero
             m_TempoMap = m_MidiFile.GetTempoMap();
             TrackChunk trackChunk = new TrackChunk();
             trackChunk.Events.Add(new SetTempoEvent(500000));
-            trackChunk.Events.Add(new SmpteOffsetEvent((Melanchall.DryWetMidi.Common.SmpteFormat)24, 0,0,0,0,0));
+            trackChunk.Events.Add(new SmpteOffsetEvent((SmpteFormat)24, 0,0,0,0,0));
             trackChunk.Events.Add(new TimeSignatureEvent());
             trackChunk.Events.Add(new SequenceNumberEvent(0));
             trackChunk.Events.Add(new SequenceTrackNameEvent("RoboyXylophoneVRRecording"));
