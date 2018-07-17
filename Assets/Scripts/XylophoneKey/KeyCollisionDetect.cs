@@ -27,10 +27,7 @@ namespace XylophoneHero
         private KeyAudioFeedback m_KeyAudioFeedback;
         private KeyVisualFeedback m_KeyVisualFeedback;
         private MusicalNote m_MusicalNote;
-
         private bool m_KeyTouched = false;
-        private bool m_KeyboardTriggered = false;
-
         private SongKeyIndicate m_KeyIndicator;
 
         #endregion // PRIVATE_MEMBER_VARIABLES
