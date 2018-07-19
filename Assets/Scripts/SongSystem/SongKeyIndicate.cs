@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace XylophoneHero
+namespace XylophoneHero.SongSystem
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [RequireComponent(typeof(Renderer))]
     [RequireComponent(typeof(AudioSource))]
     public class SongKeyIndicate : MonoBehaviour
@@ -15,8 +18,6 @@ namespace XylophoneHero
         public KeyCode TestKeyCode;
 
         public float HighlightTime = 0.1f;
-
-        public SongManager SongManager;
 
         #endregion // PUBLIC_MEMBER_VARIABLES
 
@@ -76,12 +77,12 @@ namespace XylophoneHero
             if (strikeResult)
             {
                 newColor = Color.Lerp(m_OriginColor, m_CorrectColor, m_Lerp);
-                SongManager.GoodHit();
+                SongManager.Instance.GoodHit();
             }
             else
             {
                 newColor = m_ErrorColor;
-                SongManager.BadHit();
+                SongManager.Instance.BadHit();
             }
             StartCoroutine(changeKeyColor(newColor));
         }

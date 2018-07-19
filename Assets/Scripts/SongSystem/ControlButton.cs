@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace XylophoneHero
+namespace XylophoneHero.SongSystem
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class ControlButton : MonoBehaviour
     {
 
@@ -19,7 +22,6 @@ namespace XylophoneHero
         #region PUBLIC_MEMBER_VARIABLES
 
         public Control ControlType;
-        public SongManager Manager;
         public KeyCode TestKeyCode;
 
         #endregion // PUBLIC_MEMEBER_VARIABLES
@@ -49,19 +51,19 @@ namespace XylophoneHero
             switch (ControlType)
             {
                 case Control.SongStart:
-                    Manager.StartSong();
+                    SongManager.Instance.StartSong();
                     break;
                 case Control.SongPause:
-                    Manager.PauseSong();
+                    SongManager.Instance.PauseSong();
                     break;
                 case Control.SongStop:
-                    Manager.StopSong();
+                    SongManager.Instance.StopSong();
                     break;
                 case Control.SongPrev:
-                    Manager.PrevSong();
+                    SongManager.Instance.PrevSong();
                     break;
                 case Control.SongNext:
-                    Manager.NextSong();
+                    SongManager.Instance.NextSong();
                     break;
                 default:
                     break;

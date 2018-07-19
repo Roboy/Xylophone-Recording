@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XylophoneHero.SongSystem;
 
 namespace XylophoneHero
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [RequireComponent(typeof(KeyAudioFeedback))]
     [RequireComponent(typeof(KeyVisualFeedback))]
     [RequireComponent(typeof(MusicalNote))]

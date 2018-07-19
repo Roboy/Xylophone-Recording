@@ -7,8 +7,11 @@ using TMPro;
 using UnityEngine;
 using XylophoneHero.SongSystem.Utils;
 
-namespace XylophoneHero
+namespace XylophoneHero.SongSystem
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class SongGenerator : MonoBehaviour
     {
 
@@ -25,8 +28,6 @@ namespace XylophoneHero
         public float PositionB = -1.5f;
 
         public float Bpm = 120f;
-
-        public SongManager Manager;
 
         #endregion // PUBLIC_MEMBER_VARIABLES
 
@@ -63,7 +64,7 @@ namespace XylophoneHero
                 killAllNotes();
                 StopCoroutine(m_GenerationCoroutine);
                 m_IsGenerating = false;
-                Manager.SongFinish();
+                SongManager.Instance.SongFinish();
             }
         }
 
@@ -117,7 +118,7 @@ namespace XylophoneHero
                 yield return new WaitForSeconds(noteInterval);
             }
             m_IsGenerating = false;
-            Manager.SongFinish();
+            SongManager.Instance.SongFinish();
         }
 
         private void generateNote(float posx)

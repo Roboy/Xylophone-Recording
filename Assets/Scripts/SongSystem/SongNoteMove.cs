@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-namespace XylophoneHero
+namespace XylophoneHero.SongSystem
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [RequireComponent(typeof(Rigidbody))]
     public class SongNoteMove : MonoBehaviour
     {

@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using XylophoneHero.SongSystem.Utils;
 
-namespace XylophoneHero
+
+namespace XylophoneHero.SongSystem
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class CassetteInfo : MonoBehaviour
     {
 

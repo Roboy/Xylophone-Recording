@@ -4,11 +4,13 @@ using TMPro;
 using UnityEngine;
 using XylophoneHero.SongSystem.Utils;
 
-namespace XylophoneHero
+namespace XylophoneHero.SongSystem
 {
     public class SongListBoard : MonoBehaviour
     {
-
+        /// <summary>
+        /// 
+        /// </summary>
         #region PRIVATE_MEMBER_VARIABLES
 
         private TextMeshPro m_SongListDisplay = null;

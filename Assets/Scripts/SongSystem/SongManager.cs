@@ -5,9 +5,12 @@ using TMPro;
 using UnityEngine;
 using XylophoneHero.SongSystem.Utils;
 
-namespace XylophoneHero
+namespace XylophoneHero.SongSystem
 {
-    public class SongManager : MonoBehaviour
+    /// <summary>
+    /// 
+    /// </summary>
+    public class SongManager : Singleton<SongManager>
     {
 
 
@@ -176,6 +179,10 @@ namespace XylophoneHero
         }
 
         #endregion // PUBLIC_METHODS
+
+        #region PROTECTED_METHODS
+        protected SongManager() { }
+        #endregion
 
         #region PRIVATE_METHODS
 
