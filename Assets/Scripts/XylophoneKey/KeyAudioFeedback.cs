@@ -9,15 +9,12 @@ public class KeyAudioFeedback : MonoBehaviour
     private AudioSource[] keySound;
 
     private float maxForce = 1000;
-
-    // Use this for initialization
+    
     void Start()
     {
         keySound = GetComponents<AudioSource>();
     }
-
-
-
+    
     public void PlayKey(float force)
     {
         if (GameObject.FindGameObjectWithTag("cubeStick") != null)
