@@ -390,13 +390,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 18975003}
-  m_LocalRotation: {x: -0, y: 0.95299476, z: -0, w: -0.30298698}
+  m_LocalRotation: {x: -0, y: 0.999777, z: -0, w: 0.021115746}
   m_LocalPosition: {x: 0.03, y: 0.168, z: 2.496}
   m_LocalScale: {x: 1.906887, y: 1.1641427, z: 1.1641427}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 215.27399, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 177.58, z: 0}
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -1696,7 +1696,6 @@ GameObject:
   - component: {fileID: 1291836690}
   - component: {fileID: 1291836689}
   - component: {fileID: 1291836692}
-  - component: {fileID: 1291836693}
   m_Layer: 0
   m_Name: NextButton
   m_TagString: Untagged
@@ -1790,19 +1789,6 @@ MonoBehaviour:
   ControlType: 4
   Manager: {fileID: 1992867406}
   TestKeyCode: 114
---- !u!114 &1291836693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1291836687}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66fb80be21559bb4d9fc4040231180a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveTime: 0.1
-  hitMove: {x: 0, y: -0.1, z: 0}
 --- !u!1 &1346960505
 GameObject:
   m_ObjectHideFlags: 0
@@ -1816,7 +1802,6 @@ GameObject:
   - component: {fileID: 1346960508}
   - component: {fileID: 1346960507}
   - component: {fileID: 1346960510}
-  - component: {fileID: 1346960511}
   m_Layer: 0
   m_Name: StopButton
   m_TagString: Untagged
@@ -1910,19 +1895,6 @@ MonoBehaviour:
   ControlType: 2
   Manager: {fileID: 1992867406}
   TestKeyCode: 101
---- !u!114 &1346960511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1346960505}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66fb80be21559bb4d9fc4040231180a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveTime: 0.1
-  hitMove: {x: 0, y: -0.1, z: 0}
 --- !u!1 &1372935224
 GameObject:
   m_ObjectHideFlags: 0
@@ -2604,7 +2576,6 @@ GameObject:
   - component: {fileID: 1618084385}
   - component: {fileID: 1618084384}
   - component: {fileID: 1618084387}
-  - component: {fileID: 1618084388}
   m_Layer: 0
   m_Name: StartButton
   m_TagString: Untagged
@@ -2698,19 +2669,6 @@ MonoBehaviour:
   ControlType: 0
   Manager: {fileID: 1992867406}
   TestKeyCode: 119
---- !u!114 &1618084388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1618084382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66fb80be21559bb4d9fc4040231180a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveTime: 0.1
-  hitMove: {x: 0, y: -0.1, z: 0}
 --- !u!1 &1668345000
 GameObject:
   m_ObjectHideFlags: 0
@@ -2724,7 +2682,6 @@ GameObject:
   - component: {fileID: 1668345003}
   - component: {fileID: 1668345002}
   - component: {fileID: 1668345005}
-  - component: {fileID: 1668345006}
   m_Layer: 0
   m_Name: PrevButton
   m_TagString: Untagged
@@ -2818,19 +2775,6 @@ MonoBehaviour:
   ControlType: 3
   Manager: {fileID: 1992867406}
   TestKeyCode: 113
---- !u!114 &1668345006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1668345000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66fb80be21559bb4d9fc4040231180a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveTime: 0.1
-  hitMove: {x: 0, y: -0.1, z: 0}
 --- !u!1 &1745473709
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,45 +2,48 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(AudioSource))]
-public class KeyAudioFeedback : MonoBehaviour
+namespace XylophoneHero
 {
-
-    private AudioSource[] keySound;
-
-    private float maxForce = 1000;
-    
-    void Start()
+    [RequireComponent(typeof(AudioSource))]
+    public class KeyAudioFeedback : MonoBehaviour
     {
-        keySound = GetComponents<AudioSource>();
-    }
-    
-    public void PlayKey(float force)
-    {
-        if (GameObject.FindGameObjectWithTag("cubeStick") != null)
+
+        private AudioSource[] keySound;
+
+        private float maxForce = 1000;
+
+        void Start()
         {
-            playKey(keySound[0], force);
+            keySound = GetComponents<AudioSource>();
         }
-        else
+
+        public void PlayKey(float force)
         {
-            if (GameObject.FindGameObjectWithTag("roboyStick") != null)
+            if (GameObject.FindGameObjectWithTag("cubeStick") != null)
             {
-                playKey(keySound[1], force);
+                playKey(keySound[0], force);
             }
             else
             {
-                if (GameObject.FindGameObjectWithTag("lightsaberStick") != null)
+                if (GameObject.FindGameObjectWithTag("roboyStick") != null)
                 {
-                    playKey(keySound[2], force);
+                    playKey(keySound[1], force);
+                }
+                else
+                {
+                    if (GameObject.FindGameObjectWithTag("lightsaberStick") != null)
+                    {
+                        playKey(keySound[2], force);
+                    }
                 }
             }
         }
-    }
 
-    private void playKey(AudioSource keySound, float force)
-    {
-        float vol = Mathf.Clamp(force / maxForce, 0.0f, 1.0f);
-        keySound.volume = vol;
-        keySound.Play();
+        private void playKey(AudioSource keySound, float force)
+        {
+            float vol = Mathf.Clamp(force / maxForce, 0.0f, 1.0f);
+            keySound.volume = vol;
+            keySound.Play();
+        }
     }
 }
