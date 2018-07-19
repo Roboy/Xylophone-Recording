@@ -1,2 +1,0 @@
-Libriries and External Software
-=================================

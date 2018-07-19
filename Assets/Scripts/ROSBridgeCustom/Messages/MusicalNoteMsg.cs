@@ -4,6 +4,9 @@ using ROSBridge;
 
 namespace ROSBridgeCustom
 {
+    /// <summary>
+    /// ROSBridge to ROS message interface for the musicalNotes messages
+    /// </summary>
     public class MusicalNoteMsg : ROSBridgeMsg
     {
         #region PRIVATE_MEMBER_VARIABLES

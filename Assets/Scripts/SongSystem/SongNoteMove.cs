@@ -2,27 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
-public class SongNoteMove : MonoBehaviour {
 
-    #region PUBLIC_MEMBER_VARIABLES
-    public float MoveVelocity = 3;
-    #endregion
+namespace XylophoneHero
+{
+    [RequireComponent(typeof(Rigidbody))]
+    public class SongNoteMove : MonoBehaviour
+    {
 
-    #region PRIVATE_MEMBER_VARIABLES
-    private Rigidbody m_Rb;
-    #endregion
+        #region PUBLIC_MEMBER_VARIABLES
+        public float MoveVelocity = 3;
+        #endregion
 
-    #region MONOBEHAVIOR_METHODS
-    void Start () {
-        m_Rb = GetComponent<Rigidbody>();
-        if (m_Rb)
+        #region PRIVATE_MEMBER_VARIABLES
+        private Rigidbody m_Rb;
+        #endregion
+
+        #region MONOBEHAVIOR_METHODS
+        void Start()
         {
-            m_Rb.velocity = transform.forward*MoveVelocity;
+            m_Rb = GetComponent<Rigidbody>();
+            if (m_Rb)
+            {
+                m_Rb.velocity = transform.forward * MoveVelocity;
+            }
         }
-	}
-	
-	void Update () {
-	}
-    #endregion // MONOBEHAVIOR_METHODS
+
+        void Update()
+        {
+        }
+        #endregion // MONOBEHAVIOR_METHODS
+    }
 }
+

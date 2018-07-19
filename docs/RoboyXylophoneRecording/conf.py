@@ -28,8 +28,8 @@ source_parsers = {
 # -- Project information -----------------------------------------------------
 
 project = 'RoboyXylophoneRecording'
-copyright = '2018, Arash,Ludwig,Yupei'
-author = 'Arash,Ludwig,Yupei'
+copyright = '2018, Arash, Ludwig, Yupei'
+author = 'Arash, Ludwig, Yupei'
 
 # The short X.Y version
 version = ''
@@ -137,7 +137,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'RoboyXylophoneRecording.tex', 'RoboyXylophoneRecording Documentation',
-     'Arash,Ludwig,Yupei', 'manual'),
+     'Arash, Ludwig, Yupei', 'manual'),
 ]
 
 

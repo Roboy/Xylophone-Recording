@@ -2,28 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WieldStick : MonoBehaviour {
+namespace XylophoneHero
+{
+    public class WieldStick : MonoBehaviour
+    {
 
-    public GameObject stickPrefab;
-    public Rigidbody attachPoint;
+        public GameObject stickPrefab;
+        public Rigidbody attachPoint;
 
-    private GameObject stick;
-    private FixedJoint joint;
+        private GameObject stick;
+        private FixedJoint joint;
 
 
-	// Use this for initialization
-    // generate the xylophone stick in the hand (controller)
-	void Start () {
+        // Use this for initialization
+        // generate the xylophone stick in the hand (controller)
+        void Start()
+        {
 
-        Debug.Log("wield stick!!!!");
+            Debug.Log("wield stick!!!!");
 
-        stick = GameObject.Instantiate(stickPrefab);
-        stick.transform.position = attachPoint.transform.position;
-        stick.transform.Rotate(new Vector3(80.0f, 0.0f, 0.0f));
-        stick.transform.Translate(new Vector3(0.0f, 0.2f, 0.0f));
-        joint = stick.AddComponent<FixedJoint>();
-        joint.connectedBody = attachPoint;
-	}
-	
+            stick = GameObject.Instantiate(stickPrefab);
+            stick.transform.position = attachPoint.transform.position;
+            stick.transform.Rotate(new Vector3(80.0f, 0.0f, 0.0f));
+            stick.transform.Translate(new Vector3(0.0f, 0.2f, 0.0f));
+            joint = stick.AddComponent<FixedJoint>();
+            joint.connectedBody = attachPoint;
+        }
+
+
+    }
 
 }

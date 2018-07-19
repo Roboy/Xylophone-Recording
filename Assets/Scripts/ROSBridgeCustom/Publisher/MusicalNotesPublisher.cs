@@ -2,6 +2,9 @@
 
 namespace ROSBridgeCustom
 {
+    /// <summary>
+    /// custom ROSBridge Publisher for the musicalNote messages
+    /// </summary>
     public class MusicalNotesPublisher : ROSBridgePublisher
     {
         #region PUBLIC_METHODS

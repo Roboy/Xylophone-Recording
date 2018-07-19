@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroySongNote : MonoBehaviour {
-
-    #region MONOBEHAVIOR_METHODS
-    void OnTriggerEnter(Collider other)
+namespace XylophoneHero
+{
+    public class DestroySongNote : MonoBehaviour
     {
-        if(other.gameObject.tag == "SongNote")
+
+        #region MONOBEHAVIOR_METHODS
+        void OnTriggerEnter(Collider other)
         {
-            Destroy(other.gameObject);
+            if (other.gameObject.tag == "SongNote")
+            {
+                Destroy(other.gameObject);
+            }
         }
+        #endregion // MONOBEHAVIOR_METHODS
     }
-    #endregion // MONOBEHAVIOR_METHODS
 }

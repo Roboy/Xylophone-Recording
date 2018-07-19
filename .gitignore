@@ -1,3 +1,6 @@
+# custom .gitignore for this project
+venv/
+
 
 # Created by https://www.gitignore.io/api/visualstudio,unity
 
@@ -22,7 +25,7 @@ ExportedObj/
 *.pidb
 *.booproj
 *.svd
-
+*.mp4
 
 # Unity3D generated meta files
 *.pidb.meta
@@ -307,3 +310,5 @@ __pycache__/
 
 ### VisualStudio Patch ###
 build/
+ProjectSettings/ProjectVersion.txt
+ProjectSettings/ProjectVersion.txt
