@@ -4,6 +4,7 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using XylophoneHero.SongSystem.Utils;
+using ROSBridge;
 
 namespace XylophoneHero.SongSystem
 {
