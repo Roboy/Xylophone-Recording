@@ -18,8 +18,11 @@ namespace XylophoneHero.SongSystem
 
         private void OnCollisionEnter(Collision collision)
         {
-            Indicator.SetActive(true);
-            if (collision.transform.gameObject.tag == "Cassette")
+            if(Indicator != null)
+            {
+                Indicator.SetActive(true);
+            }
+            if (collision.transform.gameObject.tag == TagsConstants.CASSETTE)
             {
                 m_Cassette = collision.transform.gameObject;
             }
@@ -30,7 +33,10 @@ namespace XylophoneHero.SongSystem
             if (Input.GetKeyDown(TestKeyCode) && m_Cassette != null)
             {
                 m_Cassette.GetComponent<Rigidbody>().AddForce(ShootForce);
-                Indicator.SetActive(false);
+                if(Indicator != null)
+                {
+                    Indicator.SetActive(false);
+                }
                 m_Cassette = null;
             }
         }
