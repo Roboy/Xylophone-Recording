@@ -35,6 +35,7 @@ ModelImporter:
     400028: screw8
     2100000: unnamed
     2100002: Material
+    2100004: CassetteMainMaterial
     2300000: Bottom
     2300002: Cassete
     2300004: FacePanel1

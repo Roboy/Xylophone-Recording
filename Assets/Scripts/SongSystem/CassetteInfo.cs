@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using XylophoneHero.SongSystem.Utils;
 
@@ -12,11 +13,24 @@ namespace XylophoneHero.SongSystem
     public class CassetteInfo : MonoBehaviour
     {
 
-        public Song CassetteSong;
+        private Song m_CassetteSong;
+        private TextMeshPro m_SongName;
+
+        private void Awake()
+        {
+            m_SongName = transform.Find("SongName").gameObject.GetComponent<TextMeshPro>();
+        }
+
 
         public void SetSong(Song song)
         {
-            CassetteSong = song;
+            m_CassetteSong = song;
+            m_SongName.text = song.Name;
+        }
+
+        public Song GetSong()
+        {
+            return m_CassetteSong;
         }
 
     }

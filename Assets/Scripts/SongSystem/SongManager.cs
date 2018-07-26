@@ -17,6 +17,10 @@ namespace XylophoneHero.SongSystem
 
         #region PUBLIC_MEMBER_VARIABLES
         public float PrompShowTime = 0.5f;
+
+        public GameObject Desk;
+        public GameObject SongCassettePrefab;
+
         #endregion // PUBLIC_MEMBER_VARIABLES
 
         #region PRIVATE_MEMBER_VARIABLES
@@ -94,9 +98,41 @@ namespace XylophoneHero.SongSystem
                 m_IsLoadSongFinish = false;
                 m_SongListBoard.DisplaySongList(false);
             }
+
+
+            //  generate a bunch of cassettes, each corresponds to one song
+
+            Vector3 deskPosition = Desk.transform.position;
+            Vector3 cassetteOffset = new Vector3(0f, 0f, 0.2f);
+
+            foreach (Song s in m_Songs)
+            {
+                GameObject cassette = GameObject.Instantiate<GameObject>(SongCassettePrefab);
+                CassetteInfo info = cassette.GetComponent<CassetteInfo>();
+                info.SetSong(s);
+                cassette.transform.SetPositionAndRotation(deskPosition + cassetteOffset, Quaternion.Euler(0f, -90f, 0f));
+                //cassette.transform.position = deskPosition + cassetteOffset;
+                cassetteOffset.x += 0.2f;
+            }
+
+
         }
 
+        //  start the song of m_CurrentSongIndex
         public void StartSong()
+        {
+            if (m_IsLoadSongFinish)
+            {
+                m_ComboCounter = 0;
+                m_Score = 0;
+                m_Promps = "";
+                StartCoroutine(displayScoreText());
+                m_SongGenerator.StartGenerate(m_Songs[m_CurrentSongIndex - 1]);
+            }
+        }
+
+        //  start the song passed to the function
+        public void StartSong(Song song)
         {
             if (m_IsLoadSongFinish)
             {

@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace XylophoneHero.SongSystem.Utils
 {
+    [Serializable]
     public class Song
     {
         public string Name;
@@ -22,5 +20,7 @@ namespace XylophoneHero.SongSystem.Utils
             Name = name;
             Content = songData;
         }
+
+
     }
 }

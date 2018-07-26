@@ -10,7 +10,6 @@ namespace XylophoneHero.SongSystem
     public class CassettePlayerManeger : MonoBehaviour
     {
 
-        public GameObject Indicator;
         public KeyCode TestKeyCode;
         public Vector3 ShootForce;
 
@@ -18,14 +17,14 @@ namespace XylophoneHero.SongSystem
 
         private void OnCollisionEnter(Collision collision)
         {
-            if(Indicator != null)
-            {
-                Indicator.SetActive(true);
-            }
             if (collision.transform.gameObject.tag == TagsConstants.CASSETTE)
             {
                 m_Cassette = collision.transform.gameObject;
             }
+
+            SongManager.Instance.StartSong(m_Cassette.GetComponent<CassetteInfo>().GetSong());
+
+
         }
 
         private void Update()
@@ -33,11 +32,9 @@ namespace XylophoneHero.SongSystem
             if (Input.GetKeyDown(TestKeyCode) && m_Cassette != null)
             {
                 m_Cassette.GetComponent<Rigidbody>().AddForce(ShootForce);
-                if(Indicator != null)
-                {
-                    Indicator.SetActive(false);
-                }
                 m_Cassette = null;
+
+                SongManager.Instance.StopSong();
             }
         }
     }
