@@ -48,7 +48,6 @@ namespace XylophoneHero.SongSystem
             if (Input.GetKeyDown(TestKeyCode))
             {
                 HandleStrike();
-                playSound();
             }
         }
 
