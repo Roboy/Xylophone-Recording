@@ -1,0 +1,774 @@
+fileFormatVersion: 2
+guid: bc43da90106344aa99861f1a90cbe37b
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: A_0
+    100002: A_0:1
+    100004: A_1
+    100006: A_1:1
+    100008: A_2
+    100010: A_2:1
+    100012: A_sharp_0
+    100014: A_sharp_0:1
+    100016: A_sharp_1
+    100018: A_sharp_1:1
+    100020: A_sharp_2
+    100022: A_sharp_2:1
+    100024: Body1
+    100026: Body1 1
+    100028: Body1 10
+    100030: Body1 11
+    100032: Body1 12
+    100034: Body1 13
+    100036: Body1 14
+    100038: Body1 15
+    100040: Body1 16
+    100042: Body1 17
+    100044: Body1 18
+    100046: Body1 19
+    100048: Body1 2
+    100050: Body1 20
+    100052: Body1 21
+    100054: Body1 22
+    100056: Body1 23
+    100058: Body1 24
+    100060: Body1 25
+    100062: Body1 26
+    100064: Body1 27
+    100066: Body1 28
+    100068: Body1 29
+    100070: Body1 3
+    100072: Body1 30
+    100074: Body1 31
+    100076: Body1 32
+    100078: Body1 33
+    100080: Body1 34
+    100082: Body1 35
+    100084: Body1 36
+    100086: Body1 37
+    100088: Body1 38
+    100090: Body1 39
+    100092: Body1 4
+    100094: Body1 40
+    100096: Body1 41
+    100098: Body1 42
+    100100: Body1 43
+    100102: Body1 44
+    100104: Body1 45
+    100106: Body1 46
+    100108: Body1 47
+    100110: Body1 48
+    100112: Body1 49
+    100114: Body1 5
+    100116: Body1 50
+    100118: Body1 51
+    100120: Body1 52
+    100122: Body1 53
+    100124: Body1 54
+    100126: Body1 55
+    100128: Body1 56
+    100130: Body1 57
+    100132: Body1 58
+    100134: Body1 59
+    100136: Body1 6
+    100138: Body1 60
+    100140: Body1 61
+    100142: Body1 62
+    100144: Body1 63
+    100146: Body1 64
+    100148: Body1 65
+    100150: Body1 66
+    100152: Body1 67
+    100154: Body1 68
+    100156: Body1 69
+    100158: Body1 7
+    100160: Body1 70
+    100162: Body1 71
+    100164: Body1 72
+    100166: Body1 73
+    100168: Body1 8
+    100170: Body1 9
+    100172: C_0
+    100174: C_0:1
+    100176: C_1
+    100178: C_1:1
+    100180: C_2
+    100182: C_2:1
+    100184: C_3
+    100186: C_3:1
+    100188: C_sharp_0
+    100190: C_sharp_0:1
+    100192: C_sharp_1
+    100194: C_sharp_1:1
+    100196: C_sharp_2
+    100198: C_sharp_2:1
+    100200: Component40
+    100202: Component40:1
+    100204: Component41
+    100206: Component41:1
+    100208: Component42
+    100210: Component42:1
+    100212: Component43
+    100214: Component43:1
+    100216: Component44
+    100218: Component44:1
+    100220: Component45
+    100222: Component45:1
+    100224: Component46
+    100226: Component46:1
+    100228: Component47
+    100230: Component47:1
+    100232: Component48
+    100234: Component48:1
+    100236: Component49
+    100238: Component49:1
+    100240: Component50
+    100242: Component50:1
+    100244: Component51
+    100246: Component51:1
+    100248: Component52
+    100250: Component52:1
+    100252: Component53
+    100254: Component53:1
+    100256: Component54
+    100258: Component54:1
+    100260: Component55
+    100262: Component55:1
+    100264: Component56
+    100266: Component56:1
+    100268: Component57
+    100270: Component57:1
+    100272: Component58
+    100274: Component58:1
+    100276: Component59
+    100278: Component59:1
+    100280: Component60
+    100282: Component60:1
+    100284: Component61
+    100286: Component61:1
+    100288: Component62
+    100290: Component62:1
+    100292: Component63
+    100294: Component63:1
+    100296: Component64
+    100298: Component64:1
+    100300: Component65
+    100302: Component65:1
+    100304: Component66
+    100306: Component66:1
+    100308: Component67
+    100310: Component67:1
+    100312: Component68
+    100314: Component68:1
+    100316: Component69
+    100318: Component69:1
+    100320: Component70
+    100322: Component70:1
+    100324: Component71
+    100326: Component71:1
+    100328: Component72
+    100330: Component72:1
+    100332: Component73
+    100334: Component73:1
+    100336: Component74
+    100338: Component74:1
+    100340: Component75
+    100342: Component75:1
+    100344: Component76
+    100346: Component76:1
+    100348: D_0
+    100350: D_0:1
+    100352: D_1
+    100354: D_1:1
+    100356: D_2
+    100358: D_2:1
+    100360: D_sharp_0
+    100362: D_sharp_0:1
+    100364: D_sharp_1
+    100366: D_sharp_1:1
+    100368: D_sharp_2
+    100370: D_sharp_2:1
+    100372: E_0
+    100374: E_0:1
+    100376: E_1
+    100378: E_1:1
+    100380: E_2
+    100382: E_2:1
+    100384: F_0
+    100386: F_0:1
+    100388: F_1
+    100390: F_1:1
+    100392: F_2
+    100394: F_2:1
+    100396: F_sharp_0
+    100398: F_sharp_0:1
+    100400: F_sharp_1
+    100402: F_sharp_1:1
+    100404: F_sharp_2
+    100406: F_sharp_2:1
+    100408: G_0
+    100410: G_0:1
+    100412: G_1
+    100414: G_1:1
+    100416: G_2
+    100418: G_2:1
+    100420: G_sharp_0
+    100422: G_sharp_0:1
+    100424: G_sharp_1
+    100426: G_sharp_1:1
+    100428: G_sharp_2
+    100430: G_sharp_2:1
+    100432: H_0
+    100434: H_0:1
+    100436: H_1
+    100438: H_1:1
+    100440: H_2
+    100442: H_2:1
+    100444: Rahmen
+    100446: Rahmen (1)
+    100448: Rahmen (1) 1
+    100450: Rahmen (1):1
+    100452: Rahmen 1
+    100454: Rahmen:1
+    100456: //RootNode
+    400000: A_0
+    400002: A_0:1
+    400004: A_1
+    400006: A_1:1
+    400008: A_2
+    400010: A_2:1
+    400012: A_sharp_0
+    400014: A_sharp_0:1
+    400016: A_sharp_1
+    400018: A_sharp_1:1
+    400020: A_sharp_2
+    400022: A_sharp_2:1
+    400024: Body1
+    400026: Body1 1
+    400028: Body1 10
+    400030: Body1 11
+    400032: Body1 12
+    400034: Body1 13
+    400036: Body1 14
+    400038: Body1 15
+    400040: Body1 16
+    400042: Body1 17
+    400044: Body1 18
+    400046: Body1 19
+    400048: Body1 2
+    400050: Body1 20
+    400052: Body1 21
+    400054: Body1 22
+    400056: Body1 23
+    400058: Body1 24
+    400060: Body1 25
+    400062: Body1 26
+    400064: Body1 27
+    400066: Body1 28
+    400068: Body1 29
+    400070: Body1 3
+    400072: Body1 30
+    400074: Body1 31
+    400076: Body1 32
+    400078: Body1 33
+    400080: Body1 34
+    400082: Body1 35
+    400084: Body1 36
+    400086: Body1 37
+    400088: Body1 38
+    400090: Body1 39
+    400092: Body1 4
+    400094: Body1 40
+    400096: Body1 41
+    400098: Body1 42
+    400100: Body1 43
+    400102: Body1 44
+    400104: Body1 45
+    400106: Body1 46
+    400108: Body1 47
+    400110: Body1 48
+    400112: Body1 49
+    400114: Body1 5
+    400116: Body1 50
+    400118: Body1 51
+    400120: Body1 52
+    400122: Body1 53
+    400124: Body1 54
+    400126: Body1 55
+    400128: Body1 56
+    400130: Body1 57
+    400132: Body1 58
+    400134: Body1 59
+    400136: Body1 6
+    400138: Body1 60
+    400140: Body1 61
+    400142: Body1 62
+    400144: Body1 63
+    400146: Body1 64
+    400148: Body1 65
+    400150: Body1 66
+    400152: Body1 67
+    400154: Body1 68
+    400156: Body1 69
+    400158: Body1 7
+    400160: Body1 70
+    400162: Body1 71
+    400164: Body1 72
+    400166: Body1 73
+    400168: Body1 8
+    400170: Body1 9
+    400172: C_0
+    400174: C_0:1
+    400176: C_1
+    400178: C_1:1
+    400180: C_2
+    400182: C_2:1
+    400184: C_3
+    400186: C_3:1
+    400188: C_sharp_0
+    400190: C_sharp_0:1
+    400192: C_sharp_1
+    400194: C_sharp_1:1
+    400196: C_sharp_2
+    400198: C_sharp_2:1
+    400200: Component40
+    400202: Component40:1
+    400204: Component41
+    400206: Component41:1
+    400208: Component42
+    400210: Component42:1
+    400212: Component43
+    400214: Component43:1
+    400216: Component44
+    400218: Component44:1
+    400220: Component45
+    400222: Component45:1
+    400224: Component46
+    400226: Component46:1
+    400228: Component47
+    400230: Component47:1
+    400232: Component48
+    400234: Component48:1
+    400236: Component49
+    400238: Component49:1
+    400240: Component50
+    400242: Component50:1
+    400244: Component51
+    400246: Component51:1
+    400248: Component52
+    400250: Component52:1
+    400252: Component53
+    400254: Component53:1
+    400256: Component54
+    400258: Component54:1
+    400260: Component55
+    400262: Component55:1
+    400264: Component56
+    400266: Component56:1
+    400268: Component57
+    400270: Component57:1
+    400272: Component58
+    400274: Component58:1
+    400276: Component59
+    400278: Component59:1
+    400280: Component60
+    400282: Component60:1
+    400284: Component61
+    400286: Component61:1
+    400288: Component62
+    400290: Component62:1
+    400292: Component63
+    400294: Component63:1
+    400296: Component64
+    400298: Component64:1
+    400300: Component65
+    400302: Component65:1
+    400304: Component66
+    400306: Component66:1
+    400308: Component67
+    400310: Component67:1
+    400312: Component68
+    400314: Component68:1
+    400316: Component69
+    400318: Component69:1
+    400320: Component70
+    400322: Component70:1
+    400324: Component71
+    400326: Component71:1
+    400328: Component72
+    400330: Component72:1
+    400332: Component73
+    400334: Component73:1
+    400336: Component74
+    400338: Component74:1
+    400340: Component75
+    400342: Component75:1
+    400344: Component76
+    400346: Component76:1
+    400348: D_0
+    400350: D_0:1
+    400352: D_1
+    400354: D_1:1
+    400356: D_2
+    400358: D_2:1
+    400360: D_sharp_0
+    400362: D_sharp_0:1
+    400364: D_sharp_1
+    400366: D_sharp_1:1
+    400368: D_sharp_2
+    400370: D_sharp_2:1
+    400372: E_0
+    400374: E_0:1
+    400376: E_1
+    400378: E_1:1
+    400380: E_2
+    400382: E_2:1
+    400384: F_0
+    400386: F_0:1
+    400388: F_1
+    400390: F_1:1
+    400392: F_2
+    400394: F_2:1
+    400396: F_sharp_0
+    400398: F_sharp_0:1
+    400400: F_sharp_1
+    400402: F_sharp_1:1
+    400404: F_sharp_2
+    400406: F_sharp_2:1
+    400408: G_0
+    400410: G_0:1
+    400412: G_1
+    400414: G_1:1
+    400416: G_2
+    400418: G_2:1
+    400420: G_sharp_0
+    400422: G_sharp_0:1
+    400424: G_sharp_1
+    400426: G_sharp_1:1
+    400428: G_sharp_2
+    400430: G_sharp_2:1
+    400432: H_0
+    400434: H_0:1
+    400436: H_1
+    400438: H_1:1
+    400440: H_2
+    400442: H_2:1
+    400444: Rahmen
+    400446: Rahmen (1)
+    400448: Rahmen (1) 1
+    400450: Rahmen (1):1
+    400452: Rahmen 1
+    400454: Rahmen:1
+    400456: //RootNode
+    2100000: Mahogany
+    2100002: Steel - Satin
+    2300000: Body1
+    2300002: Body1 1
+    2300004: Body1 10
+    2300006: Body1 11
+    2300008: Body1 12
+    2300010: Body1 13
+    2300012: Body1 14
+    2300014: Body1 15
+    2300016: Body1 16
+    2300018: Body1 17
+    2300020: Body1 18
+    2300022: Body1 19
+    2300024: Body1 2
+    2300026: Body1 20
+    2300028: Body1 21
+    2300030: Body1 22
+    2300032: Body1 23
+    2300034: Body1 24
+    2300036: Body1 25
+    2300038: Body1 26
+    2300040: Body1 27
+    2300042: Body1 28
+    2300044: Body1 29
+    2300046: Body1 3
+    2300048: Body1 30
+    2300050: Body1 31
+    2300052: Body1 32
+    2300054: Body1 33
+    2300056: Body1 34
+    2300058: Body1 35
+    2300060: Body1 36
+    2300062: Body1 37
+    2300064: Body1 38
+    2300066: Body1 39
+    2300068: Body1 4
+    2300070: Body1 40
+    2300072: Body1 41
+    2300074: Body1 42
+    2300076: Body1 43
+    2300078: Body1 44
+    2300080: Body1 45
+    2300082: Body1 46
+    2300084: Body1 47
+    2300086: Body1 48
+    2300088: Body1 49
+    2300090: Body1 5
+    2300092: Body1 50
+    2300094: Body1 51
+    2300096: Body1 52
+    2300098: Body1 53
+    2300100: Body1 54
+    2300102: Body1 55
+    2300104: Body1 56
+    2300106: Body1 57
+    2300108: Body1 58
+    2300110: Body1 59
+    2300112: Body1 6
+    2300114: Body1 60
+    2300116: Body1 61
+    2300118: Body1 62
+    2300120: Body1 63
+    2300122: Body1 64
+    2300124: Body1 65
+    2300126: Body1 66
+    2300128: Body1 67
+    2300130: Body1 68
+    2300132: Body1 69
+    2300134: Body1 7
+    2300136: Body1 70
+    2300138: Body1 71
+    2300140: Body1 72
+    2300142: Body1 73
+    2300144: Body1 8
+    2300146: Body1 9
+    2300148: Rahmen (1) 1
+    2300150: Rahmen 1
+    3300000: Body1
+    3300002: Body1 1
+    3300004: Body1 10
+    3300006: Body1 11
+    3300008: Body1 12
+    3300010: Body1 13
+    3300012: Body1 14
+    3300014: Body1 15
+    3300016: Body1 16
+    3300018: Body1 17
+    3300020: Body1 18
+    3300022: Body1 19
+    3300024: Body1 2
+    3300026: Body1 20
+    3300028: Body1 21
+    3300030: Body1 22
+    3300032: Body1 23
+    3300034: Body1 24
+    3300036: Body1 25
+    3300038: Body1 26
+    3300040: Body1 27
+    3300042: Body1 28
+    3300044: Body1 29
+    3300046: Body1 3
+    3300048: Body1 30
+    3300050: Body1 31
+    3300052: Body1 32
+    3300054: Body1 33
+    3300056: Body1 34
+    3300058: Body1 35
+    3300060: Body1 36
+    3300062: Body1 37
+    3300064: Body1 38
+    3300066: Body1 39
+    3300068: Body1 4
+    3300070: Body1 40
+    3300072: Body1 41
+    3300074: Body1 42
+    3300076: Body1 43
+    3300078: Body1 44
+    3300080: Body1 45
+    3300082: Body1 46
+    3300084: Body1 47
+    3300086: Body1 48
+    3300088: Body1 49
+    3300090: Body1 5
+    3300092: Body1 50
+    3300094: Body1 51
+    3300096: Body1 52
+    3300098: Body1 53
+    3300100: Body1 54
+    3300102: Body1 55
+    3300104: Body1 56
+    3300106: Body1 57
+    3300108: Body1 58
+    3300110: Body1 59
+    3300112: Body1 6
+    3300114: Body1 60
+    3300116: Body1 61
+    3300118: Body1 62
+    3300120: Body1 63
+    3300122: Body1 64
+    3300124: Body1 65
+    3300126: Body1 66
+    3300128: Body1 67
+    3300130: Body1 68
+    3300132: Body1 69
+    3300134: Body1 7
+    3300136: Body1 70
+    3300138: Body1 71
+    3300140: Body1 72
+    3300142: Body1 73
+    3300144: Body1 8
+    3300146: Body1 9
+    3300148: Rahmen (1) 1
+    3300150: Rahmen 1
+    4300000: Body1
+    4300002: Body1
+    4300004: Body1
+    4300006: Body1
+    4300008: Body1
+    4300010: Body1
+    4300012: Body1
+    4300014: Body1
+    4300016: Body1
+    4300018: Body1
+    4300020: Body1
+    4300022: Body1
+    4300024: Body1
+    4300026: Body1
+    4300028: Body1
+    4300030: Body1
+    4300032: Body1
+    4300034: Body1
+    4300036: Body1
+    4300038: Body1
+    4300040: Body1
+    4300042: Body1
+    4300044: Body1
+    4300046: Body1
+    4300048: Body1
+    4300050: Body1
+    4300052: Body1
+    4300054: Body1
+    4300056: Body1
+    4300058: Body1
+    4300060: Body1
+    4300062: Body1
+    4300064: Body1
+    4300066: Body1
+    4300068: Body1
+    4300070: Body1
+    4300072: Body1
+    4300074: Body1
+    4300076: Body1
+    4300078: Body1
+    4300080: Body1
+    4300082: Body1
+    4300084: Body1
+    4300086: Body1
+    4300088: Body1
+    4300090: Body1
+    4300092: Body1
+    4300094: Body1
+    4300096: Body1
+    4300098: Body1
+    4300100: Body1
+    4300102: Body1
+    4300104: Body1
+    4300106: Body1
+    4300108: Body1
+    4300110: Body1
+    4300112: Body1
+    4300114: Body1
+    4300116: Body1
+    4300118: Body1
+    4300120: Body1
+    4300122: Body1
+    4300124: Body1
+    4300126: Body1
+    4300128: Body1
+    4300130: Body1
+    4300132: Body1
+    4300134: Body1
+    4300136: Body1
+    4300138: Body1
+    4300140: Body1
+    4300142: Body1
+    4300144: Body1
+    4300146: Body1
+    4300148: Rahmen (1)
+    4300150: Rahmen
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
