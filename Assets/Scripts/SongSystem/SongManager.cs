@@ -107,11 +107,10 @@ namespace XylophoneHero.SongSystem
 
             foreach (Song s in m_Songs)
             {
-                GameObject cassette = GameObject.Instantiate<GameObject>(SongCassettePrefab);
+                GameObject cassette = GameObject.Instantiate<GameObject>(SongCassettePrefab, transform.parent.transform, false);
                 CassetteInfo info = cassette.GetComponent<CassetteInfo>();
                 info.SetSong(s);
                 cassette.transform.SetPositionAndRotation(deskPosition + cassetteOffset, Quaternion.Euler(0f, -90f, 0f));
-                //cassette.transform.position = deskPosition + cassetteOffset;
                 cassetteOffset.x += 0.2f;
             }
 

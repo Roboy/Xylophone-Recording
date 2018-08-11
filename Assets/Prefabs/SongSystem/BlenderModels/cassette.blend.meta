@@ -3,85 +3,39 @@ guid: d6b7dae42fab4634485e530a49b71acd
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Bottom
-    100002: Cassete
-    100004: //RootNode
-    100006: FacePanel1
-    100008: FacePanel2
-    100010: Reel1
-    100012: Reel2
-    100014: screw1
-    100016: screw2
-    100018: screw3
-    100020: screw4
-    100022: screw5
-    100024: screw6
-    100026: screw7
-    100028: screw8
-    400000: Bottom
-    400002: Cassete
-    400004: //RootNode
-    400006: FacePanel1
-    400008: FacePanel2
-    400010: Reel1
-    400012: Reel2
-    400014: screw1
-    400016: screw2
-    400018: screw3
-    400020: screw4
-    400022: screw5
-    400024: screw6
-    400026: screw7
-    400028: screw8
-    2100000: unnamed
-    2100002: Material
+    100000: //RootNode
+    400000: //RootNode
+    2100000: CassetteScrewMaterial
+    2100002: CassettePanelMaterial
     2100004: CassetteMainMaterial
-    2300000: Bottom
-    2300002: Cassete
-    2300004: FacePanel1
-    2300006: FacePanel2
-    2300008: Reel1
-    2300010: Reel2
-    2300012: screw1
-    2300014: screw2
-    2300016: screw3
-    2300018: screw4
-    2300020: screw5
-    2300022: screw6
-    2300024: screw7
-    2300026: screw8
-    3300000: Bottom
-    3300002: Cassete
-    3300004: FacePanel1
-    3300006: FacePanel2
-    3300008: Reel1
-    3300010: Reel2
-    3300012: screw1
-    3300014: screw2
-    3300016: screw3
-    3300018: screw4
-    3300020: screw5
-    3300022: screw6
-    3300024: screw7
-    3300026: screw8
-    4300000: screw8
-    4300002: screw7
-    4300004: screw6
-    4300006: screw5
-    4300008: screw4
-    4300010: screw2
-    4300012: screw1
-    4300014: screw3
-    4300016: FacePanel2
-    4300018: Reel2
-    4300020: Reel1
-    4300022: FacePanel1
-    4300024: Bottom
-    4300026: Cassete
+    2100006: CassetteSecondaryMaterial
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Reel1
     7400000: Default Take
     9500000: //RootNode
     2186277476908879412: ImportLogs
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CassetteMainMaterial
+    second: {fileID: 2100000, guid: fe82dd46e6d429d4f981a57ae110f427, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CassettePanelMaterial
+    second: {fileID: 2100000, guid: aeaf48782a4336344839f847a2470e8b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CassetteScrewMaterial
+    second: {fileID: 2100000, guid: 8e92addc66ad05e44817fcde6195a02e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CassetteSecondaryMaterial
+    second: {fileID: 2100000, guid: b47c1331bc964d643817bd28dd98c62b, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -153,7 +107,7 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 1
+    hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 0

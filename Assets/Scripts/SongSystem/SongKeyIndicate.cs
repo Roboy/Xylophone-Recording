@@ -16,7 +16,8 @@ namespace XylophoneHero.SongSystem
 
         public KeyCode TestKeyCode;
 
-        public float HighlightTime = 0.1f;
+        public float HighlightTime = 0.06f;
+        public Vector3 MoveVector = new Vector3(0.0f, 0.0f, -0.05f);
 
         #endregion // PUBLIC_MEMBER_VARIABLES
 
@@ -29,6 +30,8 @@ namespace XylophoneHero.SongSystem
         private Color m_CorrectColor = new Color(1.0f, 1.0f, 1.0f);
         private Color m_ErrorColor = new Color(0.8f, 0.2f, 0.2f);
         private const float m_Lerp = 0.6f;
+
+        private bool isKeyMoved = false;
 
         #endregion // PRIVATE_MEMBER_VARIABLES
 
@@ -80,20 +83,30 @@ namespace XylophoneHero.SongSystem
                 newColor = m_ErrorColor;
                 SongManager.Instance.BadHit();
             }
-            StartCoroutine(changeKeyColor(newColor));
+            StartCoroutine(visualFeedback(newColor));
         }
 
         #endregion // PUBLIC_METHODS
 
         #region PRIVATE_METHODS
 
-        private IEnumerator changeKeyColor(Color color)
+        private IEnumerator visualFeedback(Color color)
         {
-            m_Rend.material.color = color;
+            if (!isKeyMoved)
+            {
+                transform.Translate(MoveVector);
+                m_Rend.material.color = color;
+                isKeyMoved = true;
+            }
 
             yield return new WaitForSeconds(HighlightTime);
 
-            m_Rend.material.color = m_OriginColor;
+            if (isKeyMoved)
+            {
+                transform.Translate(-MoveVector);
+                m_Rend.material.color = m_OriginColor;
+                isKeyMoved = false;
+            }
         }
 
         private bool DestroySongNote()
