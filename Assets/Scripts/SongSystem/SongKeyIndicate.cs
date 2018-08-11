@@ -9,7 +9,6 @@ namespace XylophoneHero.SongSystem
     /// 
     /// </summary>
     [RequireComponent(typeof(Renderer))]
-    [RequireComponent(typeof(AudioSource))]
     public class SongKeyIndicate : MonoBehaviour
     {
 
@@ -25,7 +24,6 @@ namespace XylophoneHero.SongSystem
 
         private GameObject m_SongNoteObject = null;
         private Renderer m_Rend;
-        private AudioSource m_KeySound;
 
         private Color m_OriginColor;
         private Color m_CorrectColor = new Color(1.0f, 1.0f, 1.0f);
@@ -38,7 +36,6 @@ namespace XylophoneHero.SongSystem
         void Start()
         {
             m_Rend = GetComponent<Renderer>();
-            m_KeySound = GetComponent<AudioSource>();
             m_OriginColor = m_Rend.material.GetColor("_Color");
 
         }
@@ -97,11 +94,6 @@ namespace XylophoneHero.SongSystem
             yield return new WaitForSeconds(HighlightTime);
 
             m_Rend.material.color = m_OriginColor;
-        }
-
-        private void playSound()
-        {
-            m_KeySound.Play();
         }
 
         private bool DestroySongNote()
