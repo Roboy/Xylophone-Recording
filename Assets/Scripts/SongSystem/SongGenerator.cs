@@ -19,13 +19,19 @@ namespace XylophoneHero.SongSystem
 
         //  the x coordinate of the corresponding note
         //  the program will generate the note at this position
-        public float PositionC = 1.5f;
-        public float PositionD = 1.0f;
-        public float PositionE = 0.5f;
-        public float PositionF = 0f;
-        public float PositionG = -0.5f;
-        public float PositionA = -1.0f;
-        public float PositionB = -1.5f;
+
+        public float[] Positions = new float[] { 1.98f,
+                                    1.62f,
+                                    1.26f,
+                                    0.90f,
+                                    0.54f,
+                                    0.18f,
+                                    -0.18f,
+                                    -0.54f,
+                                    -0.90f,
+                                    -1.26f,
+                                    -1.62f,
+                                    -1.98f };
 
         public float Bpm = 120f;
 
@@ -39,10 +45,6 @@ namespace XylophoneHero.SongSystem
         private Coroutine m_GenerationCoroutine = null;
 
         #endregion // PRIVATE_MEMBER_VARIABLES
-
-        #region MONOBEHAVIOR_METHODS
-
-        #endregion // MONOBEHAVIOR_METHODS
 
         #region PUBLIC_METHODS
 
@@ -68,16 +70,6 @@ namespace XylophoneHero.SongSystem
             }
         }
 
-        public void GenerateNext()
-        {
-
-        }
-
-        public void GeneratePrev()
-        {
-
-        }
-
         #endregion // PUBLIC_METHODS
 
         #region PRIVATE_METHODS
@@ -85,38 +77,20 @@ namespace XylophoneHero.SongSystem
         private IEnumerator generateNotes(List<string> songData)
         {
             float noteInterval = 60 / Bpm;
-            foreach (string line in songData)
+
+            foreach(string line in songData)
             {
-                if (line[0] == '1')
+                int l = line.Length;
+                for (int idx = 0; idx < l; idx++)
                 {
-                    generateNote(PositionC);
-                }
-                if (line[1] == '1')
-                {
-                    generateNote(PositionD);
-                }
-                if (line[2] == '1')
-                {
-                    generateNote(PositionE);
-                }
-                if (line[3] == '1')
-                {
-                    generateNote(PositionF);
-                }
-                if (line[4] == '1')
-                {
-                    generateNote(PositionG);
-                }
-                if (line[5] == '1')
-                {
-                    generateNote(PositionA);
-                }
-                if (line[6] == '1')
-                {
-                    generateNote(PositionB);
+                    if(line[idx] == '1')
+                    {
+                        generateNote(Positions[idx]);
+                    }
                 }
                 yield return new WaitForSeconds(noteInterval);
             }
+
             m_IsGenerating = false;
             SongManager.Instance.SongFinish();
         }

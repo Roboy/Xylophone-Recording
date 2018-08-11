@@ -12,7 +12,7 @@ namespace XylophoneHero.SongSystem
     {
 
         #region PUBLIC_MEMBER_VARIABLES
-        public float MoveVelocity = 3;
+        public float MoveVelocity = 1.5f;
         #endregion
 
         #region PRIVATE_MEMBER_VARIABLES
