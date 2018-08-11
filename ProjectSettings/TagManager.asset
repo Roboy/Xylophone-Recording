@@ -17,6 +17,7 @@ TagManager:
   - SelectionMenu1
   - SelectionMenu2
   - SongBoard
+  - Cassette
   - ControllerDevice
   - RestartMessage
   - XWingSelf

@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace XylophoneHero
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class WieldStick : MonoBehaviour
     {
 

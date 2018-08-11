@@ -3,30 +3,37 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using TMPro;
 using UnityEngine;
+using XylophoneHero.SongSystem.Utils;
 
-namespace XylophoneHero
+namespace XylophoneHero.SongSystem
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class SongGenerator : MonoBehaviour
     {
 
         #region PUBLIC_MEMBER_VARIABLES
 
-        public string SongFolderPath;
-
         //  the x coordinate of the corresponding note
         //  the program will generate the note at this position
-        public float PositionC;
-        public float PositionD;
-        public float PositionE;
-        public float PositionF;
-        public float PositionG;
-        public float PositionA;
-        public float PositionB;
 
-        public float Bpm;
+        public float[] Positions = new float[] { 1.98f,
+                                    1.62f,
+                                    1.26f,
+                                    0.90f,
+                                    0.54f,
+                                    0.18f,
+                                    -0.18f,
+                                    -0.54f,
+                                    -0.90f,
+                                    -1.26f,
+                                    -1.62f,
+                                    -1.98f };
 
-        public bool SongStart;
+        public float Bpm = 120f;
 
         #endregion // PUBLIC_MEMBER_VARIABLES
 
@@ -34,139 +41,58 @@ namespace XylophoneHero
 
         [SerializeField] private GameObject m_SongNotePrefab;
 
-        private List<List<string>> m_SongDataList;
-
-        private bool m_LoadSongFinish;
-        private bool m_Playing;
-
-        private int m_CurrentSongIndex;
+        private bool m_IsGenerating = false;
+        private Coroutine m_GenerationCoroutine = null;
 
         #endregion // PRIVATE_MEMBER_VARIABLES
 
-        #region MONOBEHAVIOR_METHODS
-
-        private SongGenerator()
-        {
-            InitVariables();
-        }
-
-        private void InitVariables()
-        {
-            PositionC = 1.5f;
-            PositionD = 1.0f;
-            PositionE = 0.5f;
-            PositionF = 0f;
-            PositionG = -0.5f;
-            PositionA = -1.0f;
-            PositionB = -1.5f;
-            Bpm = 120f;
-            SongStart = true;
-            m_LoadSongFinish = false;
-            m_Playing = false;
-            m_CurrentSongIndex = -1;
-
-        }
-
-        private void OnEnable()
-        {
-            InitVariables();
-            Start();
-        }
-
-        private void Start()
-        {
-            m_SongDataList = new List<List<string>>();
-            loadSong();
-        }
-
-        private void Update()
-        {
-            if (SongStart && m_LoadSongFinish && !m_Playing)
-            {
-                m_Playing = true;
-                StartCoroutine(playSong());
-            }
-        }
-
-        #endregion // MONOBEHAVIOR_METHODS
-
         #region PUBLIC_METHODS
 
-        public void StartSong()
+        public void StartGenerate(Song song)
         {
+            m_IsGenerating = true;
+            m_GenerationCoroutine = StartCoroutine(generateNotes(song.Content));
         }
 
-        public void PauseSong()
-        {
-
-        }
-
-        public void StopSong()
+        public void PauseGenerate()
         {
 
         }
 
-        public void PlayNextSong()
+        public void StopGenerate()
         {
-
-        }
-
-        public void PlayPrevSong()
-        {
-
+            if (m_GenerationCoroutine != null)
+            {
+                killAllNotes();
+                StopCoroutine(m_GenerationCoroutine);
+                m_IsGenerating = false;
+                SongManager.Instance.SongFinish();
+            }
         }
 
         #endregion // PUBLIC_METHODS
 
         #region PRIVATE_METHODS
 
-        private void loadSong()
-        {
-            TextAsset[] rawSongFiles = Resources.LoadAll("Songs/testsong", typeof(TextAsset)).Cast<TextAsset>().ToArray();
-            foreach (TextAsset rawSongData in rawSongFiles)
-            {
-                List<string> songData = new List<string>(rawSongData.text.Split('\n'));
-                m_SongDataList.Add(songData);
-            }
-            m_LoadSongFinish = true;
-        }
-
-        private IEnumerator playSong()
+        private IEnumerator generateNotes(List<string> songData)
         {
             float noteInterval = 60 / Bpm;
-            foreach (string line in m_SongDataList[0])
+
+            foreach(string line in songData)
             {
-                if (line[0] == '1')
+                int l = line.Length;
+                for (int idx = 0; idx < l; idx++)
                 {
-                    generateNote(PositionC);
-                }
-                if (line[1] == '1')
-                {
-                    generateNote(PositionD);
-                }
-                if (line[2] == '1')
-                {
-                    generateNote(PositionE);
-                }
-                if (line[3] == '1')
-                {
-                    generateNote(PositionF);
-                }
-                if (line[4] == '1')
-                {
-                    generateNote(PositionG);
-                }
-                if (line[5] == '1')
-                {
-                    generateNote(PositionA);
-                }
-                if (line[6] == '1')
-                {
-                    generateNote(PositionB);
+                    if(line[idx] == '1')
+                    {
+                        generateNote(Positions[idx]);
+                    }
                 }
                 yield return new WaitForSeconds(noteInterval);
             }
-            m_Playing = false;
+
+            m_IsGenerating = false;
+            SongManager.Instance.SongFinish();
         }
 
         private void generateNote(float posx)
@@ -174,18 +100,18 @@ namespace XylophoneHero
             GameObject n = Instantiate(m_SongNotePrefab, transform.parent.transform, false);
             n.transform.localPosition = new Vector3(posx, 5.0f, 0.05f);
             n.transform.Rotate(new Vector3(90, 0, 0));
-
         }
 
-        private void OnDisable()
+        private void killAllNotes()
         {
             GameObject[] songNotes = GameObject.FindGameObjectsWithTag("SongNote");
-            foreach (GameObject child in songNotes)
+            foreach (GameObject sn in songNotes)
             {
-                Destroy(child);
+                Destroy(sn);
             }
         }
 
         #endregion // PRIVATE_METHODS
     }
+
 }

@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-namespace XylophoneHero
+namespace XylophoneHero.SongSystem
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [RequireComponent(typeof(Rigidbody))]
     public class SongNoteMove : MonoBehaviour
     {
 
         #region PUBLIC_MEMBER_VARIABLES
-        public float MoveVelocity = 3;
+        public float MoveVelocity = 1.5f;
         #endregion
 
         #region PRIVATE_MEMBER_VARIABLES

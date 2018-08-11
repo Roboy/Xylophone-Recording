@@ -2,16 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace XylophoneHero
+
+namespace XylophoneHero.SongSystem
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [RequireComponent(typeof(Renderer))]
-    [RequireComponent(typeof(AudioSource))]
     public class SongKeyIndicate : MonoBehaviour
     {
 
         #region PUBLIC_MEMBER_VARIABLES
 
-        public float HighlightTime = 0.1f;
+        public KeyCode TestKeyCode;
+
+        public float HighlightTime = 0.06f;
+        public Vector3 MoveVector = new Vector3(0.0f, 0.0f, -0.05f);
 
         #endregion // PUBLIC_MEMBER_VARIABLES
 
@@ -19,14 +25,13 @@ namespace XylophoneHero
 
         private GameObject m_SongNoteObject = null;
         private Renderer m_Rend;
-        private AudioSource m_KeySound;
 
         private Color m_OriginColor;
         private Color m_CorrectColor = new Color(1.0f, 1.0f, 1.0f);
         private Color m_ErrorColor = new Color(0.8f, 0.2f, 0.2f);
         private const float m_Lerp = 0.6f;
 
-        private SongManager m_SongManager;
+        private bool isKeyMoved = false;
 
         #endregion // PRIVATE_MEMBER_VARIABLES
 
@@ -34,10 +39,16 @@ namespace XylophoneHero
         void Start()
         {
             m_Rend = GetComponent<Renderer>();
-            m_KeySound = GetComponent<AudioSource>();
             m_OriginColor = m_Rend.material.GetColor("_Color");
 
-            m_SongManager = transform.parent.parent.Find("SongSystemManager").GetComponent<SongManager>();
+        }
+
+        void Update()
+        {
+            if (Input.GetKeyDown(TestKeyCode))
+            {
+                HandleStrike();
+            }
         }
 
         void OnTriggerEnter(Collider other)
@@ -65,32 +76,37 @@ namespace XylophoneHero
             if (strikeResult)
             {
                 newColor = Color.Lerp(m_OriginColor, m_CorrectColor, m_Lerp);
-                m_SongManager.GoodHit();
+                SongManager.Instance.GoodHit();
             }
             else
             {
                 newColor = m_ErrorColor;
-                m_SongManager.BadHit();
+                SongManager.Instance.BadHit();
             }
-            StartCoroutine(changeKeyColor(newColor));
+            StartCoroutine(visualFeedback(newColor));
         }
 
         #endregion // PUBLIC_METHODS
 
         #region PRIVATE_METHODS
 
-        private IEnumerator changeKeyColor(Color color)
+        private IEnumerator visualFeedback(Color color)
         {
-            m_Rend.material.color = color;
+            if (!isKeyMoved)
+            {
+                transform.Translate(MoveVector);
+                m_Rend.material.color = color;
+                isKeyMoved = true;
+            }
 
             yield return new WaitForSeconds(HighlightTime);
 
-            m_Rend.material.color = m_OriginColor;
-        }
-
-        private void playSound()
-        {
-            m_KeySound.Play();
+            if (isKeyMoved)
+            {
+                transform.Translate(-MoveVector);
+                m_Rend.material.color = m_OriginColor;
+                isKeyMoved = false;
+            }
         }
 
         private bool DestroySongNote()
@@ -105,5 +121,5 @@ namespace XylophoneHero
 
         #endregion // PRIVATE_METHODS
     }
-
 }
+

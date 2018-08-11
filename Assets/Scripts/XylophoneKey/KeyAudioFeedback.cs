@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace XylophoneHero
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [RequireComponent(typeof(AudioSource))]
     public class KeyAudioFeedback : MonoBehaviour
     {
@@ -12,13 +15,10 @@ namespace XylophoneHero
 
         private float maxForce = 1000;
 
-        // Use this for initialization
         void Start()
         {
             keySound = GetComponents<AudioSource>();
         }
-
-
 
         public void PlayKey(float force)
         {
@@ -50,4 +50,3 @@ namespace XylophoneHero
         }
     }
 }
-

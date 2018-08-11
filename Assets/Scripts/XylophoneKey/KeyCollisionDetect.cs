@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XylophoneHero.SongSystem;
 
 namespace XylophoneHero
 {
@@ -16,10 +17,8 @@ namespace XylophoneHero
 
         #region PRIVATE_MEMBER_VARIABLES
 
-        //TODO: where is this populated? Should we make it invisible in the Inspector? [Ludwig]
-        public GameObject KeyIndicatorObject;
-        public KeyCode TestKeyCode;
-
+        public float ForceThreshold = 10.0f;
+        public SongKeyIndicate KeyIndicator;
         #endregion
 
         #region PRIVATE_MEMBER_VARIABLES
@@ -28,8 +27,6 @@ namespace XylophoneHero
         private KeyVisualFeedback m_KeyVisualFeedback;
         private MusicalNote m_MusicalNote;
         private bool m_KeyTouched = false;
-        private SongKeyIndicate m_KeyIndicator;
-
         #endregion // PRIVATE_MEMBER_VARIABLES
 
         #region MONOBEHAVIOR_METHODS
@@ -39,10 +36,6 @@ namespace XylophoneHero
             m_KeyAudioFeedback = GetComponent<KeyAudioFeedback>();
             m_KeyVisualFeedback = GetComponent<KeyVisualFeedback>();
             m_MusicalNote = GetComponent<MusicalNote>();
-            if (KeyIndicatorObject != null)
-            {
-                m_KeyIndicator = KeyIndicatorObject.GetComponent<SongKeyIndicate>();
-            }
         }
 
         void Update()
@@ -56,7 +49,6 @@ namespace XylophoneHero
                 OnTriggerExit(new Collider());
             }
         }
-
         #endregion // MONOBEHAVIOR_METHODS
 
         #region PUBLIC_METHODS
@@ -69,9 +61,9 @@ namespace XylophoneHero
                 m_KeyAudioFeedback.PlayKey(500f);
                 m_MusicalNote.PublishMusicalNoteViaROS();
                 m_MusicalNote.SendNoteOnMessage();
-                if (m_KeyIndicator != null)
+                if (KeyIndicator != null)
                 {
-                    m_KeyIndicator.HandleStrike();
+                    KeyIndicator.HandleStrike();
                 }
                 m_KeyTouched = true;
             }
