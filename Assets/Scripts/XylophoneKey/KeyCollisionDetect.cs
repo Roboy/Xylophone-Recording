@@ -15,10 +15,11 @@ namespace XylophoneHero
     public class KeyCollisionDetect : MonoBehaviour
     {
 
-        #region PRIVATE_MEMBER_VARIABLES
+        #region PUBLIC_MEMBER_VARIABLES
 
-        public float ForceThreshold = 10.0f;
         public SongKeyIndicate KeyIndicator;
+
+        public KeyCode TestKeyCode;
         #endregion
 
         #region PRIVATE_MEMBER_VARIABLES
