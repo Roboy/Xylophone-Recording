@@ -46,6 +46,7 @@ namespace XylophoneHero.SongSystem
         private int m_CurrentSongIndex = -1;
 
         private int m_ComboCounter = 0;
+        private int m_MissCounter = 0;
         private int m_Score = 0;
         private string m_Promps = "";
 
@@ -68,7 +69,9 @@ namespace XylophoneHero.SongSystem
             }
             m_SongGenerator = transform.Find("NoteGenerator").gameObject.GetComponent<SongGenerator>();
 
+            m_AudioSource = GetComponent<AudioSource>();
 
+            LoadSong();
 
             LoadSoundEffects();
         }
@@ -200,17 +203,18 @@ namespace XylophoneHero.SongSystem
 
         public void GoodHit()
         {
+            m_MissCounter = 0;
             ++m_ComboCounter;
             if (m_ComboCounter < 5)
             {
                 m_Score += 10;
                 m_Promps = "Good!";
-
             }
             else if (m_ComboCounter < 10)
             {
                 m_Score += 20;
                 m_Promps = "Perfect!";
+                cheer();
             }
             else if (m_ComboCounter < 15)
             {
@@ -228,6 +232,11 @@ namespace XylophoneHero.SongSystem
         public void BadHit()
         {
             m_ComboCounter = 0;
+            ++m_MissCounter;
+            if(m_MissCounter >= 10)
+            {
+                boo();
+            }
             m_InfoPromps.SetActive(false);
         }
 
@@ -268,12 +277,18 @@ namespace XylophoneHero.SongSystem
 
         private void cheer()
         {
-
+            if(m_AudioSource != null)
+            {
+                m_AudioSource.PlayOneShot(m_CheeringSound);
+            }
         }
 
         private void boo()
         {
-
+            if(m_AudioSource != null)
+            {
+                m_AudioSource.PlayOneShot(m_BooingSound);
+            }
         }
 
         private void LoadSoundEffects()
