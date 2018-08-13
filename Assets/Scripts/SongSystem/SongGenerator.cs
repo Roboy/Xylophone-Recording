@@ -46,6 +46,7 @@ namespace XylophoneHero.SongSystem
 
         #endregion // PRIVATE_MEMBER_VARIABLES
 
+
         #region PUBLIC_METHODS
 
         public void StartGenerate(Song song)

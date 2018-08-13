@@ -32,6 +32,19 @@ namespace XylophoneHero
         #endregion // PRIVATE_MEMBER_VARIABLES
 
         #region PUBLIC_METHODS
+
+        public void ToggleRecording()
+        {
+            if (m_RecordingActivated)
+            {
+                StopMidiRecording();
+            }
+            else
+            {
+                StartMidiRecording();
+            }
+        }
+
         public void StartMidiRecording()
         {
             m_MidiFile = new MidiFile();

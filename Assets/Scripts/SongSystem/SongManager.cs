@@ -11,10 +11,10 @@ namespace XylophoneHero.SongSystem
     /// <summary>
     /// 
     /// </summary>
+    [RequireComponent(typeof(AudioSource))]
     public class SongManager : Singleton<SongManager>
     {
-
-
+        
         #region PUBLIC_MEMBER_VARIABLES
         public float PrompShowTime = 0.5f;
 
@@ -52,6 +52,8 @@ namespace XylophoneHero.SongSystem
         private void Start()
         {
 
+            Debug.Log("Song System Manager Start");
+
             m_InfoPromps = transform.Find("InfoPromps").gameObject;
             m_ScoreDisplay = transform.Find("ScoreDisplay").gameObject;
             m_SongListBoard = transform.Find("SongList").GetComponent<SongListBoard>();
@@ -64,6 +66,19 @@ namespace XylophoneHero.SongSystem
 
             LoadSong();
         }
+
+        private void OnEnable()
+        {
+            Debug.Log("Song System Manager Enable");
+
+        }
+
+        private void OnDisable()
+        {
+            Debug.Log("Song System Manager Disable");
+
+        }
+
 
         #endregion // MONOBEHAVIOR_METHODS
 
@@ -242,6 +257,16 @@ namespace XylophoneHero.SongSystem
         private void showScore()
         {
             m_ScoreDisplayText.SetText("Score: " + m_Score);
+        }
+
+        private void cheer()
+        {
+
+        }
+
+        private void boo()
+        {
+
         }
 
         #endregion // PRIVATE_METHODS
