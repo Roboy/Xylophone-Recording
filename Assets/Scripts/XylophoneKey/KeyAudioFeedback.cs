@@ -11,40 +11,28 @@ namespace XylophoneHero
     public class KeyAudioFeedback : MonoBehaviour
     {
 
-        private AudioSource[] keySound;
+        public string Key;
 
-        private float maxForce = 1000;
+        private AudioSource m_KeySound;
+
+        private float m_MaxForce = 1000;
 
         void Start()
         {
-            keySound = GetComponents<AudioSource>();
+            m_KeySound = GetComponent<AudioSource>();
         }
 
         public void PlayKey(float force)
         {
             if (GameObject.FindGameObjectWithTag("cubeStick") != null)
             {
-                playKey(keySound[0], force);
-            }
-            else
-            {
-                if (GameObject.FindGameObjectWithTag("roboyStick") != null)
-                {
-                    playKey(keySound[1], force);
-                }
-                else
-                {
-                    if (GameObject.FindGameObjectWithTag("lightsaberStick") != null)
-                    {
-                        playKey(keySound[2], force);
-                    }
-                }
+                playKey(m_KeySound, force);
             }
         }
 
         private void playKey(AudioSource keySound, float force)
         {
-            float vol = Mathf.Clamp(force / maxForce, 0.0f, 1.0f);
+            float vol = Mathf.Clamp(force / m_MaxForce, 0.0f, 1.0f);
             keySound.volume = vol;
             keySound.Play();
         }
