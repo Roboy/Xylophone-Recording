@@ -1,15 +1,25 @@
 fileFormatVersion: 2
 guid: f6a7b14bf8549734fb6cd7691dce55df
 ModelImporter:
-  serializedVersion: 22
+  serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: CassettePlayer
+    100004: Panel
     400000: //RootNode
+    400002: CassettePlayer
+    400004: Panel
     2100000: CassettePlayerMainMaterial
     2100002: CassettePlayerPanelMaterial
     2300000: //RootNode
+    2300002: CassettePlayer
+    2300004: Panel
     3300000: //RootNode
+    3300002: CassettePlayer
+    3300004: Panel
     4300000: Cube
+    4300002: CassettePlayer
+    4300004: Panel
     7400000: Default Take
     9500000: //RootNode
   externalObjects:
@@ -73,6 +83,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
