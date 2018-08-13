@@ -38,10 +38,13 @@ namespace XylophoneHero
             if (m_RecordingActivated)
             {
                 StopMidiRecording();
+                Debug.Log("StopRecording");
             }
             else
             {
                 StartMidiRecording();
+                Debug.Log("StartRecording");
+
             }
         }
 

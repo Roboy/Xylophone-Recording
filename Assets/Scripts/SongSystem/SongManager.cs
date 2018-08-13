@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using XylophoneHero.SongSystem.Utils;
 using ROSBridge;
+using System;
 
 namespace XylophoneHero.SongSystem
 {
@@ -34,6 +35,9 @@ namespace XylophoneHero.SongSystem
 
         private SongGenerator m_SongGenerator;
 
+        private AudioSource m_AudioSource;
+        private AudioClip m_CheeringSound;
+        private AudioClip m_BooingSound;
 
         private List<Song> m_Songs = null;
         private int m_SongCount = -1;
@@ -64,7 +68,9 @@ namespace XylophoneHero.SongSystem
             }
             m_SongGenerator = transform.Find("NoteGenerator").gameObject.GetComponent<SongGenerator>();
 
-            LoadSong();
+
+
+            LoadSoundEffects();
         }
 
         private void OnEnable()
@@ -199,6 +205,7 @@ namespace XylophoneHero.SongSystem
             {
                 m_Score += 10;
                 m_Promps = "Good!";
+
             }
             else if (m_ComboCounter < 10)
             {
@@ -269,6 +276,11 @@ namespace XylophoneHero.SongSystem
 
         }
 
+        private void LoadSoundEffects()
+        {
+            m_CheeringSound = Resources.Load<AudioClip>("SoundEffects/cheering");
+            m_BooingSound = Resources.Load<AudioClip>("SoundEffects/booing");
+        }
         #endregion // PRIVATE_METHODS
 
     }
