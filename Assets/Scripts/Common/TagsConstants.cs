@@ -5,6 +5,7 @@
     public static string SONG_NOTE = "SongNote";
     public static string SONG_BOARD = "SongBoard";
     public static string CASSETTE = "Cassette";
+    public static string BUTTON_TEXT = "ButtonText";
     //Contorller
     public static string LIGHT_SABER_STICK = "lightsaberStick";
     public static string CUBE_STICK = "cubeStick";

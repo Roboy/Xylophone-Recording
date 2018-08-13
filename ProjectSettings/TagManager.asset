@@ -22,6 +22,7 @@ TagManager:
   - RestartMessage
   - XWingSelf
   - AllStarWarsObjects
+  - ButtonText
   layers:
   - Default
   - TransparentFX
