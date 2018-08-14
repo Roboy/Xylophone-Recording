@@ -10595,6 +10595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyIndicator: {fileID: 0}
+  UseKeyboardTest: 1
   TestKeyCode: 99
 --- !u!114 &195255326
 MonoBehaviour:
@@ -10812,6 +10813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyIndicator: {fileID: 0}
+  UseKeyboardTest: 1
   TestKeyCode: 0
 --- !u!114 &207687907
 MonoBehaviour:
@@ -10967,161 +10969,6 @@ Transform:
   m_Father: {fileID: 426831302}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!43 &211672529
-Mesh:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  serializedVersion: 9
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 24
-    topology: 0
-    baseVertex: 0
-    firstVertex: 0
-    vertexCount: 8
-    localAABB:
-      m_Center: {x: 0, y: 0.01, z: 0}
-      m_Extent: {x: 1.65, y: 0, z: 1.275}
-  m_Shapes:
-    vertices: []
-    shapes: []
-    channels: []
-    fullWeights: []
-  m_BindPose: []
-  m_BoneNameHashes: 
-  m_RootBoneNameHash: 0
-  m_MeshCompression: 0
-  m_IsReadable: 1
-  m_KeepVertices: 1
-  m_KeepIndices: 1
-  m_IndexFormat: 0
-  m_IndexBuffer: 000004000100010004000500010005000200020005000600020006000300030006000700030007000000000007000400
-  m_VertexData:
-    serializedVersion: 2
-    m_VertexCount: 8
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 12
-      format: 0
-      dimension: 4
-    - stream: 0
-      offset: 28
-      format: 0
-      dimension: 2
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    m_DataSize: 288
-    _typelessdata: 0000c03f0ad7233c000090bf000000000000803f0000803f0000803f00000000000000000000c0bf0ad7233c000090bf000000000000803f0000803f0000803f0000803f000000000000c0bf0ad7233c0000903f000000000000803f0000803f0000803f00000000000000000000c03f0ad7233c0000903f000000000000803f0000803f0000803f0000803f000000003333d33f0ad7233c3333a3bf000000000000803f0000803f00000000000000000000803f3333d3bf0ad7233c3333a3bf000000000000803f0000803f000000000000803f0000803f3333d3bf0ad7233c3333a33f000000000000803f0000803f00000000000000000000803f3333d33f0ad7233c3333a33f000000000000803f0000803f000000000000803f0000803f
-  m_CompressedMesh:
-    m_Vertices:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UV:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Tangents:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Weights:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_NormalSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_TangentSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_FloatColors:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BoneIndices:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Triangles:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UVInfo: 0
-  m_LocalAABB:
-    m_Center: {x: 0, y: 0.01, z: 0}
-    m_Extent: {x: 1.65, y: 0, z: 1.275}
-  m_MeshUsageFlags: 0
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
-  m_MeshMetrics[0]: 1
-  m_MeshMetrics[1]: 1
-  m_MeshOptimized: 0
 --- !u!1001 &214516961
 Prefab:
   m_ObjectHideFlags: 0
@@ -11629,6 +11476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyIndicator: {fileID: 257669845}
+  UseKeyboardTest: 1
   TestKeyCode: 0
 --- !u!114 &277918928
 MonoBehaviour:
@@ -11846,6 +11694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyIndicator: {fileID: 0}
+  UseKeyboardTest: 1
   TestKeyCode: 0
 --- !u!114 &301494519
 MonoBehaviour:
@@ -12939,7 +12788,7 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 426831297}
-  m_Mesh: {fileID: 211672529}
+  m_Mesh: {fileID: 1737221073}
 --- !u!23 &426831300
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12956,7 +12805,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 946015980}
+  - {fileID: 893612417}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13294,6 +13143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyIndicator: {fileID: 0}
+  UseKeyboardTest: 1
   TestKeyCode: 0
 --- !u!114 &438300730
 MonoBehaviour:
@@ -18808,6 +18658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyIndicator: {fileID: 1665893531}
+  UseKeyboardTest: 1
   TestKeyCode: 0
 --- !u!114 &620192964
 MonoBehaviour:
@@ -19207,6 +19058,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyIndicator: {fileID: 571139177}
+  UseKeyboardTest: 1
   TestKeyCode: 0
 --- !u!114 &635207478
 MonoBehaviour:
@@ -19560,6 +19412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyIndicator: {fileID: 75809356}
+  UseKeyboardTest: 1
   TestKeyCode: 0
 --- !u!114 &640603091
 MonoBehaviour:
@@ -24589,6 +24442,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyIndicator: {fileID: 0}
+  UseKeyboardTest: 1
   TestKeyCode: 0
 --- !u!114 &667582897
 MonoBehaviour:
@@ -24880,6 +24734,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyIndicator: {fileID: 0}
+  UseKeyboardTest: 1
   TestKeyCode: 0
 --- !u!114 &675570143
 MonoBehaviour:
@@ -25097,6 +24952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyIndicator: {fileID: 0}
+  UseKeyboardTest: 1
   TestKeyCode: 0
 --- !u!114 &691208971
 MonoBehaviour:
@@ -30040,6 +29896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyIndicator: {fileID: 0}
+  UseKeyboardTest: 1
   TestKeyCode: 0
 --- !u!114 &716765683
 MonoBehaviour:
@@ -30339,6 +30196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyIndicator: {fileID: 727821981}
+  UseKeyboardTest: 1
   TestKeyCode: 0
 --- !u!114 &772075801
 MonoBehaviour:
@@ -30571,6 +30429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyIndicator: {fileID: 0}
+  UseKeyboardTest: 1
   TestKeyCode: 0
 --- !u!114 &776955961
 MonoBehaviour:
@@ -31231,6 +31090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyIndicator: {fileID: 338794532}
+  UseKeyboardTest: 1
   TestKeyCode: 0
 --- !u!114 &835295968
 MonoBehaviour:
@@ -31448,6 +31308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyIndicator: {fileID: 0}
+  UseKeyboardTest: 1
   TestKeyCode: 0
 --- !u!114 &856003319
 MonoBehaviour:
@@ -31667,6 +31528,39 @@ MonoBehaviour:
   ConstantSound: {fileID: 8300000, guid: 2e654dad5826f75439d0b193c671faa2, type: 3}
   BladeStart: {fileID: 473803951}
   BladeEnd: {fileID: 2082172151}
+--- !u!21 &893612417
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &897877271
 Prefab:
   m_ObjectHideFlags: 0
@@ -36637,6 +36531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyIndicator: {fileID: 0}
+  UseKeyboardTest: 1
   TestKeyCode: 0
 --- !u!114 &927532251
 MonoBehaviour:
@@ -36854,6 +36749,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyIndicator: {fileID: 0}
+  UseKeyboardTest: 1
   TestKeyCode: 0
 --- !u!114 &929477409
 MonoBehaviour:
@@ -41622,39 +41518,6 @@ Transform:
   m_Father: {fileID: 1645976467}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &946015980
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &952513667 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114525308656153328, guid: 38bcddb391a6a6f448d9b4e935cffff4,
@@ -42449,6 +42312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyIndicator: {fileID: 0}
+  UseKeyboardTest: 1
   TestKeyCode: 0
 --- !u!114 &1024300448
 MonoBehaviour:
@@ -47935,6 +47799,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyIndicator: {fileID: 0}
+  UseKeyboardTest: 1
   TestKeyCode: 0
 --- !u!114 &1129447041
 MonoBehaviour:
@@ -52950,6 +52815,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyIndicator: {fileID: 952513667}
+  UseKeyboardTest: 1
   TestKeyCode: 0
 --- !u!114 &1188671832
 MonoBehaviour:
@@ -53349,6 +53215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyIndicator: {fileID: 0}
+  UseKeyboardTest: 1
   TestKeyCode: 0
 --- !u!114 &1219659474
 MonoBehaviour:
@@ -58665,6 +58532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyIndicator: {fileID: 815622499}
+  UseKeyboardTest: 1
   TestKeyCode: 0
 --- !u!114 &1304813895
 MonoBehaviour:
@@ -59781,6 +59649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyIndicator: {fileID: 0}
+  UseKeyboardTest: 1
   TestKeyCode: 0
 --- !u!114 &1395474453
 MonoBehaviour:
@@ -59998,6 +59867,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyIndicator: {fileID: 1788446245}
+  UseKeyboardTest: 1
   TestKeyCode: 0
 --- !u!114 &1400508788
 MonoBehaviour:
@@ -60287,6 +60157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyIndicator: {fileID: 0}
+  UseKeyboardTest: 1
   TestKeyCode: 0
 --- !u!114 &1450278717
 MonoBehaviour:
@@ -65588,6 +65459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyIndicator: {fileID: 0}
+  UseKeyboardTest: 1
   TestKeyCode: 0
 --- !u!114 &1505421207
 MonoBehaviour:
@@ -65793,6 +65665,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyIndicator: {fileID: 1138326793}
+  UseKeyboardTest: 1
   TestKeyCode: 97
 --- !u!114 &1524721223
 MonoBehaviour:
@@ -66364,6 +66237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyIndicator: {fileID: 0}
+  UseKeyboardTest: 1
   TestKeyCode: 0
 --- !u!114 &1562661692
 MonoBehaviour:
@@ -66816,6 +66690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyIndicator: {fileID: 0}
+  UseKeyboardTest: 1
   TestKeyCode: 0
 --- !u!114 &1599616632
 MonoBehaviour:
@@ -67063,6 +66938,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyIndicator: {fileID: 0}
+  UseKeyboardTest: 1
   TestKeyCode: 0
 --- !u!114 &1613685150
 MonoBehaviour:
@@ -67310,6 +67186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyIndicator: {fileID: 906333822}
+  UseKeyboardTest: 1
   TestKeyCode: 0
 --- !u!114 &1638510512
 MonoBehaviour:
@@ -68052,6 +67929,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyIndicator: {fileID: 0}
+  UseKeyboardTest: 1
   TestKeyCode: 0
 --- !u!114 &1723436682
 MonoBehaviour:
@@ -68120,6 +67998,161 @@ Transform:
   m_Father: {fileID: 419690815}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!43 &1737221073
+Mesh:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  serializedVersion: 9
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 24
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 8
+    localAABB:
+      m_Center: {x: 0, y: 0.01, z: 0}
+      m_Extent: {x: 1.65, y: 0, z: 1.275}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexFormat: 0
+  m_IndexBuffer: 000004000100010004000500010005000200020005000600020006000300030006000700030007000000000007000400
+  m_VertexData:
+    serializedVersion: 2
+    m_VertexCount: 8
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 4
+    - stream: 0
+      offset: 28
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 288
+    _typelessdata: 0000c03f0ad7233c000090bf000000000000803f0000803f0000803f00000000000000000000c0bf0ad7233c000090bf000000000000803f0000803f0000803f0000803f000000000000c0bf0ad7233c0000903f000000000000803f0000803f0000803f00000000000000000000c03f0ad7233c0000903f000000000000803f0000803f0000803f0000803f000000003333d33f0ad7233c3333a3bf000000000000803f0000803f00000000000000000000803f3333d3bf0ad7233c3333a3bf000000000000803f0000803f000000000000803f0000803f3333d3bf0ad7233c3333a33f000000000000803f0000803f00000000000000000000803f3333d33f0ad7233c3333a33f000000000000803f0000803f000000000000803f0000803f
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: 0, y: 0.01, z: 0}
+    m_Extent: {x: 1.65, y: 0, z: 1.275}
+  m_MeshUsageFlags: 0
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
+  m_MeshOptimized: 0
 --- !u!1001 &1740604266
 Prefab:
   m_ObjectHideFlags: 0
@@ -69141,6 +69174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyIndicator: {fileID: 0}
+  UseKeyboardTest: 1
   TestKeyCode: 0
 --- !u!114 &1873761692
 MonoBehaviour:
@@ -69691,6 +69725,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyIndicator: {fileID: 0}
+  UseKeyboardTest: 1
   TestKeyCode: 0
 --- !u!114 &1969970220
 MonoBehaviour:
@@ -70538,6 +70573,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyIndicator: {fileID: 306094810}
+  UseKeyboardTest: 1
   TestKeyCode: 0
 --- !u!114 &2095038624
 MonoBehaviour:
@@ -75616,6 +75652,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyIndicator: {fileID: 0}
+  UseKeyboardTest: 1
   TestKeyCode: 0
 --- !u!114 &2136283490
 MonoBehaviour:
