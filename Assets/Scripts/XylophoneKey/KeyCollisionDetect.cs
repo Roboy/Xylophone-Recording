@@ -67,7 +67,7 @@ namespace XylophoneHero
                 }
                 else
                 {
-                    m_KeyAudioFeedback.PlayKey(1000f, "TestTag");
+                    m_KeyAudioFeedback.PlayKey(1000f, "TestKeyboardTag");
                 }
 
                 m_MusicalNote.PublishMusicalNoteViaROS();

@@ -28,6 +28,8 @@ namespace XylophoneHero
         private System.DateTime m_StartingTime;
         private TempoMap m_TempoMap;
         private bool m_RecordingActivated = false;
+        private bool m_StartingRecording = false;
+        private bool m_StoppingRecording = false;
 
         #endregion // PRIVATE_MEMBER_VARIABLES
 
@@ -38,39 +40,55 @@ namespace XylophoneHero
             if (m_RecordingActivated)
             {
                 StopMidiRecording();
-                Debug.Log("StopRecording");
             }
             else
             {
                 StartMidiRecording();
-                Debug.Log("StartRecording");
-
             }
         }
 
         public void StartMidiRecording()
         {
-            m_MidiFile = new MidiFile();
-            m_TempoMap = m_MidiFile.GetTempoMap();
-            TrackChunk trackChunk = new TrackChunk();
-            trackChunk.Events.Add(new SetTempoEvent(500000));
-            trackChunk.Events.Add(new SmpteOffsetEvent((SmpteFormat)24, 0, 0, 0, 0, 0));
-            trackChunk.Events.Add(new TimeSignatureEvent());
-            trackChunk.Events.Add(new SequenceNumberEvent(0));
-            trackChunk.Events.Add(new SequenceTrackNameEvent("RoboyXylophoneVRRecording"));
-            trackChunk.Events.Add(new MarkerEvent("First Marker"));
-            m_TimedEventsManager = new TimedEventsManager(trackChunk.Events);
-            m_TimedEventsCollection = m_TimedEventsManager.Events;
-            m_StartingTime = System.DateTime.UtcNow;
-            m_RecordingActivated = true;
+            if(!m_StartingRecording)
+            {
+                m_StartingRecording = true;
+                m_MidiFile = new MidiFile();
+                m_TempoMap = m_MidiFile.GetTempoMap();
+                TrackChunk trackChunk = new TrackChunk();
+                trackChunk.Events.Add(new SetTempoEvent(500000));
+                trackChunk.Events.Add(new SmpteOffsetEvent((SmpteFormat)24, 0, 0, 0, 0, 0));
+                trackChunk.Events.Add(new TimeSignatureEvent());
+                trackChunk.Events.Add(new SequenceNumberEvent(0));
+                trackChunk.Events.Add(new SequenceTrackNameEvent("RoboyXylophoneVRRecording"));
+                trackChunk.Events.Add(new MarkerEvent("First Marker"));
+                m_TimedEventsManager = new TimedEventsManager(trackChunk.Events);
+                m_TimedEventsCollection = m_TimedEventsManager.Events;
+                m_StartingTime = System.DateTime.UtcNow;
+                m_RecordingActivated = true;
+                Debug.Log("StartRecording");
+                m_StartingRecording = false;
+            }
+            else
+            {
+                Debug.LogError("Working on it! Already started a Recording Session.");
+            }
+            
         }
 
         public void StopMidiRecording()
         {
-            m_RecordingActivated = false;
-            m_MidiFile.Chunks.Add(TimedEventsManagingUtilities.ToTrackChunk(m_TimedEventsCollection));
-            m_TimedEventsManager.SaveChanges();
-            m_MidiFile.Write(midiFilePath, overwriteFile: overwriteFile);
+            if (!m_StartingRecording)
+            {
+                m_RecordingActivated = false;
+                m_MidiFile.Chunks.Add(TimedEventsManagingUtilities.ToTrackChunk(m_TimedEventsCollection));
+                m_TimedEventsManager.SaveChanges();
+                m_MidiFile.Write(midiFilePath, overwriteFile: overwriteFile);
+                Debug.Log("StopRecording");
+            }
+            else
+            {
+                Debug.LogError("Working on it! Already stopping a Recording Session.");
+            }
         }
 
         public void NoteOnMessage(byte key, byte velocity)

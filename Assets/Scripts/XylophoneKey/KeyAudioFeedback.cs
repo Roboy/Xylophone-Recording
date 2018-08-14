@@ -84,9 +84,13 @@ namespace XylophoneHero
                 playKey(m_ElectricGuitarJazz, force);
 
             }
-            else
+            else if (stickTag == "TestKeyboardTag")
             {
                 playKey(m_Marimba, force);
+            }
+            else
+            {
+                Debug.LogError("Wrong Unity Tag can't play sound.");
             }
         }
 
