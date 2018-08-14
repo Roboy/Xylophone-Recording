@@ -59,7 +59,9 @@ namespace XylophoneHero
             if (!m_KeyTouched)
             {
                 m_KeyVisualFeedback.MoveAndHighlightOnHit();
-                m_KeyAudioFeedback.PlayKey(500f);
+
+                m_KeyAudioFeedback.PlayKey(1000f, other.gameObject.tag);
+
                 m_MusicalNote.PublishMusicalNoteViaROS();
                 m_MusicalNote.SendNoteOnMessage();
                 if (KeyIndicator != null)

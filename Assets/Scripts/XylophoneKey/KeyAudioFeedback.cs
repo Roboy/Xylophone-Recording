@@ -55,6 +55,10 @@ namespace XylophoneHero
 
         public KeyTones Key;
 
+        private AudioClip m_ElectricGuitarJazz;
+        private AudioClip m_Piano;
+        private AudioClip m_Marimba;
+
         private AudioSource m_KeySound;
         private float m_MaxForce = 1000;
 
@@ -63,19 +67,36 @@ namespace XylophoneHero
             m_KeySound = GetComponent<AudioSource>();
         }
 
-        public void PlayKey(float force)
+        public void PlayKey(float force, String tag)
         {
-            if (GameObject.FindGameObjectWithTag("cubeStick") != null)
+            if (tag == TagsConstants.CUBE_STICK)
             {
-                playKey(m_KeySound, force);
+                playKey(m_Marimba, force);
+            }
+            else if (tag == TagsConstants.ROBOY_STICK)
+            {
+                playKey(m_Piano, force);
+            }
+            else if (tag == TagsConstants.LIGHT_SABER_STICK)
+            {
+                playKey(m_ElectricGuitarJazz, force);
             }
         }
 
-        private void playKey(AudioSource keySound, float force)
+        private void playKey(AudioClip sound, float force)
         {
             float vol = Mathf.Clamp(force / m_MaxForce, 0.0f, 1.0f);
-            keySound.volume = vol;
-            keySound.Play();
+            m_KeySound.volume = vol;
+            m_KeySound.PlayOneShot(sound) ;
+        }
+
+        private void loadSounds()
+        {
+            string tone = Enum.GetName(typeof(KeyTones), Key);
+
+            m_ElectricGuitarJazz = Resources.Load<AudioClip>("Notes/ElectricGuitarJazzMP3/ElectricGuitarJazz" + tone);
+            m_Piano = Resources.Load<AudioClip>("Notes/PianoMP3/Piano" + tone);
+            m_Marimba = Resources.Load<AudioClip>("Notes/MarimbaMP3/Marimba" + tone);
         }
     }
 }
