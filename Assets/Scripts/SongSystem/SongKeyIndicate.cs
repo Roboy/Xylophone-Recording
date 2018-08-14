@@ -14,6 +14,7 @@ namespace XylophoneHero.SongSystem
 
         #region PUBLIC_MEMBER_VARIABLES
 
+        public bool UseKeyboardTest = false;
         public KeyCode TestKeyCode;
 
         public float HighlightTime = 0.06f;
@@ -45,7 +46,7 @@ namespace XylophoneHero.SongSystem
 
         void Update()
         {
-            if (Input.GetKeyDown(TestKeyCode))
+            if (UseKeyboardTest && Input.GetKeyDown(TestKeyCode))
             {
                 HandleStrike();
             }

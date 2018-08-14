@@ -23,6 +23,7 @@ namespace XylophoneHero.SongSystem
         #region PUBLIC_MEMBER_VARIABLES
 
         public Control ControlType;
+        public bool UseKeyboardTest = false;
         public KeyCode TestKeyCode;
 
         #endregion // PUBLIC_MEMEBER_VARIABLES
@@ -32,7 +33,7 @@ namespace XylophoneHero.SongSystem
 
         private void Update()
         {
-            if (Input.GetKeyDown(TestKeyCode))
+            if (UseKeyboardTest && Input.GetKeyDown(TestKeyCode))
             {
                 buttonAction();
             }

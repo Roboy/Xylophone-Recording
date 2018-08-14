@@ -18,7 +18,7 @@ namespace XylophoneHero
         #region PUBLIC_MEMBER_VARIABLES
 
         public SongKeyIndicate KeyIndicator;
-
+        public bool UseKeyboardTest = true;
         public KeyCode TestKeyCode;
         #endregion
 
@@ -41,11 +41,11 @@ namespace XylophoneHero
 
         void Update()
         {
-            if (Input.GetKeyDown(TestKeyCode))
+            if (UseKeyboardTest && Input.GetKeyDown(TestKeyCode))
             {
                 OnTriggerEnter(new Collider());
             }
-            if (Input.GetKeyUp(TestKeyCode))
+            if (UseKeyboardTest && Input.GetKeyUp(TestKeyCode))
             {
                 OnTriggerExit(new Collider());
             }
