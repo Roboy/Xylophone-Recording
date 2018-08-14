@@ -65,21 +65,28 @@ namespace XylophoneHero
         void Start()
         {
             m_KeySound = GetComponent<AudioSource>();
+            loadSounds();
         }
 
-        public void PlayKey(float force, String tag)
+        public void PlayKey(float force, String stickTag)
         {
-            if (tag == TagsConstants.CUBE_STICK)
+            Debug.Log(stickTag);
+            if (stickTag == TagsConstants.CUBE_STICK)
             {
                 playKey(m_Marimba, force);
+                Debug.Log("Marimba");
             }
-            else if (tag == TagsConstants.ROBOY_STICK)
+            else if (stickTag == TagsConstants.ROBOY_STICK)
             {
                 playKey(m_Piano, force);
+                Debug.Log("Piano");
+
             }
-            else if (tag == TagsConstants.LIGHT_SABER_STICK)
+            else if (stickTag == TagsConstants.LIGHT_SABER_STICK)
             {
                 playKey(m_ElectricGuitarJazz, force);
+                Debug.Log("Electric");
+
             }
         }
 
@@ -97,6 +104,10 @@ namespace XylophoneHero
             m_ElectricGuitarJazz = Resources.Load<AudioClip>("Notes/ElectricGuitarJazzMP3/ElectricGuitarJazz" + tone);
             m_Piano = Resources.Load<AudioClip>("Notes/PianoMP3/Piano" + tone);
             m_Marimba = Resources.Load<AudioClip>("Notes/MarimbaMP3/Marimba" + tone);
+
+            Debug.Log(m_ElectricGuitarJazz);
+            Debug.Log(m_Piano);
+            Debug.Log(m_Marimba);
         }
     }
 }

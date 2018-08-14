@@ -279,7 +279,7 @@ namespace XylophoneHero.SongSystem
         {
             if(m_AudioSource != null)
             {
-                m_AudioSource.PlayOneShot(m_CheeringSound);
+                m_AudioSource.PlayOneShot(m_CheeringSound, 0.1f);
             }
         }
 
@@ -287,7 +287,7 @@ namespace XylophoneHero.SongSystem
         {
             if(m_AudioSource != null)
             {
-                m_AudioSource.PlayOneShot(m_BooingSound);
+                m_AudioSource.PlayOneShot(m_BooingSound, 0.1f);
             }
         }
 

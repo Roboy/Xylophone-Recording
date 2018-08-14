@@ -60,6 +60,7 @@ namespace XylophoneHero
             {
                 m_KeyVisualFeedback.MoveAndHighlightOnHit();
 
+                Debug.Log(other.gameObject.tag);
                 m_KeyAudioFeedback.PlayKey(1000f, other.gameObject.tag);
 
                 m_MusicalNote.PublishMusicalNoteViaROS();
