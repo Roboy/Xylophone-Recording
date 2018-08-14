@@ -70,23 +70,23 @@ namespace XylophoneHero
 
         public void PlayKey(float force, String stickTag)
         {
-            Debug.Log(stickTag);
             if (stickTag == TagsConstants.CUBE_STICK)
             {
                 playKey(m_Marimba, force);
-                Debug.Log("Marimba");
             }
             else if (stickTag == TagsConstants.ROBOY_STICK)
             {
                 playKey(m_Piano, force);
-                Debug.Log("Piano");
 
             }
             else if (stickTag == TagsConstants.LIGHT_SABER_STICK)
             {
                 playKey(m_ElectricGuitarJazz, force);
-                Debug.Log("Electric");
 
+            }
+            else
+            {
+                playKey(m_Marimba, force);
             }
         }
 
@@ -105,9 +105,6 @@ namespace XylophoneHero
             m_Piano = Resources.Load<AudioClip>("Notes/PianoMP3/Piano" + tone);
             m_Marimba = Resources.Load<AudioClip>("Notes/MarimbaMP3/Marimba" + tone);
 
-            Debug.Log(m_ElectricGuitarJazz);
-            Debug.Log(m_Piano);
-            Debug.Log(m_Marimba);
         }
     }
 }
