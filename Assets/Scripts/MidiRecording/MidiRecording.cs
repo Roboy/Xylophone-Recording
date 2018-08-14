@@ -35,15 +35,17 @@ namespace XylophoneHero
 
         #region PUBLIC_METHODS
 
-        public void ToggleRecording()
+        public bool ToggleRecording()
         {
             if (m_RecordingActivated)
             {
                 StopMidiRecording();
+                return false;
             }
             else
             {
                 StartMidiRecording();
+                return true;
             }
         }
 
