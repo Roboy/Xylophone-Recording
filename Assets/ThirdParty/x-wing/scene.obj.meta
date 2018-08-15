@@ -1,0 +1,156 @@
+fileFormatVersion: 2
+guid: 7a9e7eaa6748e464a95a9b4edddefa63
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: default
+    100002: //RootNode
+    400000: default
+    400002: //RootNode
+    2100000: Material__199915
+    2100002: Glass
+    2100004: Engine_Main
+    2100006: Fuselage_Main_exterior
+    2100008: Grill
+    2100010: Material__1811
+    2100012: Fuse_Main_interior
+    2100014: Material__199879
+    2100016: Wing_Rotors
+    2100018: Material__199878
+    2100020: Canopy
+    2100022: Fuselage_Nose
+    2100024: Material__199985
+    2100026: Material__199796
+    2100028: Material__19941
+    2100030: Material__19920
+    2100032: Material__185
+    2100034: Material__199987
+    2100036: Cockpit
+    2100038: Wing
+    2100040: R2_Dome
+    2100042: Glassy
+    2100044: wing_block_mat_1
+    2100046: R2_Head_metal
+    2100048: Material__31
+    2100050: Body_main
+    2100052: Material__39
+    2100054: Metal
+    2100056: Material__34
+    2100058: Legs
+    2100060: Material__32
+    2100062: Material__200029
+    2100064: Material__19987
+    2100066: Material__35
+    2100068: Material__2
+    2100070: Material__36
+    2100072: Material__3
+    2100074: Material__19979
+    2100076: Light
+    2100078: Barrel
+    2100080: wing_block_mat_2
+    2100082: Material__200097
+    2100084: Material__200091
+    2100086: Material__200099
+    2100088: Material__200092
+    2100090: Material__200096
+    2100092: Material__200095
+    2100094: Material__200094
+    2100096: Material__200093
+    2100098: Material__200098
+    2100100: wing_2
+    2100102: Material__200101
+    2100104: Material__200100
+    2100106: Material__200109
+    2100108: Material__200102
+    2100110: Material__200110
+    2100112: Material__200108
+    2100114: Material__200103
+    2100116: Material__200107
+    2100118: Material__200105
+    2100120: Material__200104
+    2100122: Material__200106
+    2300000: default
+    3300000: default
+    4300000: default
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

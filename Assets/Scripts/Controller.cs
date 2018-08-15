@@ -36,23 +36,25 @@ public class Controller : MonoBehaviour
         MakeGameBoardDisableAtStart();
         MakeCubeStickInvis();
         MakeRoboyStickInvis();
-        MakeRoboyStickInvis();
     }
 
     void Update()
     {
-        GameObject[] controllers = GameObject.FindGameObjectsWithTag(TagsConstants.CONTROLLER_DEVICE);
         if (restartApp || controllers.Length != TagsConstants.NUMBER_OF_CONTROLLER) {
-            MakeGameObjectActive(TagsConstants.CONTROLLER_DEVICE, false);
-            MakeGameObjectActive(TagsConstants.ALL_STARWARS_OBJECT, false);
-            MakeGameObjectActive(TagsConstants.RESTART_MESSAGE, true);
-            restartApp = true;
-            return;
-        }
+        GameObject[] controllers = GameObject.FindGameObjectsWithTag(TagsConstants.CONTROLLER_DEVICE);
+            /*if (restartApp || controllers.Length != TagsConstants.NUMBER_OF_CONTROLLER) {
+    >>>>>>> origin/secondScene
+                MakeGameObjectActive(TagsConstants.CONTROLLER_DEVICE, false);
+                MakeGameObjectActive(TagsConstants.ALL_STARWARS_OBJECT, false);
+                MakeGameObjectActive(TagsConstants.RESTART_MESSAGE, true);
+                restartApp = true;
+                return;
+            }
 
-        if (trackedObject == null)
-        {
-            return;
+            if (trackedObject == null)
+            {
+                return;
+            }*/
         }
         device = SteamVR_Controller.Input((int)trackedObject.index);
 
@@ -117,6 +119,7 @@ public class Controller : MonoBehaviour
     private void MakeControllerDisable()
     {
         GameObject controllerMenu = GameObject.Find(TagsConstants.CONTROLLER_MENU);
+        GameObject controllerMenu = GameObject.FindGameObjectWithTag(TagsConstants.CONTROLLER_MENU);
         MakeGameObjectActive(TagsConstants.RESTART_MESSAGE, false);
         MakeGameObjectActive(TagsConstants.CONTROLLER_MENU, false);
         controllerMenu.transform.localScale = new Vector3(1, 1, 1);
@@ -206,22 +209,26 @@ public class Controller : MonoBehaviour
     private void MakeLightSaberStickVisible()
     {
         MakeGameObjectActive(TagsConstants.LIGHT_SABER_STICK, true);
+        MakeGameObjectActive(TagsConstants.ALL_STARWARS_OBJECT, true);
 
     }
 
     private void MakeLightSaberStickInvis()
     {
         MakeGameObjectActive(TagsConstants.LIGHT_SABER_STICK, false);
+        MakeGameObjectActive(TagsConstants.ALL_STARWARS_OBJECT, false);
     }
 
     private void MakeCubeStickVisible()
     {
         MakeGameObjectActive(TagsConstants.CUBE_STICK, true);
+        MakeGameObjectActive(TagsConstants.CINEMA_SCENE, true);
     }
 
     private void MakeCubeStickInvis()
     {
         MakeGameObjectActive(TagsConstants.CUBE_STICK, false);
+        MakeGameObjectActive(TagsConstants.CINEMA_SCENE, false);
     }
 
     private void MakeRoboyStickVisible()

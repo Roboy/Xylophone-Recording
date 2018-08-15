@@ -23,6 +23,9 @@
     public static string ALL_STARWARS_OBJECT = "AllStarWarsObjects";
     public static string LASER_BOLT = "laserBolt";
     public static string LASER_BOLT_XWING = "laserBoltXWing";
+    //CIENEMA
+    public static string CINEMA_CHAIR = "CinemaChair";
+    public static string CINEMA_SCENE = "CinemaObjects";
     //Messages
     public static string RESTART_MESSAGE = "RestartMessage";
     #endregion // PUBLIC_MEMBER_VARIABLES

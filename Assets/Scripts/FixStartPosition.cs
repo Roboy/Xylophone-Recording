@@ -16,6 +16,5 @@ public class FixStartPosition : MonoBehaviour
             cameraPos.transform.position.y + childPos.y,
             cameraPos.transform.position.z + childPos.z);
         }
-
     }
 }
