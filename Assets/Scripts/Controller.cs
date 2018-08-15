@@ -40,22 +40,22 @@ public class Controller : MonoBehaviour
 
     void Update()
     {
-        if (restartApp || controllers.Length != TagsConstants.NUMBER_OF_CONTROLLER) {
         GameObject[] controllers = GameObject.FindGameObjectsWithTag(TagsConstants.CONTROLLER_DEVICE);
-            /*if (restartApp || controllers.Length != TagsConstants.NUMBER_OF_CONTROLLER) {
-    >>>>>>> origin/secondScene
-                MakeGameObjectActive(TagsConstants.CONTROLLER_DEVICE, false);
-                MakeGameObjectActive(TagsConstants.ALL_STARWARS_OBJECT, false);
-                MakeGameObjectActive(TagsConstants.RESTART_MESSAGE, true);
-                restartApp = true;
-                return;
-            }
+        /* if (restartApp || controllers.Length != TagsConstants.NUMBER_OF_CONTROLLER) {
+             if (restartApp || controllers.Length != TagsConstants.NUMBER_OF_CONTROLLER) {
+     >>>>>>> origin/secondScene
+                 MakeGameObjectActive(TagsConstants.CONTROLLER_DEVICE, false);
+                 MakeGameObjectActive(TagsConstants.ALL_STARWARS_OBJECT, false);
+                 MakeGameObjectActive(TagsConstants.RESTART_MESSAGE, true);
+                 restartApp = true;
+                 return;
+             }
 
-            if (trackedObject == null)
-            {
-                return;
-            }*/
-        }
+             if (trackedObject == null)
+             {
+                 return;
+             }
+    }*/
         device = SteamVR_Controller.Input((int)trackedObject.index);
 
         CheckAndShowSongBoard();
@@ -118,7 +118,6 @@ public class Controller : MonoBehaviour
     #region PRIVATE_METHODS
     private void MakeControllerDisable()
     {
-        GameObject controllerMenu = GameObject.Find(TagsConstants.CONTROLLER_MENU);
         GameObject controllerMenu = GameObject.FindGameObjectWithTag(TagsConstants.CONTROLLER_MENU);
         MakeGameObjectActive(TagsConstants.RESTART_MESSAGE, false);
         MakeGameObjectActive(TagsConstants.CONTROLLER_MENU, false);
