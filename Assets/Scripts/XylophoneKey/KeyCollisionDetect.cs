@@ -58,6 +58,9 @@ namespace XylophoneHero
         {
             if (!m_KeyTouched)
             {
+                float velocity = Vector3.Magnitude(other.attachedRigidbody.velocity);
+                Debug.Log("Velocity: " + velocity);
+
                 m_KeyVisualFeedback.MoveAndHighlightOnHit();
 
                 Debug.Log(other);
@@ -85,7 +88,6 @@ namespace XylophoneHero
             m_MusicalNote.SendNoteOffMessage();
             m_KeyTouched = false;
         }
-
         #endregion // PUBLIC_METHODS
     }
 
