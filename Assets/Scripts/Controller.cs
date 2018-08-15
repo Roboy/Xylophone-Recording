@@ -43,7 +43,6 @@ public class Controller : MonoBehaviour
         GameObject[] controllers = GameObject.FindGameObjectsWithTag(TagsConstants.CONTROLLER_DEVICE);
         /* if (restartApp || controllers.Length != TagsConstants.NUMBER_OF_CONTROLLER) {
              if (restartApp || controllers.Length != TagsConstants.NUMBER_OF_CONTROLLER) {
-     >>>>>>> origin/secondScene
                  MakeGameObjectActive(TagsConstants.CONTROLLER_DEVICE, false);
                  MakeGameObjectActive(TagsConstants.ALL_STARWARS_OBJECT, false);
                  MakeGameObjectActive(TagsConstants.RESTART_MESSAGE, true);
@@ -118,17 +117,15 @@ public class Controller : MonoBehaviour
     #region PRIVATE_METHODS
     private void MakeControllerDisable()
     {
-        GameObject controllerMenu = GameObject.FindGameObjectWithTag(TagsConstants.CONTROLLER_MENU);
+        //GameObject controllerMenu = GameObject.FindGameObjectWithTag(TagsConstants.CONTROLLER_MENU);
+        //controllerMenu.transform.localScale = new Vector3(1, 1, 1);
         MakeGameObjectActive(TagsConstants.RESTART_MESSAGE, false);
         MakeGameObjectActive(TagsConstants.CONTROLLER_MENU, false);
-        controllerMenu.transform.localScale = new Vector3(1, 1, 1);
     }
 
     private void MakeGameBoardDisableAtStart()
     {
-        GameObject controllerMenu = GameObject.FindGameObjectWithTag(TagsConstants.SONG_BOARD);
         MakeGameObjectActive(TagsConstants.SONG_BOARD, false);
-        controllerMenu.transform.localScale = new Vector3(0.5F, 0.5F, 0.5F);
     }
 
     private void CheckAndShowSongBoard()

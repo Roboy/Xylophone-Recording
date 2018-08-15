@@ -126,6 +126,6 @@ namespace DigitalRuby.LaserSword
 
             return true;
         }
-        
+
     }
 }
