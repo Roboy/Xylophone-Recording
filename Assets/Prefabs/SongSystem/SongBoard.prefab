@@ -2521,6 +2521,8 @@ MonoBehaviour:
   Desk: {fileID: 1398049240188054}
   SongCassettePrefab: {fileID: 1056316437250200, guid: 6a81a87019220ef4cb264dc953b77114,
     type: 2}
+  ComboThresholds: 01000000050000000a0000000f00000014000000
+  MissThresholds: 01000000050000000a0000000f00000014000000
 --- !u!114 &114039258980215518
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2532,7 +2534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e64c8b69af43448afddd82af57edf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UseKeyboardTest: 1
+  UseKeyboardTest: 0
   TestKeyCode: 104
   HighlightTime: 0.1
   MoveVector: {x: 0, y: 0, z: -0.01}
@@ -2547,7 +2549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e64c8b69af43448afddd82af57edf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UseKeyboardTest: 1
+  UseKeyboardTest: 0
   TestKeyCode: 115
   HighlightTime: 0.1
   MoveVector: {x: 0, y: 0, z: -0.01}
@@ -2600,7 +2602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e64c8b69af43448afddd82af57edf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UseKeyboardTest: 1
+  UseKeyboardTest: 0
   TestKeyCode: 112
   HighlightTime: 0.1
   MoveVector: {x: 0, y: 0, z: -0.01}
@@ -2731,7 +2733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e64c8b69af43448afddd82af57edf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UseKeyboardTest: 1
+  UseKeyboardTest: 0
   TestKeyCode: 111
   HighlightTime: 0.1
   MoveVector: {x: 0, y: 0, z: -0.01}
@@ -2860,7 +2862,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e64c8b69af43448afddd82af57edf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UseKeyboardTest: 1
+  UseKeyboardTest: 0
   TestKeyCode: 107
   HighlightTime: 0.1
   MoveVector: {x: 0, y: 0, z: -0.01}
@@ -3002,7 +3004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e64c8b69af43448afddd82af57edf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UseKeyboardTest: 1
+  UseKeyboardTest: 0
   TestKeyCode: 103
   HighlightTime: 0.1
   MoveVector: {x: 0, y: 0, z: -0.01}
@@ -3283,7 +3285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e64c8b69af43448afddd82af57edf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UseKeyboardTest: 1
+  UseKeyboardTest: 0
   TestKeyCode: 100
   HighlightTime: 0.1
   MoveVector: {x: 0, y: 0, z: -0.01}
@@ -3540,7 +3542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e64c8b69af43448afddd82af57edf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UseKeyboardTest: 1
+  UseKeyboardTest: 0
   TestKeyCode: 106
   HighlightTime: 0.1
   MoveVector: {x: 0, y: 0, z: -0.01}
@@ -3555,7 +3557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e64c8b69af43448afddd82af57edf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UseKeyboardTest: 1
+  UseKeyboardTest: 0
   TestKeyCode: 102
   HighlightTime: 0.1
   MoveVector: {x: 0, y: 0, z: -0.01}
@@ -3570,7 +3572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e64c8b69af43448afddd82af57edf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UseKeyboardTest: 1
+  UseKeyboardTest: 0
   TestKeyCode: 108
   HighlightTime: 0.1
   MoveVector: {x: 0, y: 0, z: -0.01}
@@ -3701,7 +3703,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e64c8b69af43448afddd82af57edf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UseKeyboardTest: 1
+  UseKeyboardTest: 0
   TestKeyCode: 105
   HighlightTime: 0.1
   MoveVector: {x: 0, y: 0, z: -0.01}
@@ -3716,7 +3718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e64c8b69af43448afddd82af57edf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UseKeyboardTest: 1
+  UseKeyboardTest: 0
   TestKeyCode: 97
   HighlightTime: 0.1
   MoveVector: {x: 0, y: 0, z: -0.01}
@@ -4010,7 +4012,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 50
+      scalar: 40
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -4651,7 +4653,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1200
+      scalar: 600
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -8543,7 +8545,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 50
+      scalar: 40
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -9184,7 +9186,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1200
+      scalar: 600
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -13076,7 +13078,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 50
+      scalar: 40
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -13717,7 +13719,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1200
+      scalar: 600
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -17609,7 +17611,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 50
+      scalar: 40
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -18250,7 +18252,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1200
+      scalar: 600
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -22142,7 +22144,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 50
+      scalar: 40
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -22783,7 +22785,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1200
+      scalar: 600
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -26675,7 +26677,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 50
+      scalar: 40
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -27316,7 +27318,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1200
+      scalar: 600
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -31208,7 +31210,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 50
+      scalar: 40
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -31849,7 +31851,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1200
+      scalar: 600
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -35741,7 +35743,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 50
+      scalar: 40
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -36382,7 +36384,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1200
+      scalar: 600
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -40274,7 +40276,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 50
+      scalar: 40
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -40915,7 +40917,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1200
+      scalar: 600
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -44807,7 +44809,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 50
+      scalar: 40
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -45448,7 +45450,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1200
+      scalar: 600
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -49340,7 +49342,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 50
+      scalar: 40
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -49981,7 +49983,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1200
+      scalar: 600
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -53873,7 +53875,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 50
+      scalar: 40
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -54514,7 +54516,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1200
+      scalar: 600
       minScalar: 10
       maxCurve:
         serializedVersion: 2

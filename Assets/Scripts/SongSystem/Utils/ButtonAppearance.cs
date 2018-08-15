@@ -8,16 +8,18 @@ namespace XylophoneHero.SongSystem.Utils
     {
 
         public Color OverrideRingColor = Color.clear;
-        public Color OffRingColor = new Color(245f, 94f, 94f);
 
         public bool OffWhenStart = false;
 
+        private Color m_OffRingColor = new Color(1f, 0.214f, 0.164f, 1f);
+        private float m_Intensity = 2f;
         private Renderer m_Rend;
         private Material m_EmissiveMaterial;
         private Color m_OriginalEmissionColor;
 
         private void Start()
         {
+            
             m_Rend = GetComponent<Renderer>();
             if(m_Rend != null)
             {
@@ -27,14 +29,14 @@ namespace XylophoneHero.SongSystem.Utils
                     {
                         m_EmissiveMaterial = m;
                         m_OriginalEmissionColor = m.GetColor("_EmissionColor");
-
+                        m_EmissiveMaterial.EnableKeyword("_EMISSION");
                         if (OffWhenStart)
                         {
-                            m.SetColor("_EmissionColor", OffRingColor);
+                            m.SetColor("_EmissionColor", m_OffRingColor * m_Intensity);
                         }
                         else if (OverrideRingColor != Color.clear)
                         {
-                            m.SetColor("_EmissionColor", OverrideRingColor);
+                            m.SetColor("_EmissionColor", OverrideRingColor * m_Intensity);
                         }
 
                     }
@@ -48,16 +50,16 @@ namespace XylophoneHero.SongSystem.Utils
             {
                 if (OverrideRingColor != Color.clear)
                 {
-                    m_EmissiveMaterial.SetColor("_EmissionColor", OverrideRingColor);
+                    m_EmissiveMaterial.SetColor("_EmissionColor", OverrideRingColor * m_Intensity);
                 }
                 else
                 {
-                    m_EmissiveMaterial.SetColor("_EmissionColor", m_OriginalEmissionColor);
+                    m_EmissiveMaterial.SetColor("_EmissionColor", m_OriginalEmissionColor * m_Intensity);
                 }
             }
             else
             {
-                m_EmissiveMaterial.SetColor("_EmissionColor", OffRingColor);
+                m_EmissiveMaterial.SetColor("_EmissionColor", m_OffRingColor * m_Intensity);
             }
 
         }

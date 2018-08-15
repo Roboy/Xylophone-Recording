@@ -5,7 +5,6 @@ using TMPro;
 using UnityEngine;
 using XylophoneHero.SongSystem.Utils;
 using ROSBridge;
-using System;
 
 namespace XylophoneHero.SongSystem
 {
@@ -75,14 +74,12 @@ namespace XylophoneHero.SongSystem
             m_AudioSource = GetComponent<AudioSource>();
 
             LoadSong();
-
             LoadSoundEffects();
         }
 
         private void OnEnable()
         {
             Debug.Log("Song System Manager Enable");
-
         }
 
         private void OnDisable()
@@ -176,7 +173,7 @@ namespace XylophoneHero.SongSystem
 
         public void PauseSong()
         {
-
+            //  Not implemented
         }
 
         public void StopSong()
@@ -285,7 +282,6 @@ namespace XylophoneHero.SongSystem
             {
                 m_Score += 20;
                 m_Promps = "Perfect!";
-                cheer();
             }
             else if (m_ComboCounter < 15)
             {
