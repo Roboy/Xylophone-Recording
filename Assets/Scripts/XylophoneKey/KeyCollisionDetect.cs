@@ -58,12 +58,14 @@ namespace XylophoneHero
         {
             if (!m_KeyTouched)
             {
-                float velocity = Vector3.Magnitude(other.attachedRigidbody.velocity);
-                Debug.Log("Velocity: " + velocity);
+                if (other != null)
+                {
+                    float velocity = Vector3.Magnitude(other.attachedRigidbody.velocity);
+                    Debug.Log("Velocity: " + velocity);
+                }
 
                 m_KeyVisualFeedback.MoveAndHighlightOnHit();
 
-                Debug.Log(other);
                 if(other != null)
                 {
                     m_KeyAudioFeedback.PlayKey(1000f, other.gameObject.tag);

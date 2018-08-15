@@ -22,6 +22,9 @@ namespace XylophoneHero.SongSystem
         public GameObject Desk;
         public GameObject SongCassettePrefab;
 
+        public int[] ComboThresholds = new int[] { 1, 5, 10, 15, 20 };
+        public int[] MissThresholds = new int[] { 1, 5, 10, 15, 20 };
+
         #endregion // PUBLIC_MEMBER_VARIABLES
 
         #region PRIVATE_MEMBER_VARIABLES
@@ -32,7 +35,6 @@ namespace XylophoneHero.SongSystem
         private TextMeshPro m_ScoreDisplayText;
 
         private SongListBoard m_SongListBoard;
-
         private SongGenerator m_SongGenerator;
 
         private AudioSource m_AudioSource;
@@ -50,6 +52,7 @@ namespace XylophoneHero.SongSystem
         private int m_Score = 0;
         private string m_Promps = "";
 
+        private Coroutine m_TextDisplayCoroutine = null;
         #endregion // PRIVATE_MEMBER_VARIABLES
 
         #region MONOBEHAVIOR_METHODS
@@ -144,12 +147,14 @@ namespace XylophoneHero.SongSystem
         //  start the song of m_CurrentSongIndex
         public void StartSong()
         {
-            if (m_IsLoadSongFinish)
+            if (m_IsLoadSongFinish && (!m_IsPlaying))
             {
                 m_ComboCounter = 0;
+                m_MissCounter = 0;
                 m_Score = 0;
-                m_Promps = "";
-                StartCoroutine(displayScoreText());
+                m_Promps = "Song start!";
+                m_IsPlaying = true;
+                showInfo();
                 m_SongGenerator.StartGenerate(m_Songs[m_CurrentSongIndex - 1]);
             }
         }
@@ -157,13 +162,15 @@ namespace XylophoneHero.SongSystem
         //  start the song passed to the function
         public void StartSong(Song song)
         {
-            if (m_IsLoadSongFinish)
+            if (m_IsLoadSongFinish && (!m_IsPlaying))
             {
                 m_ComboCounter = 0;
+                m_MissCounter = 0;
                 m_Score = 0;
-                m_Promps = "";
-                StartCoroutine(displayScoreText());
-                m_SongGenerator.StartGenerate(m_Songs[m_CurrentSongIndex - 1]);
+                m_Promps = "Song start!";
+                m_IsPlaying = true;
+                showInfo();
+                m_SongGenerator.StartGenerate(song);
             }
         }
 
@@ -174,7 +181,10 @@ namespace XylophoneHero.SongSystem
 
         public void StopSong()
         {
-            m_SongGenerator.StopGenerate();
+            if (m_IsPlaying)
+            {
+                m_SongGenerator.StopGenerate();
+            }
         }
 
         public void PrevSong()
@@ -205,10 +215,71 @@ namespace XylophoneHero.SongSystem
         {
             m_MissCounter = 0;
             ++m_ComboCounter;
+            comboFeedback();
+        }
+
+        public void BadHit()
+        {
+            m_ComboCounter = 0;
+            ++m_MissCounter;
+            missFeedback();
+        }
+
+        public void SongFinish()
+        {
+            m_IsPlaying = false;
+            m_Promps = "Song finished!";
+            showInfo();
+
+            //  TODO: add high score system
+            //  save the high score at the end of the song and display
+
+        }
+
+        #endregion // PUBLIC_METHODS
+
+        #region PROTECTED_METHODS
+        protected SongManager() { }
+        #endregion
+
+        #region PRIVATE_METHODS
+
+        private void showInfo()
+        {
+            if(m_TextDisplayCoroutine != null)
+            {
+                StopCoroutine(m_TextDisplayCoroutine);
+            }
+            m_TextDisplayCoroutine = StartCoroutine(displayScoreText());
+        }
+
+        private IEnumerator displayScoreText()
+        {
+            showScore();
+
+            m_InfoPrompsText.SetText(m_Promps);
+            m_InfoPromps.SetActive(true);
+
+            yield return new WaitForSeconds(PrompShowTime);
+
+            if (m_InfoPromps.activeSelf)
+            {
+                m_InfoPromps.SetActive(false);
+            }
+        }
+
+        private void showScore()
+        {
+            m_ScoreDisplayText.SetText("Score: " + m_Score);
+        }
+
+        private void comboFeedback()
+        {
             if (m_ComboCounter < 5)
             {
                 m_Score += 10;
                 m_Promps = "Good!";
+
             }
             else if (m_ComboCounter < 10)
             {
@@ -226,53 +297,23 @@ namespace XylophoneHero.SongSystem
                 m_Score += 80;
                 m_Promps = "Godlike!";
             }
-            StartCoroutine(displayScoreText());
+
+            if (ComboThresholds.Contains(m_ComboCounter))
+            {
+                cheer();
+            }
+
+            showInfo();
         }
 
-        public void BadHit()
+        private void missFeedback()
         {
-            m_ComboCounter = 0;
-            ++m_MissCounter;
-            if(m_MissCounter >= 10)
+            if (MissThresholds.Contains(m_MissCounter))
             {
+                m_Promps = "Ah no...";
+                showInfo();
                 boo();
             }
-            m_InfoPromps.SetActive(false);
-        }
-
-        public void SongFinish()
-        {
-            m_IsPlaying = false;
-        }
-
-        #endregion // PUBLIC_METHODS
-
-        #region PROTECTED_METHODS
-        protected SongManager() { }
-        #endregion
-
-        #region PRIVATE_METHODS
-
-        private IEnumerator displayScoreText()
-        {
-            m_InfoPromps.SetActive(false);
-
-            showScore();
-            m_InfoPrompsText.SetText(m_Promps);
-
-            m_InfoPromps.SetActive(true);
-
-            yield return new WaitForSeconds(PrompShowTime);
-
-            if (m_InfoPromps.activeSelf)
-            {
-                m_InfoPromps.SetActive(false);
-            }
-        }
-
-        private void showScore()
-        {
-            m_ScoreDisplayText.SetText("Score: " + m_Score);
         }
 
         private void cheer()

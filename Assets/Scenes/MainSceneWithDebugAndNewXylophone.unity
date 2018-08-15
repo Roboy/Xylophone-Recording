@@ -4897,6 +4897,12 @@ Transform:
   m_Father: {fileID: 884456599}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &36413130 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114863275938577122, guid: 38bcddb391a6a6f448d9b4e935cffff4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1475025420}
+  m_Script: {fileID: 11500000, guid: 91e64c8b69af43448afddd82af57edf8, type: 3}
 --- !u!1 &40124888
 GameObject:
   m_ObjectHideFlags: 0
@@ -11056,6 +11062,12 @@ Transform:
   m_Father: {fileID: 419690815}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &237840460 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114666609376087336, guid: 38bcddb391a6a6f448d9b4e935cffff4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1475025420}
+  m_Script: {fileID: 11500000, guid: 91e64c8b69af43448afddd82af57edf8, type: 3}
 --- !u!1 &238143299
 GameObject:
   m_ObjectHideFlags: 0
@@ -11463,7 +11475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df883927e28bb334cbcd4d8881b1a092, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KeyIndicator: {fileID: 0}
+  KeyIndicator: {fileID: 1316989697}
   UseKeyboardTest: 1
   TestKeyCode: 112
 --- !u!114 &277918928
@@ -11721,6 +11733,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Key: 33
+--- !u!114 &302527758 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114784311860809242, guid: 38bcddb391a6a6f448d9b4e935cffff4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1475025420}
+  m_Script: {fileID: 11500000, guid: 91e64c8b69af43448afddd82af57edf8, type: 3}
 --- !u!1 &312479898
 GameObject:
   m_ObjectHideFlags: 0
@@ -12764,7 +12782,7 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 426831297}
-  m_Mesh: {fileID: 2030091949}
+  m_Mesh: {fileID: 1212551573}
 --- !u!23 &426831300
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12781,7 +12799,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 1621035057}
+  - {fileID: 881978712}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18627,7 +18645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df883927e28bb334cbcd4d8881b1a092, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KeyIndicator: {fileID: 0}
+  KeyIndicator: {fileID: 302527758}
   UseKeyboardTest: 1
   TestKeyCode: 106
 --- !u!114 &620192964
@@ -19045,7 +19063,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df883927e28bb334cbcd4d8881b1a092, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KeyIndicator: {fileID: 0}
+  KeyIndicator: {fileID: 1807318666}
   UseKeyboardTest: 1
   TestKeyCode: 103
 --- !u!114 &635207478
@@ -19399,7 +19417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df883927e28bb334cbcd4d8881b1a092, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KeyIndicator: {fileID: 0}
+  KeyIndicator: {fileID: 892994390}
   UseKeyboardTest: 1
   TestKeyCode: 104
 --- !u!114 &640603091
@@ -30077,7 +30095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df883927e28bb334cbcd4d8881b1a092, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KeyIndicator: {fileID: 0}
+  KeyIndicator: {fileID: 1574895245}
   UseKeyboardTest: 1
   TestKeyCode: 102
 --- !u!114 &772075801
@@ -30683,6 +30701,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 823877320}
   m_Mesh: {fileID: 4300162, guid: 35de41bbaf23544e5b8968fabe810e5c, type: 3}
+--- !u!114 &825293883 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114205158649954858, guid: 38bcddb391a6a6f448d9b4e935cffff4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1475025420}
+  m_Script: {fileID: 11500000, guid: 91e64c8b69af43448afddd82af57edf8, type: 3}
 --- !u!1 &832741212
 GameObject:
   m_ObjectHideFlags: 0
@@ -30965,7 +30989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df883927e28bb334cbcd4d8881b1a092, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KeyIndicator: {fileID: 0}
+  KeyIndicator: {fileID: 237840460}
   UseKeyboardTest: 1
   TestKeyCode: 100
 --- !u!114 &835295968
@@ -31329,6 +31353,39 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 869561020}
   m_Mesh: {fileID: 4300178, guid: 35de41bbaf23544e5b8968fabe810e5c, type: 3}
+--- !u!21 &881978712
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &884456598
 GameObject:
   m_ObjectHideFlags: 0
@@ -31404,6 +31461,12 @@ MonoBehaviour:
   ConstantSound: {fileID: 8300000, guid: 2e654dad5826f75439d0b193c671faa2, type: 3}
   BladeStart: {fileID: 473803951}
   BladeEnd: {fileID: 2082172151}
+--- !u!114 &892994390 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114039258980215518, guid: 38bcddb391a6a6f448d9b4e935cffff4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1475025420}
+  m_Script: {fileID: 11500000, guid: 91e64c8b69af43448afddd82af57edf8, type: 3}
 --- !u!1001 &897877271
 Prefab:
   m_ObjectHideFlags: 0
@@ -52639,7 +52702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df883927e28bb334cbcd4d8881b1a092, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KeyIndicator: {fileID: 0}
+  KeyIndicator: {fileID: 825293883}
   UseKeyboardTest: 1
   TestKeyCode: 107
 --- !u!114 &1188671832
@@ -52861,6 +52924,161 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1207976928}
   m_Mesh: {fileID: 4300196, guid: 35de41bbaf23544e5b8968fabe810e5c, type: 3}
+--- !u!43 &1212551573
+Mesh:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  serializedVersion: 9
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 24
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 8
+    localAABB:
+      m_Center: {x: 0, y: 0.01, z: 0}
+      m_Extent: {x: 1.65, y: 0, z: 1.275}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexFormat: 0
+  m_IndexBuffer: 000004000100010004000500010005000200020005000600020006000300030006000700030007000000000007000400
+  m_VertexData:
+    serializedVersion: 2
+    m_VertexCount: 8
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 4
+    - stream: 0
+      offset: 28
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 288
+    _typelessdata: 0000c03f0ad7233c000090bf000000000000803f0000803f0000803f00000000000000000000c0bf0ad7233c000090bf000000000000803f0000803f0000803f0000803f000000000000c0bf0ad7233c0000903f000000000000803f0000803f0000803f00000000000000000000c03f0ad7233c0000903f000000000000803f0000803f0000803f0000803f000000003333d33f0ad7233c3333a3bf000000000000803f0000803f00000000000000000000803f3333d3bf0ad7233c3333a3bf000000000000803f0000803f000000000000803f0000803f3333d3bf0ad7233c3333a33f000000000000803f0000803f00000000000000000000803f3333d33f0ad7233c3333a33f000000000000803f0000803f000000000000803f0000803f
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: 0, y: 0.01, z: 0}
+    m_Extent: {x: 1.65, y: 0, z: 1.275}
+  m_MeshUsageFlags: 0
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
+  m_MeshOptimized: 0
 --- !u!1 &1219659465
 GameObject:
   m_ObjectHideFlags: 0
@@ -53253,6 +53471,12 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1258657003 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114955972237065062, guid: 38bcddb391a6a6f448d9b4e935cffff4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1475025420}
+  m_Script: {fileID: 11500000, guid: 91e64c8b69af43448afddd82af57edf8, type: 3}
 --- !u!1 &1272290554
 GameObject:
   m_ObjectHideFlags: 0
@@ -58338,7 +58562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df883927e28bb334cbcd4d8881b1a092, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KeyIndicator: {fileID: 0}
+  KeyIndicator: {fileID: 1325251794}
   UseKeyboardTest: 1
   TestKeyCode: 39
 --- !u!114 &1304813895
@@ -58468,6 +58692,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1306065688}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1316989697 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114079504397407958, guid: 38bcddb391a6a6f448d9b4e935cffff4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1475025420}
+  m_Script: {fileID: 11500000, guid: 91e64c8b69af43448afddd82af57edf8, type: 3}
+--- !u!114 &1325251794 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114185034117201812, guid: 38bcddb391a6a6f448d9b4e935cffff4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1475025420}
+  m_Script: {fileID: 11500000, guid: 91e64c8b69af43448afddd82af57edf8, type: 3}
 --- !u!43 &1337230364
 Mesh:
   m_ObjectHideFlags: 0
@@ -59714,7 +59950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df883927e28bb334cbcd4d8881b1a092, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KeyIndicator: {fileID: 0}
+  KeyIndicator: {fileID: 36413130}
   UseKeyboardTest: 1
   TestKeyCode: 108
 --- !u!114 &1400508788
@@ -64662,6 +64898,16 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1018265829}
     m_Modifications:
+    - target: {fileID: 114034769168312138, guid: 38bcddb391a6a6f448d9b4e935cffff4,
+        type: 2}
+      propertyPath: MissThresholds.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114034769168312138, guid: 38bcddb391a6a6f448d9b4e935cffff4,
+        type: 2}
+      propertyPath: ComboThresholds.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4433998626054736, guid: 38bcddb391a6a6f448d9b4e935cffff4, type: 2}
       propertyPath: m_LocalPosition.x
       value: 1.787
@@ -64859,6 +65105,62 @@ Prefab:
       propertyPath: UseKeyboardTest
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114034769168312138, guid: 38bcddb391a6a6f448d9b4e935cffff4,
+        type: 2}
+      propertyPath: ComboThresholds.Array.data[4]
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114034769168312138, guid: 38bcddb391a6a6f448d9b4e935cffff4,
+        type: 2}
+      propertyPath: ComboThresholds.Array.data[3]
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114034769168312138, guid: 38bcddb391a6a6f448d9b4e935cffff4,
+        type: 2}
+      propertyPath: ComboThresholds.Array.data[2]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114034769168312138, guid: 38bcddb391a6a6f448d9b4e935cffff4,
+        type: 2}
+      propertyPath: ComboThresholds.Array.data[1]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114034769168312138, guid: 38bcddb391a6a6f448d9b4e935cffff4,
+        type: 2}
+      propertyPath: ComboThresholds.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114034769168312138, guid: 38bcddb391a6a6f448d9b4e935cffff4,
+        type: 2}
+      propertyPath: MissThresholds.Array.data[4]
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114034769168312138, guid: 38bcddb391a6a6f448d9b4e935cffff4,
+        type: 2}
+      propertyPath: MissThresholds.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114034769168312138, guid: 38bcddb391a6a6f448d9b4e935cffff4,
+        type: 2}
+      propertyPath: MissThresholds.Array.data[1]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114034769168312138, guid: 38bcddb391a6a6f448d9b4e935cffff4,
+        type: 2}
+      propertyPath: MissThresholds.Array.data[2]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114034769168312138, guid: 38bcddb391a6a6f448d9b4e935cffff4,
+        type: 2}
+      propertyPath: MissThresholds.Array.data[3]
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114050220159877530, guid: 38bcddb391a6a6f448d9b4e935cffff4,
+        type: 2}
+      propertyPath: m_SongNotePrefab
+      value: 
+      objectReference: {fileID: 1694354830288708, guid: a38ab09b063a65049b9e7ce878f7843c,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38bcddb391a6a6f448d9b4e935cffff4, type: 2}
   m_IsPrefabAsset: 0
@@ -65388,7 +65690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df883927e28bb334cbcd4d8881b1a092, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KeyIndicator: {fileID: 0}
+  KeyIndicator: {fileID: 1258657003}
   UseKeyboardTest: 1
   TestKeyCode: 97
 --- !u!114 &1524721223
@@ -66076,6 +66378,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1572365087}
   m_Mesh: {fileID: 4300184, guid: 35de41bbaf23544e5b8968fabe810e5c, type: 3}
+--- !u!114 &1574895245 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114861398565914496, guid: 38bcddb391a6a6f448d9b4e935cffff4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1475025420}
+  m_Script: {fileID: 11500000, guid: 91e64c8b69af43448afddd82af57edf8, type: 3}
 --- !u!1 &1589798184
 GameObject:
   m_ObjectHideFlags: 0
@@ -66731,39 +67039,6 @@ Transform:
   m_Father: {fileID: 419690815}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &1621035057
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1638510503
 GameObject:
   m_ObjectHideFlags: 0
@@ -66942,7 +67217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df883927e28bb334cbcd4d8881b1a092, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KeyIndicator: {fileID: 0}
+  KeyIndicator: {fileID: 1802011229}
   UseKeyboardTest: 1
   TestKeyCode: 115
 --- !u!114 &1638510512
@@ -67322,6 +67597,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1672894132}
   m_Mesh: {fileID: 4300222, guid: 35de41bbaf23544e5b8968fabe810e5c, type: 3}
+--- !u!114 &1687708093 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114947778095951368, guid: 38bcddb391a6a6f448d9b4e935cffff4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1475025420}
+  m_Script: {fileID: 11500000, guid: 91e64c8b69af43448afddd82af57edf8, type: 3}
 --- !u!1001 &1690390021
 Prefab:
   m_ObjectHideFlags: 0
@@ -68238,6 +68519,12 @@ Transform:
   m_Father: {fileID: 1372665054}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1802011229 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114041213498138604, guid: 38bcddb391a6a6f448d9b4e935cffff4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1475025420}
+  m_Script: {fileID: 11500000, guid: 91e64c8b69af43448afddd82af57edf8, type: 3}
 --- !u!1 &1806021317
 GameObject:
   m_ObjectHideFlags: 0
@@ -68268,6 +68555,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1807318666 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114481708657257538, guid: 38bcddb391a6a6f448d9b4e935cffff4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1475025420}
+  m_Script: {fileID: 11500000, guid: 91e64c8b69af43448afddd82af57edf8, type: 3}
 --- !u!1 &1810062060
 GameObject:
   m_ObjectHideFlags: 0
@@ -69567,161 +69860,6 @@ MonoBehaviour:
   ConstantSound: {fileID: 8300000, guid: 2e654dad5826f75439d0b193c671faa2, type: 3}
   BladeStart: {fileID: 621018075}
   BladeEnd: {fileID: 1907704197}
---- !u!43 &2030091949
-Mesh:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  serializedVersion: 9
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 24
-    topology: 0
-    baseVertex: 0
-    firstVertex: 0
-    vertexCount: 8
-    localAABB:
-      m_Center: {x: 0, y: 0.01, z: 0}
-      m_Extent: {x: 1.65, y: 0, z: 1.275}
-  m_Shapes:
-    vertices: []
-    shapes: []
-    channels: []
-    fullWeights: []
-  m_BindPose: []
-  m_BoneNameHashes: 
-  m_RootBoneNameHash: 0
-  m_MeshCompression: 0
-  m_IsReadable: 1
-  m_KeepVertices: 1
-  m_KeepIndices: 1
-  m_IndexFormat: 0
-  m_IndexBuffer: 000004000100010004000500010005000200020005000600020006000300030006000700030007000000000007000400
-  m_VertexData:
-    serializedVersion: 2
-    m_VertexCount: 8
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 12
-      format: 0
-      dimension: 4
-    - stream: 0
-      offset: 28
-      format: 0
-      dimension: 2
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    m_DataSize: 288
-    _typelessdata: 0000c03f0ad7233c000090bf000000000000803f0000803f0000803f00000000000000000000c0bf0ad7233c000090bf000000000000803f0000803f0000803f0000803f000000000000c0bf0ad7233c0000903f000000000000803f0000803f0000803f00000000000000000000c03f0ad7233c0000903f000000000000803f0000803f0000803f0000803f000000003333d33f0ad7233c3333a3bf000000000000803f0000803f00000000000000000000803f3333d3bf0ad7233c3333a3bf000000000000803f0000803f000000000000803f0000803f3333d3bf0ad7233c3333a33f000000000000803f0000803f00000000000000000000803f3333d33f0ad7233c3333a33f000000000000803f0000803f000000000000803f0000803f
-  m_CompressedMesh:
-    m_Vertices:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UV:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Tangents:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Weights:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_NormalSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_TangentSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_FloatColors:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BoneIndices:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Triangles:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UVInfo: 0
-  m_LocalAABB:
-    m_Center: {x: 0, y: 0.01, z: 0}
-    m_Extent: {x: 1.65, y: 0, z: 1.275}
-  m_MeshUsageFlags: 0
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
-  m_MeshMetrics[0]: 1
-  m_MeshMetrics[1]: 1
-  m_MeshOptimized: 0
 --- !u!1 &2042322371
 GameObject:
   m_ObjectHideFlags: 0
@@ -70337,7 +70475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df883927e28bb334cbcd4d8881b1a092, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KeyIndicator: {fileID: 0}
+  KeyIndicator: {fileID: 1687708093}
   UseKeyboardTest: 1
   TestKeyCode: 59
 --- !u!114 &2095038624
