@@ -26,7 +26,7 @@ namespace XylophoneHero.SongSystem.Utils
                     if (m.name == "ControlButtonSecondaryMaterial (Instance)")
                     {
                         m_EmissiveMaterial = m;
-                        m_OriginalEmissionColor = m.GetColor("_EmssionColor");
+                        m_OriginalEmissionColor = m.GetColor("_EmissionColor");
 
                         if (OffWhenStart)
                         {

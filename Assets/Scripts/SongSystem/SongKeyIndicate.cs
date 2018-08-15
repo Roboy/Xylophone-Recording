@@ -32,6 +32,8 @@ namespace XylophoneHero.SongSystem
         private Color m_ErrorColor = new Color(0.8f, 0.2f, 0.2f);
         private const float m_Lerp = 0.6f;
 
+        private ParticleSystem m_Particle;
+
         private bool isKeyMoved = false;
 
         #endregion // PRIVATE_MEMBER_VARIABLES
@@ -41,7 +43,7 @@ namespace XylophoneHero.SongSystem
         {
             m_Rend = GetComponent<Renderer>();
             m_OriginColor = m_Rend.material.GetColor("_Color");
-
+            m_Particle = GetComponent<ParticleSystem>();
         }
 
         void Update()
@@ -77,6 +79,7 @@ namespace XylophoneHero.SongSystem
             if (strikeResult)
             {
                 newColor = Color.Lerp(m_OriginColor, m_CorrectColor, m_Lerp);
+                m_Particle.Play();
                 SongManager.Instance.GoodHit();
             }
             else
