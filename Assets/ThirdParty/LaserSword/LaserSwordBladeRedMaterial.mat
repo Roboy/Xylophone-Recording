@@ -4,7 +4,7 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: LaserSwordBladeRedMaterial
   m_Shader: {fileID: 4800000, guid: 48f75c9902d5b474e9fc5ec7b766231a, type: 3}
@@ -72,5 +72,5 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RimColor: {r: 1, g: 0.41911763, b: 0.41911763, a: 1}
-    - _TintColor: {r: 0.41911763, g: 0.3247524, b: 0.07704368, a: 1}
+    - _RimColor: {r: 1, g: 0, b: 0, a: 1}
+    - _TintColor: {r: 0.9716981, g: 0.36605898, b: 0, a: 1}

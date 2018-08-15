@@ -15,7 +15,7 @@ namespace DigitalRuby.LaserSword
         [Tooltip("The length of the blade.")]
         [Range(0.1f, 16.0f)]
         public float BladeHeight = 2.7f;
-        
+
         [Tooltip("The bottom radius.")]
         [Range(0.01f, 4.0f)]
         public float BottomRadius = 0.25f;
