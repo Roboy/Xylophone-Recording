@@ -74,7 +74,7 @@ namespace XylophoneHero.SongSystem
             m_AudioSource = GetComponent<AudioSource>();
 
             LoadSong();
-            LoadSoundEffects();
+            loadSoundEffects();
         }
 
         private void OnEnable()
@@ -328,7 +328,7 @@ namespace XylophoneHero.SongSystem
             }
         }
 
-        private void LoadSoundEffects()
+        private void loadSoundEffects()
         {
             m_CheeringSound = Resources.Load<AudioClip>("SoundEffects/cheering");
             m_BooingSound = Resources.Load<AudioClip>("SoundEffects/booing");

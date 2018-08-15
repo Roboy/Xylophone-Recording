@@ -219,6 +219,7 @@ GameObject:
   - component: {fileID: 23803827069695254}
   - component: {fileID: 114269169456720520}
   - component: {fileID: 65140757242399478}
+  - component: {fileID: 65985272927545918}
   m_Layer: 0
   m_Name: PrevButton
   m_TagString: Untagged
@@ -293,6 +294,7 @@ GameObject:
   - component: {fileID: 23207456946755848}
   - component: {fileID: 114487878018715432}
   - component: {fileID: 65754016696192122}
+  - component: {fileID: 65329971081345798}
   m_Layer: 0
   m_Name: NextButton
   m_TagString: Untagged
@@ -483,6 +485,7 @@ GameObject:
   - component: {fileID: 23627802706430682}
   - component: {fileID: 114956335263225520}
   - component: {fileID: 65714215276398484}
+  - component: {fileID: 65707077481243372}
   m_Layer: 0
   m_Name: StopButton
   m_TagString: Untagged
@@ -542,6 +545,7 @@ GameObject:
   - component: {fileID: 23011716424302486}
   - component: {fileID: 114711250455157718}
   - component: {fileID: 65366586697153902}
+  - component: {fileID: 65844110895618524}
   m_Layer: 0
   m_Name: StartButton
   m_TagString: Untagged
@@ -846,8 +850,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1906560038695180}
-  m_LocalRotation: {x: -0.3535534, y: -0.61237246, z: -0.3535534, w: 0.61237246}
-  m_LocalPosition: {x: 1.787, y: 0.45, z: 0.015999794}
+  m_LocalRotation: {x: -0.5, y: 0, z: 0, w: 0.8660254}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.30000013, y: 0.3000001, z: 0.30000013}
   m_Children:
   - {fileID: 4199679020638024}
@@ -959,7 +963,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1398049240188054}
   m_LocalRotation: {x: 0.3550761, y: 0.60972357, z: 0.35202405, w: 0.6150099}
-  m_LocalPosition: {x: -4.8, y: -7.59, z: 3.05}
+  m_LocalPosition: {x: -7.407, y: -7.571, z: 3.039}
   m_LocalScale: {x: 2.5, y: 0.049999993, z: 2.5}
   m_Children: []
   m_Father: {fileID: 4433998626054736}
@@ -1016,7 +1020,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1965803105649888}
   m_LocalRotation: {x: -0.18412621, y: 0.18189235, z: 0.6788316, w: 0.6871685}
-  m_LocalPosition: {x: -5.93, y: -7.58, z: 3.09}
+  m_LocalPosition: {x: -8.29, y: -7.302, z: 2.924}
   m_LocalScale: {x: 2, y: 2.0128317, z: 1.9669355}
   m_Children:
   - {fileID: 4863864208981228}
@@ -1898,7 +1902,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e4a457e8f346aeb41ab3cee12bc7c925, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2351,6 +2355,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65329971081345798
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1385814432815128}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4, y: 0.40000013, z: 0.32000002}
+  m_Center: {x: -0.00000023841858, y: -0.00000022347795, z: 0.16710849}
 --- !u!65 &65366586697153902
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -2387,6 +2403,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65707077481243372
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1683421251417106}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4, y: 0.40000013, z: 0.32000002}
+  m_Center: {x: 0, y: 0.00000001494062, z: 0.16710849}
 --- !u!65 &65714215276398484
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -2411,6 +2439,30 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.40000015, y: 0.40000013, z: 0.32000014}
   m_Center: {x: -0.0000051880943, y: 0.00000065284917, z: 0.16710852}
+--- !u!65 &65844110895618524
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1695151951154888}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4, y: 0.40000007, z: 0.32000002}
+  m_Center: {x: 0, y: 0.00000011920929, z: 0.167108}
+--- !u!65 &65985272927545918
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1345656075724928}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4, y: 0.40000007, z: 0.32000005}
+  m_Center: {x: -0.00000011920929, y: 0, z: 0.16710873}
 --- !u!82 &82729844557978972
 AudioSource:
   m_ObjectHideFlags: 1
@@ -2517,7 +2569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97e3dc6d98f0af54f99b6706b933fa42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PrompShowTime: 0.5
+  PrompShowTime: 1
   Desk: {fileID: 1398049240188054}
   SongCassettePrefab: {fileID: 1056316437250200, guid: 6a81a87019220ef4cb264dc953b77114,
     type: 2}
@@ -2534,7 +2586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e64c8b69af43448afddd82af57edf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UseKeyboardTest: 0
+  UseKeyboardTest: 1
   TestKeyCode: 104
   HighlightTime: 0.1
   MoveVector: {x: 0, y: 0, z: -0.01}
@@ -2549,7 +2601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e64c8b69af43448afddd82af57edf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UseKeyboardTest: 0
+  UseKeyboardTest: 1
   TestKeyCode: 115
   HighlightTime: 0.1
   MoveVector: {x: 0, y: 0, z: -0.01}
@@ -2602,7 +2654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e64c8b69af43448afddd82af57edf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UseKeyboardTest: 0
+  UseKeyboardTest: 1
   TestKeyCode: 112
   HighlightTime: 0.1
   MoveVector: {x: 0, y: 0, z: -0.01}
@@ -2733,7 +2785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e64c8b69af43448afddd82af57edf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UseKeyboardTest: 0
+  UseKeyboardTest: 1
   TestKeyCode: 111
   HighlightTime: 0.1
   MoveVector: {x: 0, y: 0, z: -0.01}
@@ -2862,7 +2914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e64c8b69af43448afddd82af57edf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UseKeyboardTest: 0
+  UseKeyboardTest: 1
   TestKeyCode: 107
   HighlightTime: 0.1
   MoveVector: {x: 0, y: 0, z: -0.01}
@@ -3004,7 +3056,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e64c8b69af43448afddd82af57edf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UseKeyboardTest: 0
+  UseKeyboardTest: 1
   TestKeyCode: 103
   HighlightTime: 0.1
   MoveVector: {x: 0, y: 0, z: -0.01}
@@ -3285,7 +3337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e64c8b69af43448afddd82af57edf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UseKeyboardTest: 0
+  UseKeyboardTest: 1
   TestKeyCode: 100
   HighlightTime: 0.1
   MoveVector: {x: 0, y: 0, z: -0.01}
@@ -3542,7 +3594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e64c8b69af43448afddd82af57edf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UseKeyboardTest: 0
+  UseKeyboardTest: 1
   TestKeyCode: 106
   HighlightTime: 0.1
   MoveVector: {x: 0, y: 0, z: -0.01}
@@ -3557,7 +3609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e64c8b69af43448afddd82af57edf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UseKeyboardTest: 0
+  UseKeyboardTest: 1
   TestKeyCode: 102
   HighlightTime: 0.1
   MoveVector: {x: 0, y: 0, z: -0.01}
@@ -3572,7 +3624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e64c8b69af43448afddd82af57edf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UseKeyboardTest: 0
+  UseKeyboardTest: 1
   TestKeyCode: 108
   HighlightTime: 0.1
   MoveVector: {x: 0, y: 0, z: -0.01}
@@ -3703,7 +3755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e64c8b69af43448afddd82af57edf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UseKeyboardTest: 0
+  UseKeyboardTest: 1
   TestKeyCode: 105
   HighlightTime: 0.1
   MoveVector: {x: 0, y: 0, z: -0.01}
@@ -3718,7 +3770,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e64c8b69af43448afddd82af57edf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UseKeyboardTest: 0
+  UseKeyboardTest: 1
   TestKeyCode: 97
   HighlightTime: 0.1
   MoveVector: {x: 0, y: 0, z: -0.01}
