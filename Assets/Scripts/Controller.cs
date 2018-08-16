@@ -38,20 +38,22 @@ public class Controller : MonoBehaviour
     void Start()
     {
         trackedObject = GetComponent<SteamVR_TrackedObject>();
+        MakeRoboyStickInvis();
+        MakeLightSaberStickInvis();
+        MakeChipsStickVisible();
         MakeControllerDisable();
         //MakeGameBoardDisableAtStart();
-        MakeCubeStickInvis();
-        MakeRoboyStickInvis();
     }
 
     void Update()
     {
         GameObject[] controllers = GameObject.FindGameObjectsWithTag(TagsConstants.CONTROLLER_DEVICE);
-        /* if (restartApp || controllers.Length != TagsConstants.NUMBER_OF_CONTROLLER) {
+        if (restartApp || controllers.Length != TagsConstants.NUMBER_OF_CONTROLLER) {
              if (restartApp || controllers.Length != TagsConstants.NUMBER_OF_CONTROLLER) {
                  MakeGameObjectActive(TagsConstants.CONTROLLER_DEVICE, false);
                  MakeGameObjectActive(TagsConstants.ALL_STARWARS_OBJECT, false);
-                 MakeGameObjectActive(TagsConstants.RESTART_MESSAGE, true);
+                MakeGameObjectActive(TagsConstants.CINEMA_SCENE, false);
+                MakeGameObjectActive(TagsConstants.RESTART_MESSAGE, true);
                  restartApp = true;
                  return;
              }
@@ -60,7 +62,7 @@ public class Controller : MonoBehaviour
              {
                  return;
              }
-    }*/
+        }
         device = SteamVR_Controller.Input((int)trackedObject.index);
 
         //CheckAndShowSongBoard();
@@ -102,27 +104,27 @@ public class Controller : MonoBehaviour
                 MakeFirstMenuNotGlow();
                 MakeSecondMenuNotGlow();
                 MakeThirdMenuGlow();
-                MakeLightSaberStickVisible();
-                MakeCubeStickInvis();
+                MakeChipsStickInvis();
                 MakeRoboyStickInvis();
+                MakeLightSaberStickVisible();
             }
             else if (device.GetAxis().x > -0.33f && device.GetAxis().x < 0.33f)
             {
                 MakeSecondMenuGlow();
                 MakeFirstMenuNotGlow();
                 MakeThirdMenuNotGlow();
-                MakeCubeStickInvis();
-                MakeRoboyStickVisible();
+                MakeChipsStickInvis();
                 MakeLightSaberStickInvis();
+                MakeRoboyStickVisible();
             }
             else if (device.GetAxis().x > 0.33f)
             {
                 MakeSecondMenuNotGlow();
                 MakeFirstMenuGlow();
                 MakeThirdMenuNotGlow();
-                MakeCubeStickVisible();
                 MakeRoboyStickInvis();
                 MakeLightSaberStickInvis();
+                MakeChipsStickVisible();
             }
         }
 
@@ -132,8 +134,6 @@ public class Controller : MonoBehaviour
     #region PRIVATE_METHODS
     private void MakeControllerDisable()
     {
-        //GameObject controllerMenu = GameObject.FindGameObjectWithTag(TagsConstants.CONTROLLER_MENU);
-        //controllerMenu.transform.localScale = new Vector3(1, 1, 1);
         MakeGameObjectActive(TagsConstants.RESTART_MESSAGE, false);
         MakeGameObjectActive(TagsConstants.CONTROLLER_MENU, false);
     }
@@ -221,30 +221,29 @@ public class Controller : MonoBehaviour
     {
         MakeGameObjectActive(TagsConstants.LIGHT_SABER_STICK, true);
         MakeGameObjectActive(TagsConstants.ALL_STARWARS_OBJECT, true);
+        MakeGameObjectActive(TagsConstants.CINEMA_SCENE, false);
 
     }
 
     private void MakeLightSaberStickInvis()
     {
         MakeGameObjectActive(TagsConstants.LIGHT_SABER_STICK, false);
-        MakeGameObjectActive(TagsConstants.ALL_STARWARS_OBJECT, false);
     }
 
-    private void MakeCubeStickVisible()
+    private void MakeChipsStickVisible()
     {
-        MakeGameObjectActive(TagsConstants.CUBE_STICK, true);
+        MakeGameObjectActive(TagsConstants.CHIPS_STICK, true);
+        MakeGameObjectActive(TagsConstants.ALL_STARWARS_OBJECT, false);
         MakeGameObjectActive(TagsConstants.CINEMA_SCENE, true);
     }
 
-    private void MakeCubeStickInvis()
+    private void MakeChipsStickInvis()
     {
-        MakeGameObjectActive(TagsConstants.CUBE_STICK, false);
-        MakeGameObjectActive(TagsConstants.CINEMA_SCENE, false);
+        MakeGameObjectActive(TagsConstants.CHIPS_STICK, false);
     }
 
     private void MakeRoboyStickVisible()
     {
-
         MakeGameObjectActive(TagsConstants.ROBOY_STICK, true);
     }
 

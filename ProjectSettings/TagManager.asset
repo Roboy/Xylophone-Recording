@@ -22,6 +22,14 @@ TagManager:
   - RestartMessage
   - XWingSelf
   - AllStarWarsObjects
+  - ThrowedChips
+  - CinemaObjects
+  - CubeStickCollider
+  - RoboyStickCollider
+  - LightSaberStickCollider
+  - WholeXylophoneObjects
+  - ThrowedChipsesLeft
+  - ThrowedChipsesRight
   layers:
   - Default
   - TransparentFX

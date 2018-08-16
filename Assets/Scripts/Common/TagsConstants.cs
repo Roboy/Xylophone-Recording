@@ -7,8 +7,11 @@
     public static string CASSETTE = "Cassette";
     //Contorller
     public static string LIGHT_SABER_STICK = "lightsaberStick";
-    public static string CUBE_STICK = "cubeStick";
+    public static string CHIPS_STICK = "cubeStick";
     public static string ROBOY_STICK = "roboyStick";
+    public static string LIGHT_SABER_COLLIDER = "LightSaberStickCollider";
+    public static string CUBE_COLLIDER = "CubeStickCollider";
+    public static string ROBOY_COLLIDER = "RoboyStickCollider";
     public static string CONTROLLER_MENU = "ControllerMenu";
     public static string SELECTION_MENU_0 = "SelectionMenu0";
     public static string SELECTION_MENU_1 = "SelectionMenu1";
@@ -26,6 +29,8 @@
     //CIENEMA
     public static string CINEMA_CHAIR = "CinemaChair";
     public static string CINEMA_SCENE = "CinemaObjects";
+    public static string THROWED_CHIPS_LEFT = "ThrowedChipsesLeft";
+    public static string THROWED_CHIPS_RIGHT = "ThrowedChipsesRight";
     //Messages
     public static string RESTART_MESSAGE = "RestartMessage";
     #endregion // PUBLIC_MEMBER_VARIABLES

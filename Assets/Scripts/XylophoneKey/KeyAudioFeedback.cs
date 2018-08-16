@@ -70,16 +70,16 @@ namespace XylophoneHero
 
         public void PlayKey(float force, String stickTag)
         {
-            if (stickTag == TagsConstants.CUBE_STICK)
+            if (stickTag == TagsConstants.CUBE_COLLIDER)
             {
                 playKey(m_Marimba, force);
             }
-            else if (stickTag == TagsConstants.ROBOY_STICK)
+            else if (stickTag == TagsConstants.ROBOY_COLLIDER)
             {
                 playKey(m_Piano, force);
 
             }
-            else if (stickTag == TagsConstants.LIGHT_SABER_STICK)
+            else if (stickTag == TagsConstants.LIGHT_SABER_COLLIDER)
             {
                 playKey(m_ElectricGuitarJazz, force);
 
