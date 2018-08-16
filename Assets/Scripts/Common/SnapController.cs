@@ -13,8 +13,8 @@ public class SnapController : MonoBehaviour {
 
     #region PRIVATE_MEMBER_VARIABLES
 
-    private SteamVR_TrackedObject m_TrackedObject;
-    private SteamVR_Controller.Device m_Device;
+    //private SteamVR_TrackedObject m_TrackedObject;
+    //private SteamVR_Controller.Device m_Device;
 
     private SphereCollider m_SnapRegion;
 
@@ -28,29 +28,29 @@ public class SnapController : MonoBehaviour {
 
     #region MONOBEHAVIOUR_FUNCTIONS
 
-    private void Start()
-    {
-        m_SnapRegion = GetComponent<SphereCollider>();
-        m_TrackedObject = GetComponent<SteamVR_TrackedObject>();
-    }
+    //private void Start()
+    //{
+    //    m_SnapRegion = GetComponent<SphereCollider>();
+    //    m_TrackedObject = GetComponent<SteamVR_TrackedObject>();
+    //}
 
-    private void Update()
-    {
-        m_Device = SteamVR_Controller.Input((int)m_TrackedObject.index);
+    //private void Update()
+    //{
+    //    m_Device = SteamVR_Controller.Input((int)m_TrackedObject.index);
 
-        if (m_Device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
-        {
-            Debug.Log("Trigger pressed!");
-            if (m_SnappedObject != null && m_Joint != null)
-            {
-                Destroy(m_Joint);
-                Rigidbody otherRigidbody = m_SnappedObject.GetComponent<Rigidbody>();
-                otherRigidbody.useGravity = m_SnapObjectUseGravity;
-                m_SnappedObject = null;
-            }
-        }
+    //    if (m_Device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
+    //    {
+    //        Debug.Log("Trigger pressed!");
+    //        if (m_SnappedObject != null && m_Joint != null)
+    //        {
+    //            Destroy(m_Joint);
+    //            Rigidbody otherRigidbody = m_SnappedObject.GetComponent<Rigidbody>();
+    //            otherRigidbody.useGravity = m_SnapObjectUseGravity;
+    //            m_SnappedObject = null;
+    //        }
+    //    }
 
-    }
+    //}
 
     private void OnTriggerEnter(Collider other)
     {
@@ -62,7 +62,7 @@ public class SnapController : MonoBehaviour {
 
             m_SnappedObject = other.gameObject;
             m_SnappedObject.transform.position = SnapPoint.transform.position;
-            m_SnappedObject.transform.Translate(new Vector3(0.0f, -0.05f, 0.05f));
+            m_SnappedObject.transform.Translate(new Vector3(0.0f, 0.0f, 0.25f));
             Rigidbody otherRigidbody = m_SnappedObject.GetComponent<Rigidbody>();
             m_SnapObjectUseGravity = otherRigidbody.useGravity;
             otherRigidbody.useGravity = false;
@@ -84,5 +84,21 @@ public class SnapController : MonoBehaviour {
     }
 
     #endregion // MONOBEHAVIOUR_FUNCTIONS
+
+    #region PUBLIC_MEMBER_FUNCTIONS
+
+    public void DropItem()
+    {
+        Debug.Log("Drop Drop!");
+        if (m_SnappedObject != null && m_Joint != null)
+        {
+            Destroy(m_Joint);
+            Rigidbody otherRigidbody = m_SnappedObject.GetComponent<Rigidbody>();
+            otherRigidbody.useGravity = m_SnapObjectUseGravity;
+            m_SnappedObject = null;
+        }
+    }
+
+    #endregion // PUBLIC_MEMBER_FUNCTIONS
 
 }
