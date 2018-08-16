@@ -3,7 +3,7 @@ using XylophoneHero.SongSystem.Utils;
 
 namespace XylophoneHero
 {
-    public class ToggleRecording : MonoBehaviour
+    public class ToggleRecording : DebounceButton
     {
         public KeyCode TestKeyCode;
         private ButtonAppearance m_Appearance;
@@ -24,8 +24,13 @@ namespace XylophoneHero
 
         private void OnTriggerEnter(Collider other)
         {
-            bool RecordingStart = MidiRecording.Instance.ToggleRecording();
-            m_Appearance.SwitchColor(RecordingStart);
+            if (m_IsButtonActivated)
+            {
+                bool RecordingStart = MidiRecording.Instance.ToggleRecording();
+                m_Appearance.SwitchColor(RecordingStart);
+
+                debounce();
+            }
         }
     }
 }

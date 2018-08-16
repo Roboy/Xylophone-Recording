@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 33735263504589510}
   - component: {fileID: 23759677150876560}
   - component: {fileID: 114706736241929076}
-  - component: {fileID: 114377063792638986}
   - component: {fileID: 65517020149609112}
   m_Layer: 0
   m_Name: Button
@@ -275,18 +274,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   m_maskType: 0
---- !u!114 &114377063792638986
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1530534397239246}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a6a366bcf7c54a4d84b98a6ad3420ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TestKeyCode: 109
 --- !u!114 &114706736241929076
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -299,6 +286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OverrideRingColor: {r: 0, g: 0.5850754, b: 1, a: 1}
+  OffWhenStart: 0
 --- !u!222 &222057144688102178
 CanvasRenderer:
   m_ObjectHideFlags: 1

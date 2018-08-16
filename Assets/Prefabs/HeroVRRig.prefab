@@ -3905,7 +3905,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85f9c1691a9a0104ea135a769da3e9d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachPoint: {fileID: 0}
+  SnappyFinger: {fileID: 0}
 --- !u!114 &114091716069579178
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4040,7 +4040,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85f9c1691a9a0104ea135a769da3e9d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachPoint: {fileID: 0}
+  SnappyFinger: {fileID: 0}
 --- !u!114 &114531815710525504
 MonoBehaviour:
   m_ObjectHideFlags: 1

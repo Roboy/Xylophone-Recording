@@ -8,7 +8,7 @@ namespace XylophoneHero.SongSystem
     /// <summary>
     /// 
     /// </summary>
-    public class ControlButton : MonoBehaviour
+    public class ControlButton : DebounceButton
     {
 
         public enum Control
@@ -41,7 +41,12 @@ namespace XylophoneHero.SongSystem
 
         private void OnTriggerEnter(Collider other)
         {
-            buttonAction();
+            if (m_IsButtonActivated)
+            {
+                buttonAction();
+
+                debounce();
+            }
         }
 
         #endregion // MONOBEHAVIOUR_METHODS

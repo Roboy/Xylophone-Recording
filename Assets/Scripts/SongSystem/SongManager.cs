@@ -63,7 +63,7 @@ namespace XylophoneHero.SongSystem
 
             m_InfoPromps = transform.Find("InfoPromps").gameObject;
             m_ScoreDisplay = transform.Find("ScoreDisplay").gameObject;
-            m_SongListBoard = transform.Find("SongList").GetComponent<SongListBoard>();
+            //m_SongListBoard = transform.Find("SongList").GetComponent<SongListBoard>();
             if (m_InfoPromps != null && m_ScoreDisplay != null)
             {
                 m_InfoPrompsText = m_InfoPromps.GetComponent<TextMeshPro>();
@@ -113,14 +113,14 @@ namespace XylophoneHero.SongSystem
                 m_SongCount = m_Songs.Count;
                 m_CurrentSongIndex = 1;
                 m_IsLoadSongFinish = true;
-                m_SongListBoard.DisplaySongList(m_Songs, m_CurrentSongIndex);
+                //m_SongListBoard.DisplaySongList(m_Songs, m_CurrentSongIndex);
             }
             else
             {
                 m_SongCount = -1;
                 m_CurrentSongIndex = -1;
                 m_IsLoadSongFinish = false;
-                m_SongListBoard.DisplaySongList(false);
+                //m_SongListBoard.DisplaySongList(false);
             }
 
 
@@ -137,8 +137,23 @@ namespace XylophoneHero.SongSystem
                 cassette.transform.SetPositionAndRotation(deskPosition + cassetteOffset, Quaternion.Euler(0f, -90f, 0f));
                 cassetteOffset.x += 0.2f;
             }
+            
+        }
 
+        public void ReloadSong()
+        {
+            //  destroy all cassettes
+            GameObject[] cassettes = GameObject.FindGameObjectsWithTag(TagsConstants.CASSETTE);
+            foreach(GameObject c in cassettes)
+            {
+                Destroy(c);
+            }
 
+            //  clear the existing songs
+            m_Songs = null;
+
+            //  load songs
+            LoadSong();
         }
 
         //  start the song of m_CurrentSongIndex
@@ -193,7 +208,7 @@ namespace XylophoneHero.SongSystem
             }
             StopSong();
             StartSong();
-            m_SongListBoard.DisplaySongList(m_Songs, m_CurrentSongIndex);
+            //m_SongListBoard.DisplaySongList(m_Songs, m_CurrentSongIndex);
         }
 
         public void NextSong()
@@ -205,7 +220,7 @@ namespace XylophoneHero.SongSystem
             }
             StopSong();
             StartSong();
-            m_SongListBoard.DisplaySongList(m_Songs, m_CurrentSongIndex);
+            //m_SongListBoard.DisplaySongList(m_Songs, m_CurrentSongIndex);
         }
 
         public void GoodHit()

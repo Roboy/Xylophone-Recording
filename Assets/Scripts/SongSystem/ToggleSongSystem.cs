@@ -3,7 +3,7 @@ using XylophoneHero.SongSystem.Utils;
 
 namespace XylophoneHero.SongSystem
 {
-    public class ToggleSongSystem : MonoBehaviour
+    public class ToggleSongSystem : DebounceButton
     {
 
         public KeyCode TestKeyCode;
@@ -30,10 +30,15 @@ namespace XylophoneHero.SongSystem
 
         private void OnTriggerEnter(Collider other)
         {
-            if (SongSystem != null)
+            if (m_IsButtonActivated)
             {
-                SongSystem.SetActive(!SongSystem.activeSelf);
-                m_Appearance.SwitchColor(SongSystem.activeSelf);
+                if (SongSystem != null)
+                {
+                    SongSystem.SetActive(!SongSystem.activeSelf);
+                    m_Appearance.SwitchColor(SongSystem.activeSelf);
+                }
+
+                debounce();
             }
         }
     }
