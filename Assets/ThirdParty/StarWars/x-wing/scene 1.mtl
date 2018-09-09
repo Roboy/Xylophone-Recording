@@ -1,0 +1,434 @@
+# Exported from 3D Builder
+
+newmtl Material__199915
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__199915_baseColor.jpg
+
+newmtl Glass
+Kd 0.011978 0.021561 0.023957
+
+newmtl Engine_Main
+Kd 1.000000 1.000000 1.000000
+map_Kd Engine_Main_baseColor.jpg
+
+newmtl Fuselage_Main_exterior
+Kd 1.000000 1.000000 1.000000
+map_Kd Fuselage_Main_exterior_baseColor.jpg
+
+newmtl Grill
+Kd 1.000000 1.000000 1.000000
+map_Kd Grill_baseColor.jpg
+
+newmtl Material__1811
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__1811_baseColor.jpg
+
+newmtl Fuse_Main_interior
+Kd 1.000000 1.000000 1.000000
+map_Kd Fuse_Main_interior_baseColor.jpg
+
+newmtl Material__199879
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__199879_baseColor.jpg
+
+newmtl Wing_Rotors
+Kd 1.000000 1.000000 1.000000
+map_Kd Wing_Rotors_baseColor.jpg
+
+newmtl Material__199878
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__199878_baseColor.jpg
+
+newmtl Canopy
+Kd 1.000000 1.000000 1.000000
+map_Kd Canopy_baseColor.jpg
+
+newmtl Fuselage_Nose
+Kd 1.000000 1.000000 1.000000
+map_Kd Fuselage_Nose_baseColor.jpg
+
+newmtl Material__199878
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__199878_baseColor.jpg
+
+newmtl Glass
+Kd 0.011978 0.021561 0.023957
+
+newmtl Material__199985
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__199985_baseColor.jpg
+
+newmtl Wing_Rotors
+Kd 1.000000 1.000000 1.000000
+map_Kd Wing_Rotors_baseColor.jpg
+
+newmtl Material__199796
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__199796_baseColor.jpg
+
+newmtl Material__19941
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__19941_baseColor.jpg
+
+newmtl Material__19920
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__19920_baseColor.jpg
+
+newmtl Engine_Main
+Kd 1.000000 1.000000 1.000000
+map_Kd Engine_Main_baseColor.jpg
+
+newmtl Material__185
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__19920_baseColor.jpg
+
+newmtl Material__199987
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__199987_baseColor.png
+
+newmtl Cockpit
+Kd 0.258824 0.258824 0.258824
+
+newmtl Wing
+Kd 1.000000 1.000000 1.000000
+map_Kd Wing_baseColor.jpg
+
+newmtl R2_Dome
+Kd 1.000000 1.000000 1.000000
+map_Kd R2_Dome_baseColor.jpg
+
+newmtl Glassy
+Kd 0.000000 0.588235 0.623529
+
+newmtl wing_block_mat_1
+Kd 1.000000 1.000000 1.000000
+map_Kd wing_block_mat_1_baseColor.jpg
+
+newmtl R2_Head_metal
+Kd 0.603922 0.603922 0.603922
+
+newmtl Material__31
+Kd 1.000000 1.000000 1.000000
+map_Kd Fuse_Main_interior_baseColor.jpg
+
+newmtl Body_main
+Kd 1.000000 1.000000 1.000000
+map_Kd Body_main_baseColor.jpg
+
+newmtl Material__39
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__39_baseColor.jpg
+
+newmtl Metal
+Kd 0.060859 0.055567 0.050275
+
+newmtl Material__34
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__34_baseColor.jpg
+
+newmtl Legs
+Kd 0.854902 0.850981 0.843137
+
+newmtl Material__32
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__19987_baseColor.jpg
+
+newmtl Material__199879
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__199879_baseColor.jpg
+
+newmtl Material__200029
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__200029_baseColor.jpg
+
+newmtl Material__19987
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__19987_baseColor.jpg
+
+newmtl Material__199987
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__199987_baseColor.png
+
+newmtl Material__31
+Kd 1.000000 1.000000 1.000000
+map_Kd Fuse_Main_interior_baseColor.jpg
+
+newmtl Material__39
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__39_baseColor.jpg
+
+newmtl Material__34
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__34_baseColor.jpg
+
+newmtl Material__35
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__35_baseColor.jpg
+
+newmtl Material__2
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__2_baseColor.jpg
+
+newmtl Material__36
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__36_baseColor.jpg
+
+newmtl Material__32
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__19987_baseColor.jpg
+
+newmtl Material__200029
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__200029_baseColor.jpg
+
+newmtl Material__3
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__3_baseColor.jpg
+
+newmtl Material__199915
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__199915_baseColor.jpg
+
+newmtl Material__199985
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__199985_baseColor.jpg
+
+newmtl Wing
+Kd 1.000000 1.000000 1.000000
+map_Kd Wing_baseColor.jpg
+
+newmtl Material__199796
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__199796_baseColor.jpg
+
+newmtl Material__19979
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__199796_baseColor.jpg
+
+newmtl Light
+Kd 0.000000 0.000000 0.000000
+
+newmtl Barrel
+Kd 1.000000 1.000000 1.000000
+map_Kd Barrel_baseColor.jpg
+
+newmtl Grill
+Kd 1.000000 1.000000 1.000000
+map_Kd Grill_baseColor.jpg
+
+newmtl wing_block_mat_1
+Kd 1.000000 1.000000 1.000000
+map_Kd wing_block_mat_1_baseColor.jpg
+
+newmtl Material__19987
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__19987_baseColor.jpg
+
+newmtl Light
+Kd 0.000000 0.000000 0.000000
+
+newmtl Barrel
+Kd 1.000000 1.000000 1.000000
+map_Kd Barrel_baseColor.jpg
+
+newmtl Material__19979
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__199796_baseColor.jpg
+
+newmtl Material__35
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__35_baseColor.jpg
+
+newmtl Material__2
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__2_baseColor.jpg
+
+newmtl Material__36
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__36_baseColor.jpg
+
+newmtl Material__3
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__3_baseColor.jpg
+
+newmtl wing_block_mat_2
+Kd 1.000000 1.000000 1.000000
+map_Kd wing_block_mat_2_baseColor.jpg
+
+newmtl Material__200097
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__200097_baseColor.jpg
+
+newmtl Material__200091
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__36_baseColor.jpg
+
+newmtl Material__200099
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__34_baseColor.jpg
+
+newmtl Material__200092
+Kd 1.000000 1.000000 1.000000
+map_Kd Fuse_Main_interior_baseColor.jpg
+
+newmtl Material__200096
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__200029_baseColor.jpg
+
+newmtl Material__200095
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__19987_baseColor.jpg
+
+newmtl Material__200094
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__39_baseColor.jpg
+
+newmtl Material__200093
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__35_baseColor.jpg
+
+newmtl Material__200098
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__3_baseColor.jpg
+
+newmtl wing_2
+Kd 1.000000 1.000000 1.000000
+map_Kd wing_2_baseColor.jpg
+
+newmtl Light
+Kd 0.000000 0.000000 0.000000
+
+newmtl Barrel
+Kd 1.000000 1.000000 1.000000
+map_Kd Barrel_baseColor.jpg
+
+newmtl Grill
+Kd 1.000000 1.000000 1.000000
+map_Kd Grill_baseColor.jpg
+
+newmtl Material__199879
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__199879_baseColor.jpg
+
+newmtl Material__19987
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__19987_baseColor.jpg
+
+newmtl Material__199878
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__199878_baseColor.jpg
+
+newmtl Material__200101
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__200101_baseColor.jpg
+
+newmtl Material__200100
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__200100_baseColor.jpg
+
+newmtl Engine_Main
+Kd 1.000000 1.000000 1.000000
+map_Kd Engine_Main_baseColor.jpg
+
+newmtl wing_block_mat_2
+Kd 1.000000 1.000000 1.000000
+map_Kd wing_block_mat_2_baseColor.jpg
+
+newmtl Material__199915
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__199915_baseColor.jpg
+
+newmtl Material__199985
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__199985_baseColor.jpg
+
+newmtl Material__199987
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__199987_baseColor.png
+
+newmtl Material__199987
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__199987_baseColor.png
+
+newmtl Light
+Kd 0.000000 0.000000 0.000000
+
+newmtl Barrel
+Kd 1.000000 1.000000 1.000000
+map_Kd Barrel_baseColor.jpg
+
+newmtl Grill
+Kd 1.000000 1.000000 1.000000
+map_Kd Grill_baseColor.jpg
+
+newmtl Material__200109
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__35_baseColor.jpg
+
+newmtl Material__200102
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__39_baseColor.jpg
+
+newmtl Material__200110
+Kd 1.000000 1.000000 1.000000
+map_Kd Fuse_Main_interior_baseColor.jpg
+
+newmtl Material__200108
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__19987_baseColor.jpg
+
+newmtl Material__200103
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__200029_baseColor.jpg
+
+newmtl Material__200107
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__36_baseColor.jpg
+
+newmtl Material__200105
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__3_baseColor.jpg
+
+newmtl Material__200104
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__200097_baseColor.jpg
+
+newmtl Material__200106
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__34_baseColor.jpg
+
+newmtl Material__199879
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__199879_baseColor.jpg
+
+newmtl Material__19987
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__19987_baseColor.jpg
+
+newmtl Wing
+Kd 1.000000 1.000000 1.000000
+map_Kd Wing_baseColor.jpg
+
+newmtl Material__199878
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__199878_baseColor.jpg
+
+newmtl Material__200101
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__200101_baseColor.jpg
+
+newmtl Material__200100
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__200100_baseColor.jpg
+
+newmtl Engine_Main
+Kd 1.000000 1.000000 1.000000
+map_Kd Engine_Main_baseColor.jpg
+
+newmtl Material__199915
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__199915_baseColor.jpg
+
+newmtl Material__199985
+Kd 1.000000 1.000000 1.000000
+map_Kd Material__199985_baseColor.jpg
