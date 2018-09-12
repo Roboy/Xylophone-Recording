@@ -1,5 +1,7 @@
 # custom .gitignore for this project
 venv/
+#default midi file which is generated when saving to midi
+test.midi
 
 
 
