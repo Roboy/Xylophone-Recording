@@ -1,6 +1,9 @@
 Introduction
 ====================
 
+.. image:: _static/XylophoneHeroWithScreenshot.jpg
+  :alt: Xylophone Hero Screenshot
+
 What is Xylophone Recording?
 ------------------------------
 This project is about capturing users movement who playing xylophone in virtual reality. 
