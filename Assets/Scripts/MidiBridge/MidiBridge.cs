@@ -20,7 +20,7 @@ namespace XylophoneHero
     {
         #region PUBLIC_MEMBER_VARIABLES
         //starts with 1 as at least on Windows the MidiDevice Numbers start with 1 in the GUIs
-        public int MidiDeviveNumber = 1;
+        public int MidiDeviceNumber = 1;
         public Channel MidiChannel = Channel.Channel1;
         #endregion // PUBLIC_MEMBER_VARIABLES
 
@@ -36,9 +36,9 @@ namespace XylophoneHero
             try
             {
                 IEnumerable<RtMidi.Core.Devices.Infos.IMidiOutputDeviceInfo> outputDevices = MidiDeviceManager.Default.OutputDevices;
-                RtMidi.Core.Devices.Infos.IMidiOutputDeviceInfo outputDeviceInfo = outputDevices.ElementAt(MidiDeviveNumber - 1);
+                RtMidi.Core.Devices.Infos.IMidiOutputDeviceInfo outputDeviceInfo = outputDevices.ElementAt(MidiDeviceNumber - 1);
                 this.m_OutputDevice = outputDeviceInfo.CreateDevice();
-                Debug.Log("Now using MidiDevice Number: " + MidiDeviveNumber + outputDeviceInfo.Name);
+                Debug.Log("Now using MidiDevice Number: " + MidiDeviceNumber + outputDeviceInfo.Name);
                 this.m_OutputDevice.Open();
             }
             catch (System.Exception e)
