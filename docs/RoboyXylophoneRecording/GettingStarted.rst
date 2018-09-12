@@ -6,14 +6,25 @@ This section explains how to install the project and later on which steps have t
 Installation
 --------------------
 
+Requirements
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+We suggest to use Windows as a development system as the used HTC Vive is officially just `supported on Windows <https://www.vive.com/de/ready/>`_.
+Nevertheless it's possible to run the Unity project without the HTC Vive for debugging purposes.
+This is also possible with other operating systems like Mac OSX.
+
 Part 1: Install Unity
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Xylophone Recording Project is developped and tested in Unity 2018.1.5.f1. Any Versions later than this should be compatible with this project. Using earlier versions should be avoided, because it may cause "missing prefab" problems.
+The Xylophone Recording Project is developped and tested in Unity.
+Take a look at the **ProjectSettings/ProjectVersion.txt** file to see what Version of Unity is currently used for the Project.
+Any Versions later than this should be compatible with this project.
+Using earlier versions should be avoided, because it may cause "missing prefab" and other problems.
 
-Unity can be downloaded from here: https://unity3d.com/get-unity/download/archive
+Specific Unity Versions can be downloaded here: `Unity Download Archive <https://unity3d.com/get-unity/download/archive>`_
 
-Select the correct version and download the installer. After downloading, run the installer and follow the instructions to install Unity.
+Select the correct version and download the installer.
+After downloading, run the installer and follow the instructions to install Unity.
 
 Part 2: Setup HTC Vive and SteamVR
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -21,13 +32,16 @@ Follow the official `SteamVR HTC Vive PRE installation Guide <https://support.st
 
 Part 3: Clone the project from Github
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Use the following command in Git Bash or command line to clone the Xylophone Recording repository from Github::
+Use the following command in Git Bash or your preffered command line to clone the Xylophone Recording repository from Github::
 
 	git clone git@github.com:Roboy/ss18_xylophone_recording.git
 
 Part 4: Setup ROS
 ~~~~~~~~~~~~~~~~~~
-This is just one way of installing ROS for Roboy. There are probably more suited approaches which are more elegant. But this one worked for us. ROS can be installed on another computer then were Unity is installed.
+This is just one way of installing ROS for Roboy.
+There are probably more suited approaches which are more elegant.
+But this one worked for us.
+ROS can be installed on another computer then were Unity is installed.
 
 Install ROS like described in the `Roboy repository <https://github.com/Roboy/Roboy>`_.
 
@@ -83,3 +97,9 @@ Check the GameObject ROSBridge for the correct ROS Core IP (computer where you s
 
 .. image:: _static/GameObject_ROSBridge.png
 		:alt: GameObject ROSBridge
+
+Debugging
+---------
+
+In the Unity Xylophone model we added debugging support for playing the xylophone without having a HTC Vive at hand.
+You can set a computer keyboard key to a xylophone key in the **XylophoneKeyCollider** gameobject.

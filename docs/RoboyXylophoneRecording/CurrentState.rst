@@ -4,7 +4,8 @@ Current State
 Xylophone
 -----------
 
-In the mean time, due to limited time, we haven't modeled the real xylophone yet. We use simple unity cubes as xylophone keys for testing purpose. On the other hand, we only have 7 keys. However, the functionalities of the keys are basically complete. When they are hit, they emit the sound of the corresponding key (audio feedback), they would be "pressed down" and then bounce back and at the same time highlight a little (visual feedback), and they would also transfer the message through ROSBridge to receivers (for example Roboy).
+The Xylophone is modeled like in the real world.
+Only thing still missing due to no testing is the integration of a variable velocity detection which forwarded to the communciation modules.
 
 Environment and Controllers
 -----------------------------

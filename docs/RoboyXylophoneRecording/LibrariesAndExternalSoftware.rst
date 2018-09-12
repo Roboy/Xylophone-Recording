@@ -17,6 +17,10 @@ MidiBridge
 	- `RtMidi.Core <https://github.com/micdah/RtMidi.Core>`_ (Version: 1.0.38 netstandard2.0)
 	- `Serilog <https://serilog.net/>`_ (Dependecy for RtMidi.Core, Version: 2.6.0 netstandard1.3)
 
+MidiRecording
+"""""""""""""
+	- `Melanchall.DryWetMidi <https://github.com/melanchall/drywetmidi>`_ (Version: 3.1.0 net45)
+
 ROSBridge
 """""""""
 	- `ROSBridge <https://github.com/RobotWebTools/rosbridge_suite>`_
@@ -32,6 +36,7 @@ These external programs have been used for developing and testing. Some of them 
 - `MIDI-OX <http://www.midiox.com/>`_ (Midi Testing - Midi Monitor Windows)
 - `MIDIMonitor <https://www.snoize.com/MIDIMonitor/>`_ (Midi Testing - Midi Monitor MacOSX)
 - `loopMIDI <http://www.tobias-erichsen.de/software/loopmidi.html>`_ (Midi Testing - Midi Loopback Driver)
+- `Jack2 <https://github.com/jackaudio/jack2>`_ (Midi via Ethernet)
 -  All libraries and models which were used from external sources are inside the ThirdParty folder.
 
 
