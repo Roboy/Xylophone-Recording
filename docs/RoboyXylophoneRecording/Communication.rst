@@ -71,11 +71,13 @@ Use the following commands to start the Jack2 Server on the receiving side of yo
 	jack_unload netmanager
 
 The following tools might also be of interest for different purposes:
+
 - `Qsynth <https://qsynth.sourceforge.io/>`_ can be used as a Synthesizer to play sounds of the received Midi notes
 - `Gmidimonitor <https://packages.ubuntu.com/source/bionic/gmidimonitor>`_ can be used as a Midi Monitor to visualize the received Midi notes
 - `a2jmidid <https://packages.ubuntu.com/de/bionic/a2jmidid>`_ can be used as a alsa midi to jack midi bridge for software which doesn't natively support jack
 
 The following picture shows all the launched programms:
+
 .. image:: _static/jackd_screenshots/jackd_screenshot_linux.png
 	:alt: running Jack Server in Linux
 
@@ -85,12 +87,15 @@ In the qjackctl window (JACK Audio Connection Kit) press the Connect button when
 To install the client side of Jack and its tools on windows use `this guide <http://jackaudio.org/faq/jack_on_windows.html>`_.
 
 To be a 100 percent sure we launched qjackctl.exe as Administrator, but maybe this step is not even needed.
+
 .. image:: _static/jackd_screenshots/jackd_settings_3.PNG
 	:alt: launch qjackctl.exe as administrator
 
 After that the Jack Server was configured with the following parameters:
+
 .. image:: _static/jackd_screenshots/jackd_settings_2.PNG
 	:alt: Jack2 Windows parameters
+
 .. image:: _static/jackd_screenshots/jackd_settings_1.PNG
 	:alt: Jack2 Windows parameters and the running status of jack
 
