@@ -85,6 +85,8 @@ Note down the Midi Device Number of your prefered Midi Output as you need it lat
 If you don't have a local Midi Device you can use a loopback Driver like `loopMIDI (Windows) <http://www.tobias-erichsen.de/software/loopMidi.html>`_ for testing purposes.
 On MacOSX you can use the `this guide <https://help.ableton.com/hc/en-us/articles/209774225-Using-virtual-MIDI-buses>`_ to setup a loopback Driver.
 
+If you want to send Midi over the network to another computer in an efficient manner check out the Communication chapter as the setup for this is not trivial!
+
 Step 3: Launch Unity
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -102,4 +104,7 @@ Debugging
 ---------
 
 In the Unity Xylophone model we added debugging support for playing the xylophone without having a HTC Vive at hand.
-You can set a computer keyboard key to a xylophone key in the **XylophoneKeyCollider** gameobject.
+You can set a computer keyboard key to a xylophone key in the **XylophoneKeyCollider** GameObject.
+
+.. image:: _static/xylophone_key_debugging.png
+		:alt: GameObject XylophoneKeyCollider
