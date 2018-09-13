@@ -15,6 +15,7 @@ Welcome to RoboyXylophoneRecording's documentation!
    ProjectStructure
    UseCase
    Communication
+   Communication_Jack2NetworkSetup
    SongSystem
    Environments
    CurrentState
