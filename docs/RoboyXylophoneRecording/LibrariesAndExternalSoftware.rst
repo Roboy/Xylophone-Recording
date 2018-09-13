@@ -37,8 +37,12 @@ These external programs have been used for developing and testing. Some of them 
 - `MIDIMonitor <https://www.snoize.com/MIDIMonitor/>`_ (Midi Testing - Midi Monitor MacOSX)
 - `loopMIDI <http://www.tobias-erichsen.de/software/loopmidi.html>`_ (Midi Testing - Midi Loopback Driver)
 - `Jack2 <https://github.com/jackaudio/jack2>`_ (Midi via Ethernet)
--  All libraries and models which were used from external sources are inside the ThirdParty folder.
 
+All libraries and models which were used from external sources are inside the ThirdParty folder:
 
-The lightsaber or laserSword model was downloaded from https://github.com/jjxtra/UnityLightsaber.git.
-darth_vaders fighter, tieFighters, xwing were downloaded from https://clara.io/ and https://free3d.com/.
+- the lightsaber or laserSword model were downloaded from `https://github.com/jjxtra/UnityLightsaber.git <https://github.com/jjxtra/UnityLightsaber.git>`_
+- darth_vaders fighter, tieFighters, xwing were downloaded from `clara.io <https://clara.io/>`_ and `free3d.com <https://free3d.com/>`_
+
+All textures we used for our own models are inside the Materials folder:
+
+- the xylophone texture is from `textures.com <https://www.textures.com/download/woodfine0011/19680>`_
