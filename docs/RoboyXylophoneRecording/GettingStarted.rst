@@ -34,7 +34,7 @@ Part 3: Clone the project from Github
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Use the following command in Git Bash or your preffered command line to clone the Xylophone Recording repository from Github::
 
-	git clone git@github.com:Roboy/ss18_xylophone_recording.git
+	git clone https://github.com/Roboy/ss18_xylophone_recording.git
 
 Part 4: Setup ROS
 ~~~~~~~~~~~~~~~~~~
@@ -47,12 +47,12 @@ Install ROS like described in the `Roboy repository <https://github.com/Roboy/Ro
 
 Change to the Roboy directory and checkout our `branch <https://github.com/Roboy/roboy_communication/tree/ss18_xylophone_recording>`_ of the roboy_communication repository::
 
-	cd path/to/Roboy/src/roboy_communication
+	cd path-to-Roboy/src/roboy_communication
 	git checkout ss18_xylophone_recording
 
 If you just want to run our program you can move all the other submodules/folders inside src (everything except CMakeLists.txt and roboy_communication) to another folder outside src so that they won't be built::
 	
-	cd path/to/Roboy
+	cd path-to-Roboy
 	mkdir donotbuild
 	mv src/common_utilities donotbuild
 	...
@@ -70,7 +70,7 @@ Step 1: Launch ROSBridge Server
 
 Before running the Unity Project launch the ROSBridge Server on a device which has ROS installed like this::
 
-	source path-to-roboy-repo/devel/setup.bash
+	source path-to-Roboy/devel/setup.bash
 	roslaunch rosbridge_server rosbridge_websocket.launch
 
 Step 2: Check for an available Midi Device

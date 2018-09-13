@@ -38,8 +38,8 @@ ROSBridge
 
 
 
-ROS Cheatsheet
---------------
+ROS Debugging/Demo Cheatsheet
+-----------------------------
 
 This was used for debugging/demo purposes to see the Midi messages::
 
@@ -52,9 +52,9 @@ This was used for debugging/demo purposes to see the Midi messages::
 Current State
 -------------
 
-Sofar there are three ways of communication/output via ROSBridge, MidiRecording and via MidiBridge.
+So far, there are three ways of communication/output via ROSBridge, MidiRecording and via MidiBridge.
 
-The ROS Messages are pretty basic sofar and can be extended if needed.
+The ROS Messages are pretty basic and can be extended if needed.
 We didn't extend the ROS approach as the Jack2 approach seems to have a better performance as Jack2 is based on UDP packets and not on TCP packets like ROS with the Unity ROSBridge.
 
 Jack2 could probably be integrated more tightly on a library level in Unity and not just on a programm level which uses the Midi Data coming from the MidiBridge as Input.
