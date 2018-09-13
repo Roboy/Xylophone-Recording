@@ -54,6 +54,7 @@ Setup Steps
 In this example we're using a Linux machine as the Jack Server and a Windows machine with Unity and the HTC Vive as a Jack Client.
 
 Install Jack2 and the needed tools with the following commands::
+
 	sudo apt-get update
 	sudo apt-get install jackd2 qjackctl
 
@@ -61,6 +62,7 @@ For better performance add your user to the audio group which has elevated right
 How to do this in Ubuntu is explained `here <https://wiki.ubuntuusers.de/Tonstudio/Konfiguration/>`_.
 
 Use the following commands to start the Jack2 Server on the receiving side of your network setup with Linux::
+
 	jackd -r -d alsa -r 44100
 	#start the following programm in another terminal or in the programm launcher
 	qjackctl
@@ -74,25 +76,21 @@ The following tools might also be of interest for different purposes:
 - `a2jmidid <https://packages.ubuntu.com/de/bionic/a2jmidid>`_ can be used as a alsa midi to jack midi bridge for software which doesn't natively support jack
 
 The following picture shows all the launched programms:
-
 .. image:: _static/jackd_screenshots/jackd_screenshot_linux.png
 	:alt: running Jack Server in Linux
 
 In the qjackctl window (JACK Audio Connection Kit) press the Connect button when the Client is connected and connect the Clients Midi Output (DESKTOP-GDGAKV4 in the Screenshot) with your desired Midi Application like Qsynth or Gmidimonitor.
 
 
-To install the client side of Jack and its tools on windows use `this guide <http://jackaudio.org/faq/jack_on_windows.html>`.
+To install the client side of Jack and its tools on windows use `this guide <http://jackaudio.org/faq/jack_on_windows.html>`_.
 
 To be a 100 percent sure we launched qjackctl.exe as Administrator, but maybe this step is not even needed.
-
 .. image:: _static/jackd_screenshots/jackd_settings_3.PNG
 	:alt: launch qjackctl.exe as administrator
 
 After that the Jack Server was configured with the following parameters:
-
 .. image:: _static/jackd_screenshots/jackd_settings_2.PNG
 	:alt: Jack2 Windows parameters
-
 .. image:: _static/jackd_screenshots/jackd_settings_1.PNG
 	:alt: Jack2 Windows parameters and the running status of jack
 
