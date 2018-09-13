@@ -99,12 +99,3 @@ Check the GameObject ROSBridge for the correct ROS Core IP (computer where you s
 
 .. image:: _static/GameObject_ROSBridge.png
 		:alt: GameObject ROSBridge
-
-Debugging
----------
-
-In the Unity Xylophone model we added debugging support for playing the xylophone without having a HTC Vive at hand.
-You can set a computer keyboard key to a xylophone key in the **XylophoneKeyCollider** GameObject.
-
-.. image:: _static/xylophone_key_debugging.png
-		:alt: GameObject XylophoneKeyCollider
