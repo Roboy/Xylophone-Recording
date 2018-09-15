@@ -63,7 +63,7 @@ Build the project::
 	catkin_make
 
 Starting the Program
---------------------
+---------------------
 
 Step 1: Launch ROSBridge Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -99,3 +99,11 @@ Check the GameObject ROSBridge for the correct ROS Core IP (computer where you s
 
 .. image:: _static/GameObject_ROSBridge.png
 		:alt: GameObject ROSBridge
+
+Extra Softwares for Development
+--------------------------------
+
+Install Blender
+~~~~~~~~~~~~~~~~~
+
+We use Blender to build some of the 3D models in our project. If you want to modify the models or build some new ones, you can download Blender `here <https://www.blender.org/download/>`_, run the downloaded installation program to install blender and then you are ready to go. You can find very good tutorials online. If you are new to blender, `This <https://www.youtube.com/watch?v=JYj6e-72RDs&t=14s>`_ could be a good start.
