@@ -8,6 +8,9 @@ When the user is playing the xylophone in virtual reality, he may sometimes feel
 
 Inspired by the famous video game serious Guitar Hero, we name our song system Xylophone Hero.
 
+.. image:: _static/song_system_screenshots/SongBoard2.jpg
+  :alt: The Song Board
+
 Structure
 --------------
 
@@ -31,6 +34,8 @@ The song files are not actual audio recordings of the song (``.mp3``, ``.wav``, 
 	100000000000
 
 Each line represents one beat. There are 12 keys in the xylophone now so each row has 12 digits, each one corresponds to one key. 1 means this key should be played on this beat, 0 means it should not. So the note generator can generate the notes of the song according to this song file.
+
+New songs can be easily added to the system by simply adding new song files in ``txt`` format to ``Assets/Resources/Songs``.
 
 Song System Manager
 ~~~~~~~~~~~~~~~~~~~~~
@@ -56,7 +61,13 @@ We seek to make the song system more interactive, more intuitive and more intere
 
 After the Song Manager loads the songs, it will generate several cassette, each one carries the information of one song, on the desk. The player can use the stick with Roboy's head to grab a cassette and then put it in the cassette player, which will make the Song Manager start the song. 
 
+.. image:: _static/song_system_screenshots/Cassettes.jpg
+  :alt: Cassettes
+
 There are two buttons above the cassette player. The left one is *Reload Song*. By pressing this button the Song Manager clears the current loaded songs, destroys all existing cassettes, and then loads the songs and generates the cassettes again. This is useful when the player drops some cassettes to the space or can not reach the cassettes for some reasons. The right button is *Eject* button. This makes the cassette player eject the current cassette and stop playing the song.
+
+.. image:: _static/song_system_screenshots/CassettePlayerAndButtons.jpg
+  :alt: Cassette Player and Buttons
 
 Score and Feedback System
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -77,6 +88,9 @@ Some Other Things
 ~~~~~~~~~~~~~~~~~~~
 
 There are two buttons on the left side of the player (when facing the xylophone). One is *Toggle Recording*. This one toggles converting the played notes to midi. The other one is *Toggle Board*. This one shows or hides the song board.
+
+.. image:: _static/song_system_screenshots/LeftButtons.jpg
+  :alt: Left Buttons
 
 Under the ``SongSystemManager`` Game Object there is a set of **Control Buttons** which are disabled. They are not used in the release version of Xylophone Hero, but they are good helpers for debugging. When they are enabled, the player or developer can use the keyboard to start, stop, play the previous or play the next song. Of course the player can also interact with these buttons using the sticks.
 

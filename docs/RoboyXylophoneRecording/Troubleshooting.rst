@@ -20,3 +20,13 @@ You can set a computer keyboard key to a xylophone key in the **XylophoneKeyColl
 
 .. image:: _static/xylophone_key_debugging.png
 		:alt: GameObject XylophoneKeyCollider
+
+Some other GameObjects also have this keyboard debugging feature, including
+
+- **ToggleBoardButton**
+- **ToggleRecordingButton**
+- **KeyIndicator**
+
+.. ATTENTION::
+	Please avoid using keyboard dubugging for KeyIndicators and XylophoneKeyColliders at the same time because XylophoneKeyColliders can trigger KeyIndicators. If you have to apply keyboard debugging for them simultaneously, assign different keys for them.
+

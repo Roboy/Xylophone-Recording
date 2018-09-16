@@ -8,6 +8,7 @@ HCI
 ^^^
 
 - `TextMesh Pro <https://assetstore.unity.com/packages/essentials/beta-projects/textmesh-pro-84126>`_ (Substitute of the original unity text mesh)
+- `Post Processing Stack 1\.0\.4 <https://assetstore.unity.com/packages/essentials/post-processing-stack-83912>`_ 
 
 Communciation
 ^^^^^^^^^^^^^
@@ -37,6 +38,7 @@ These external programs have been used for developing and testing. Some of them 
 - `MIDIMonitor <https://www.snoize.com/MIDIMonitor/>`_ (Midi Testing - Midi Monitor MacOSX)
 - `loopMIDI <http://www.tobias-erichsen.de/software/loopmidi.html>`_ (Midi Testing - Midi Loopback Driver)
 - `Jack2 <https://github.com/jackaudio/jack2>`_ (Midi via Ethernet)
+- `Blender <https://www.blender.org/>`_ (3D modeling)
 
 All libraries and models which were used from external sources are inside the ThirdParty folder:
 
