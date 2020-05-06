@@ -1,0 +1,8 @@
+Abstract
+
+The xylophone recording project consists of two basic modules in order to record xylophone notes - the Human Computer Interface (HCI) and the Communication module.
+The HCI is being used to visualize the xylophone, the controllers, the song system and places all of these in a nice virtual environment.
+In the Communication module there are several submodules which could be used to transport the played xylophone notes to roboy.
+There's the MidiBridge for local Midi output, which could be forwarded to another computer on the network via a tool called Jack2.
+Another option is the usage of ROSBrige to send Midi data via ROS.
+The last communication module is the MidiRecording which saves the Midi output to a Midi file.
